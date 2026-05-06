@@ -14,19 +14,31 @@ const WYNDHAM_URL =
 const loaderEl = document.getElementById('loader');
 
 if (loaderEl) {
-  window.addEventListener('load', () => {
-    const tl = gsap.timeline();
-    tl.to('#ldLogo', { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out' })
-      .to('#ldBar',  { width: '100%', duration: 1.5, ease: 'power2.inOut' }, '-=0.3')
-      .to('#loader', {
-        yPercent: -100, duration: 0.9, ease: 'power3.inOut', delay: 0.2,
-        onComplete() {
-          loaderEl.style.display = 'none';
-          runHeroEntrance();
-          initScrollAnimations();
-        }
-      });
-  });
+  const alreadySeen = sessionStorage.getItem('loaderShown');
+
+  if (alreadySeen) {
+    /* Skip loader on return visits — show content instantly */
+    loaderEl.style.display = 'none';
+    window.addEventListener('DOMContentLoaded', () => {
+      runHeroEntrance();
+      initScrollAnimations();
+    });
+  } else {
+    window.addEventListener('load', () => {
+      const tl = gsap.timeline();
+      tl.to('#ldLogo', { opacity: 1, y: 0, duration: 0.75, ease: 'power3.out' })
+        .to('#ldBar',  { width: '100%', duration: 1.5, ease: 'power2.inOut' }, '-=0.3')
+        .to('#loader', {
+          yPercent: -100, duration: 0.9, ease: 'power3.inOut', delay: 0.2,
+          onComplete() {
+            loaderEl.style.display = 'none';
+            sessionStorage.setItem('loaderShown', '1');
+            runHeroEntrance();
+            initScrollAnimations();
+          }
+        });
+    });
+  }
 } else {
   /* Sub-pages: run scroll animations after DOM is ready */
   window.addEventListener('DOMContentLoaded', () => {

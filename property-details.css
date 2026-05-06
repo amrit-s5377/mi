@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   property-details.css  |  PROPERTY DETAILS PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+/* Hero background */
+.detail-hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=2200&q=90');
+}
+
+/* Policies table */
+.policy-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 1.2rem;
+}
+.policy-item {
+  display: flex; flex-direction: column; gap: 3px; padding: 1rem 1.2rem;
+  background: var(--white); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.policy-item:nth-child(even) { border-right: none; }
+.policy-item:nth-last-child(-n+2) { border-bottom: none; }
+.policy-item span { font-size: 0.6rem; font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-l); }
+.policy-item strong { font-size: 0.82rem; font-weight: 500; color: var(--ink); }
+
+/* Location highlights block */
+.detail-loc-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 1.2rem;
+}
+.detail-loc-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 10px 14px; background: var(--white);
+  border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
+  font-size: 0.78rem;
+}
+.detail-loc-item:nth-child(even) { border-right: none; }
+.detail-loc-item strong { font-weight: 600; color: var(--ink); }
+.detail-loc-item span { font-weight: 300; color: var(--ink-m); text-align: right; }
+
+/* Explore more links in sidebar */
+.detail-nav-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
+.detail-nav-links a {
+  font-size: 0.72rem; font-weight: 500; color: var(--teal);
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 6px; transition: gap 0.2s, color 0.2s;
+}
+.detail-nav-links a:last-child { border-bottom: none; }
+.detail-nav-links a:hover { color: var(--teal-d); gap: 10px; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — PROPERTY DETAILS PAGE
+═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .policy-grid     { grid-template-columns: 1fr; }
+  .policy-item     { border-right: none; }
+  .policy-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .policy-item:last-child { border-bottom: none; }
+  .detail-loc-grid { grid-template-columns: 1fr; }
+  .detail-loc-item { border-right: none; }
+}

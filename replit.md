@@ -6,34 +6,55 @@ A static marketing website for Microtel Inn & Suites by Wyndham in Williston, ND
 
 - **Start**: `node server.js`
 - No environment variables required
+- Serves on port 5000
 
 ## Stack
 
 - Pure static site: HTML, CSS, vanilla JavaScript
-- GSAP 3.12.5 + ScrollTrigger (loaded via CDN in index.html)
-- Node.js static file server (server.js) on port 5000
+- GSAP 3.12.5 + ScrollTrigger (CDN)
+- Node.js static file server (`server.js`) on port 5000
+- Google Fonts: DM Serif Display + Inter
 
 ## Where things live
 
-- `index.html` — full single-page app (all pages in one HTML file)
-- `style.css` — all styles
-- `main.js` — GSAP animations and page navigation logic
-- `server.js` — simple Node.js HTTP server
+- `index.html` — Home / landing page
+- `kitchenette.html` — Queen Kitchenette Suite detail page
+- `extended-stay.html` — Weekly & Monthly Rates page
+- `property-details.html` — Full property overview page
+- `style.css` — Shared styles: reset, tokens, navbar, footer, loader, buttons, reveals, shared sub-page components (d-hero, d-body, d-sidebar, d-info-card, d-amen-grid, d-gallery, d-rooms-grid)
+- `home.css` — Landing page specific styles
+- `kitchenette.css` — Kitchenette page specific styles
+- `extended-stay.css` — Extended stay page specific styles
+- `property-details.css` — Property details page specific styles
+- `main.js` — Shared JS: loader (home only), navbar glass toggle, hamburger/drawer, GSAP scroll animations
+- `server.js` — Simple Node.js HTTP static file server
+- SEO source: `attached_assets/microtel_williston_SEO_CONTENT_1778096188132.xlsx`
 
 ## Architecture decisions
 
-- Single-page application using JS-controlled visibility (no router library)
-- Pages: `#landingPg`, `#kitchenettePg`, `#extendedPg`, `#detailPg`
-- GSAP handles all animations and scroll triggers
-- No build step needed — pure static files served directly
+- Multi-page HTML architecture — real `<a href="page.html">` links, no JS-controlled visibility
+- CSS split by page: `style.css` (shared) + one CSS file per page for clean organization
+- Loader runs on home page only (`#loader` presence detected in `main.js`)
+- Sub-pages auto-initialize scroll animations on `DOMContentLoaded`
+- Navbar switches to light mode on sub-pages automatically (no hero to detect)
+- GSAP parallax on hero bg, parallax divider, and CTA section (home only)
 
 ## Product
 
-- Landing page with hero section and property highlights
-- Kitchenette Suite detail page
-- Weekly & Monthly Rates / Extended Stay page
-- Full property detail page
-- Links out to Wyndham booking engine
+- Home page with full hero entrance animation, stat bar, about, kitchenette spotlight, rooms, parallax divider, amenities, explore, location, reviews, CTA
+- Kitchenette Suite detail page with full equipment list, spec grid, rate cards, gallery
+- Weekly & Monthly Rates page with rate tiers, loaner items, audience cards (Bakken/Nurse/Contractor), FAQ
+- Property Details page with room grid, amenities, policies, location, gallery
+
+## SEO Content Applied (from Excel)
+
+- Home title: "Microtel Williston | Extended-Stay Suites in the Bakken"
+- Home H1: "Williston's Newest Full-Kitchen Extended-Stay Hotel"
+- Kitchenette title: "Queen Kitchenette Suites in Williston, ND | Microtel Williston"
+- Kitchenette H1: "Queen Kitchenette Suites with Full Kitchen — Williston, ND"
+- Extended Stay title: "Weekly & Monthly Hotel Rates Williston ND | Microtel Williston"
+- Extended Stay H1: "Weekly & Monthly Hotel Rates — Williston, ND"
+- Schema.org Hotel markup on all pages; HotelRoom markup on kitchenette.html
 
 ## User preferences
 
@@ -41,9 +62,12 @@ _Populate as you build_
 
 ## Gotchas
 
-- GSAP is loaded from CDN; internet access required for full animation support
-- All page navigation is JS-driven via `goHome()`, `openDetail()`, etc.
+- GSAP loaded from CDN; internet required for animations
+- `d-back-btn` uses `position: absolute` — hero must have `position: relative` on its parent
+- `d-body` grid collapses to single column at 1100px (sidebar goes below content)
+- Navbar `.light` mode auto-applies on sub-pages (no hero section present)
 
 ## Pointers
 
 - Wyndham booking URL: https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview
+- Phone: (701) 572-2000 | Address: 3820 4th Ave W, Williston, ND 58801

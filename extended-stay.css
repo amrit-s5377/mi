@@ -1,0 +1,192 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   extended-stay.css  |  EXTENDED STAY PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+/* Hero background */
+.ext-hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2200&q=90');
+}
+
+/* ── LAYOUT ── */
+.ext-body {
+  display: grid; grid-template-columns: 1fr 320px; gap: 3.5rem;
+  padding: 72px 8vw; align-items: start; max-width: 1280px; margin: 0 auto;
+}
+.ext-main { min-width: 0; }
+.ext-sidebar { position: sticky; top: 82px; }
+
+/* ── SECTIONS ── */
+.ext-section { margin-bottom: 3.5rem; }
+.ext-section:last-child { margin-bottom: 0; }
+.ext-section p {
+  font-size: 0.86rem; font-weight: 300; line-height: 1.88; color: var(--ink-m); margin-bottom: 0.7rem;
+}
+
+/* ── RATE GRID ── */
+.ext-rate-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.8rem;
+}
+.ext-rate-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+  padding: 1.8rem; position: relative; transition: box-shadow 0.25s;
+}
+.ext-rate-card:hover { box-shadow: 0 8px 32px rgba(13,127,110,0.1); }
+.ext-rate-card--mid { border-top: 3px solid var(--teal-l); }
+.ext-rate-card--best { border: 2px solid var(--teal); }
+.erc-badge {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  font-size: 0.55rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  background: var(--teal); color: #fff; padding: 4px 14px; border-radius: 999px; white-space: nowrap;
+}
+.erc-icon { font-size: 1.6rem; margin-bottom: 0.8rem; }
+.erc-title {
+  font-family: var(--serif); font-size: 1.25rem; font-weight: 400; color: var(--ink); margin-bottom: 0.5rem;
+}
+.erc-from {
+  font-size: 0.8rem; color: var(--ink-m); margin-bottom: 0.8rem; padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+.erc-from strong { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+.erc-from span { font-size: 0.68rem; color: var(--ink-l); margin-left: 2px; }
+.erc-desc { font-size: 0.78rem; font-weight: 300; line-height: 1.65; color: var(--ink-m); margin-bottom: 1rem; }
+.erc-list {
+  list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 1.4rem;
+}
+.erc-list li {
+  font-size: 0.74rem; font-weight: 300; color: var(--ink-m);
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.erc-list li:last-child { border-bottom: none; }
+.erc-list li::before { content: '✓'; color: var(--teal); font-size: 0.7rem; flex-shrink: 0; }
+.erc-btn {
+  display: block; text-align: center; width: 100%;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 11px; border-radius: 8px; background: var(--ink); color: #fff;
+  border: none; transition: background 0.22s, transform 0.18s;
+}
+.erc-btn:hover { background: var(--ink-m); transform: translateY(-1px); }
+.erc-btn--teal { background: var(--teal); }
+.erc-btn--teal:hover { background: var(--teal-l); }
+
+/* ── WHAT'S INCLUDED ── */
+.ext-included-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1.4rem;
+}
+.ext-inc-group {
+  background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 1.4rem;
+}
+.ext-inc-group h3 {
+  font-size: 0.8rem; font-weight: 600; color: var(--ink); margin-bottom: 0.9rem;
+  padding-bottom: 0.6rem; border-bottom: 1px solid var(--teal-pale);
+}
+.ext-inc-group ul { list-style: none; display: flex; flex-direction: column; gap: 0; }
+.ext-inc-group li {
+  font-size: 0.76rem; font-weight: 300; color: var(--ink-m);
+  padding: 6px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.ext-inc-group li:last-child { border-bottom: none; }
+.ext-inc-group li::before { content: '✦'; color: var(--teal-l); font-size: 0.45rem; flex-shrink: 0; }
+
+/* ── LOANER ITEMS ── */
+.ext-loaner { background: var(--teal-xpale); border-radius: 14px; padding: 2rem; }
+.ext-loaner-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; margin-top: 1.2rem;
+}
+.ext-loaner-item {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.5rem;
+  background: var(--white); border-radius: 10px; padding: 1.2rem 0.8rem;
+  border: 1px solid var(--border);
+}
+.ext-loaner-item span { font-size: 1.6rem; }
+.ext-loaner-item strong { font-size: 0.74rem; font-weight: 600; color: var(--ink); }
+.ext-loaner-item p { font-size: 0.66rem; font-weight: 300; color: var(--ink-m); line-height: 1.5; margin: 0; }
+
+/* ── AUDIENCE CARDS ── */
+.ext-audience-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 1.4rem;
+}
+.ext-audience-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 1.6rem;
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+.ext-audience-card:hover { box-shadow: 0 8px 32px rgba(13,127,110,0.1); transform: translateY(-3px); }
+.eac-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.eac-title { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); margin-bottom: 0.7rem; }
+.eac-desc { font-size: 0.78rem; font-weight: 300; line-height: 1.65; color: var(--ink-m); margin-bottom: 1rem; }
+.eac-list {
+  list-style: none; display: flex; flex-direction: column; gap: 0; margin-bottom: 1.4rem;
+}
+.eac-list li {
+  font-size: 0.74rem; font-weight: 300; color: var(--ink-m);
+  padding: 6px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.eac-list li:last-child { border-bottom: none; }
+.eac-list li::before { content: '✓'; color: var(--teal); font-size: 0.7rem; flex-shrink: 0; }
+.eac-btn {
+  display: block; text-align: center; width: 100%;
+  font-size: 0.64rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 10px; border-radius: 8px; background: var(--teal); color: #fff;
+  border: none; transition: background 0.22s;
+}
+.eac-btn:hover { background: var(--teal-l); }
+
+/* ── LOCATION LIST ── */
+.ext-loc-list {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 1.2rem;
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden;
+}
+.ext-loc-item {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+  padding: 10px 14px; background: var(--white);
+  border-bottom: 1px solid var(--border); border-right: 1px solid var(--border);
+}
+.ext-loc-item:nth-child(even) { border-right: none; }
+.ext-loc-item strong { font-size: 0.74rem; font-weight: 600; color: var(--ink); }
+.ext-loc-item span { font-size: 0.72rem; font-weight: 300; color: var(--ink-m); text-align: right; }
+
+/* ── FAQ ── */
+.ext-faq { display: flex; flex-direction: column; gap: 0; margin-top: 1.2rem; }
+.ext-faq-item {
+  padding: 1.2rem 0; border-bottom: 1px solid var(--border);
+}
+.ext-faq-item:last-child { border-bottom: none; }
+.ext-faq-item h3 {
+  font-family: var(--serif); font-size: 1rem; font-weight: 400; color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+.ext-faq-item p { font-size: 0.82rem; font-weight: 300; line-height: 1.75; color: var(--ink-m); margin: 0; }
+
+/* ── SIDEBAR NAV LINKS ── */
+.ext-nav-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
+.ext-nav-links a {
+  font-size: 0.72rem; font-weight: 500; color: var(--teal);
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 6px; transition: gap 0.2s, color 0.2s;
+}
+.ext-nav-links a:last-child { border-bottom: none; }
+.ext-nav-links a:hover { color: var(--teal-d); gap: 10px; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — EXTENDED STAY PAGE
+═══════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ext-body     { grid-template-columns: 1fr; padding: 56px 6vw; }
+  .ext-sidebar  { position: static; }
+  .ext-rate-grid { grid-template-columns: 1fr 1fr; }
+  .ext-audience-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .ext-rate-grid     { grid-template-columns: 1fr; }
+  .ext-included-grid { grid-template-columns: 1fr; }
+  .ext-audience-grid { grid-template-columns: 1fr; }
+  .ext-loaner-grid   { grid-template-columns: repeat(2, 1fr); }
+  .ext-loc-list      { grid-template-columns: 1fr; }
+  .ext-loc-item      { border-right: none; }
+}
+@media (max-width: 480px) {
+  .ext-loaner-grid { grid-template-columns: 1fr; }
+}

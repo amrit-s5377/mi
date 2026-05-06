@@ -1,0 +1,103 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   kitchenette.css  |  KITCHENETTE SUITE PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+/* Hero background */
+.kit-hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2200&q=90');
+}
+
+/* Best-for tags */
+.best-for-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+.best-for-tags span {
+  font-size: 0.64rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal-d); background: var(--teal-pale);
+  border: 1px solid rgba(13,127,110,0.2); padding: 6px 14px; border-radius: 999px;
+  transition: background 0.22s, color 0.22s;
+}
+.best-for-tags span:hover { background: var(--teal); color: #fff; }
+
+/* Equipment groups */
+.equip-group { margin-top: 2rem; }
+.equip-group:first-child { margin-top: 1.2rem; }
+.equip-group-title {
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.8rem; padding-bottom: 0.6rem;
+  border-bottom: 2px solid var(--teal-pale);
+}
+
+/* Room spec grid */
+.spec-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-top: 1.2rem;
+}
+.spec-item {
+  display: flex; flex-direction: column; gap: 3px; padding: 1rem 1.2rem;
+  background: var(--white); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+}
+.spec-item:nth-child(3n) { border-right: none; }
+.spec-item:nth-last-child(-n+3) { border-bottom: none; }
+.spec-item span { font-size: 0.6rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-l); }
+.spec-item strong { font-size: 0.84rem; font-weight: 500; color: var(--ink); }
+
+/* Rate cards */
+.rate-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.rate-card {
+  border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem;
+  background: var(--white); position: relative;
+  transition: box-shadow 0.25s;
+}
+.rate-card:hover { box-shadow: 0 6px 28px rgba(13,127,110,0.1); }
+.rate-card--featured { border: 2px solid var(--teal); }
+.rc-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  font-size: 0.55rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  background: var(--teal); color: #fff; padding: 4px 12px; border-radius: 999px;
+  white-space: nowrap;
+}
+.rc-type {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 400; color: var(--ink);
+  margin-bottom: 0.5rem; margin-top: 0.5rem;
+}
+.rc-desc { font-size: 0.76rem; font-weight: 300; line-height: 1.6; color: var(--ink-m); margin-bottom: 1.2rem; }
+.rc-btn {
+  display: block; text-align: center; width: 100%;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 10px; border-radius: 8px; background: var(--ink); color: #fff;
+  border: none; transition: background 0.22s;
+}
+.rc-btn:hover { background: var(--ink-m); }
+.rc-btn--teal { background: var(--teal); }
+.rc-btn--teal:hover { background: var(--teal-l); }
+
+/* Explore More links inside sidebar */
+.kit-nav-links { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.6rem; }
+.kit-nav-links a {
+  font-size: 0.72rem; font-weight: 500; color: var(--teal);
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 6px; transition: gap 0.2s, color 0.2s;
+}
+.kit-nav-links a:last-child { border-bottom: none; }
+.kit-nav-links a:hover { color: var(--teal-d); gap: 10px; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE — KITCHENETTE PAGE
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .spec-grid { grid-template-columns: 1fr 1fr; }
+  .spec-item:nth-child(3n)      { border-right: 1px solid var(--border); }
+  .spec-item:nth-child(even)    { border-right: none; }
+  .spec-item:nth-last-child(-n+3) { border-bottom: 1px solid var(--border); }
+  .spec-item:nth-last-child(-n+2) { border-bottom: none; }
+}
+@media (max-width: 768px) {
+  .rate-cards { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .spec-grid { grid-template-columns: 1fr; }
+  .spec-item { border-right: none; }
+  .spec-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .spec-item:last-child { border-bottom: none; }
+  .best-for-tags span { font-size: 0.58rem; padding: 5px 10px; }
+}

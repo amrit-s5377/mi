@@ -47,6 +47,31 @@
 .detail-nav-links a:last-child { border-bottom: none; }
 .detail-nav-links a:hover { color: var(--teal-d); gap: 10px; }
 
+/* ── AMENITIES GRID — 3-col on wide screens ── */
+@media (min-width: 900px) {
+  .d-amen-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .d-amen-item:nth-child(even) { border-right: 1px solid var(--border); }
+  .d-amen-item:nth-child(3n)   { border-right: none; }
+}
+
+/* ── POLICY GRID IMPROVEMENTS ── */
+.policy-grid {
+  border-radius: 12px;
+}
+.policy-item {
+  padding: 1.1rem 1.3rem;
+}
+
+/* Location grid */
+.detail-loc-grid {
+  border-radius: 12px;
+}
+.detail-loc-item {
+  padding: 11px 16px;
+}
+
 /* ═══════════════════════════════════════
    RESPONSIVE — PROPERTY DETAILS PAGE
 ═══════════════════════════════════════ */

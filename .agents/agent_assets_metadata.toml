@@ -1,0 +1,56 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "fRx_QtAerLkpRXvZM-ROr"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-hero-dark.png"
+type = "image"
+title = "Dark dramatic hotel exterior"
+
+[[generated]]
+id = "p5pJVJ0P0SSLpovZKoyWk"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-about-kitchen.png"
+type = "image"
+title = "Warm kitchenette interior"
+
+[[generated]]
+id = "YR7wXN7rtOdLYhxaRNxyJ"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-room-queen.png"
+type = "image"
+title = "Queen kitchenette suite"
+
+[[generated]]
+id = "0YyH1xAthHblJQLXls-ef"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-hero.png"
+type = "image"
+title = "Dramatic hotel exterior at night"
+
+[[generated]]
+id = "ZEKWBSvTDBMKXNILnKxn-"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-about-1.png"
+type = "image"
+title = "Hotel suite interior living area"
+
+[[generated]]
+id = "5_rV-uzqLVCZWmyfnWpcJ"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-about-2.png"
+type = "image"
+title = "Hotel breakfast buffet area"
+
+[[generated]]
+id = "03oJZVnIfCcTP5i0q5bHU"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-kitchenette.png"
+type = "image"
+title = "Full hotel suite kitchenette"
+
+[[generated]]
+id = "8BRid4533PsAAc0TGiP-J"
+uri = "file://artifacts/mockup-sandbox/public/images/hotel-exterior.png"
+type = "image"
+title = "Hotel exterior at night"
+
+[[generated]]
+id = "h1p3QgmC_Rc1txAxNCqGL"
+uri = "file://artifacts/mockup-sandbox/public/images/kitchenette-suite.png"
+type = "image"
+title = "Modern kitchenette suite"

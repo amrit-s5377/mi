@@ -102,6 +102,19 @@
 .kit-nav-links a:last-child { border-bottom: none; }
 .kit-nav-links a:hover { color: var(--teal-d); gap: 10px; }
 
+/* ── IMPROVED SIDEBAR STICKY OFFSET ── */
+.d-sidebar { position: sticky; top: 82px; }
+
+/* ── EQUIPMENT LIST IMPROVEMENTS ── */
+.equip-group { margin-top: 2rem; }
+.equip-group:first-child { margin-top: 1.4rem; }
+
+/* Spec grid improved */
+.spec-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 1.2rem;
+}
+
 /* ═══════════════════════════════════════
    RESPONSIVE — KITCHENETTE PAGE
 ═══════════════════════════════════════ */

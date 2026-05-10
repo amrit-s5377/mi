@@ -2,17 +2,10 @@
 
 A static marketing website for Microtel Inn & Suites by Wyndham in Williston, ND, showcasing extended-stay kitchenette suites for Bakken oilfield crews, travel nurses, and business travelers.
 
-## Run & Operate
-
-- **Start**: `node server.js`
-- No environment variables required
-- Serves on port 5000
-
 ## Stack
 
 - Pure static site: HTML, CSS, vanilla JavaScript
 - GSAP 3.12.5 + ScrollTrigger (CDN)
-- Node.js static file server (`server.js`) on port 5000
 - Google Fonts: DM Serif Display + Inter
 
 ## Where things live
@@ -26,9 +19,6 @@ A static marketing website for Microtel Inn & Suites by Wyndham in Williston, ND
 - `kitchenette.css` — Kitchenette page specific styles
 - `extended-stay.css` — Extended stay page specific styles
 - `property-details.css` — Property details page specific styles
-- `main.js` — Shared JS: loader (home only), navbar glass toggle, hamburger/drawer, GSAP scroll animations
-- `server.js` — Simple Node.js HTTP static file server
-- SEO source: `attached_assets/microtel_williston_SEO_CONTENT_1778096188132.xlsx`
 
 ## Architecture decisions
 

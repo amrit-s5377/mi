@@ -134,6 +134,58 @@
 }
 .eac-btn:hover { background: var(--teal-l); }
 
+/* .ext-audience-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; margin-top: 1.8rem;
+}
+.ext-audience-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px;
+  padding: 2rem 1.8rem 1.6rem; box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: box-shadow 0.25s, transform 0.25s;
+  display: flex; flex-direction: column;
+}
+.ext-audience-card:hover { box-shadow: 0 10px 36px rgba(13,127,110,0.12); transform: translateY(-3px); }
+
+/* Icon circle */
+.eac-icon {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: var(--teal-xpale); border: 1px solid var(--teal-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 1.1rem; flex-shrink: 0;
+}
+
+.eac-title {
+  font-family: var(--serif); font-size: 1.15rem; font-weight: 400;
+  color: var(--ink); margin-bottom: 0.6rem; line-height: 1.25;
+}
+.eac-desc {
+  font-size: 0.8rem; font-weight: 300; line-height: 1.7;
+  color: var(--ink-m); margin-bottom: 1.2rem;
+}
+
+/* 2-column compact tag grid */
+.eac-list {
+  list-style: none;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5px 10px;
+  margin-bottom: 1.6rem; flex-grow: 1;
+}
+.eac-list li {
+  font-size: 0.72rem; font-weight: 400; color: var(--ink-m);
+  display: flex; align-items: flex-start; gap: 5px; line-height: 1.4;
+  padding: 0; border: none;
+}
+.eac-list li::before {
+  content: '✓'; color: var(--teal); font-size: 0.72rem;
+  font-weight: 700; flex-shrink: 0; margin-top: 1px;
+}
+
+.eac-btn {
+  display: block; text-align: center; width: 100%; margin-top: auto;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.02em;
+  padding: 13px 16px; border-radius: 8px; background: var(--teal); color: #fff;
+  border: none; transition: background 0.22s, transform 0.18s;
+}
+.eac-btn:hover { background: var(--teal-l); transform: translateY(-1px); } */
+
 /* ── LOCATION LIST ── */
 .ext-loc-list {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-top: 1.2rem;

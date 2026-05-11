@@ -105,8 +105,8 @@ const server = http.createServer(async (req, res) => {
         return res.end(JSON.stringify({ ok: false, error: 'Please fill in all required fields.' }));
       }
 
-      const transporter = createTransporter();
-      if (!transporter) {
+      const resend = getResend();
+      if (!resend) {
         res.writeHead(503);
         return res.end(JSON.stringify({
           ok: false,
@@ -127,14 +127,16 @@ const server = http.createServer(async (req, res) => {
         d.message,
       ].filter(l => l !== null).join('\n');
 
-      await transporter.sendMail({
-        from: `"Microtel Williston Website" <${process.env.SMTP_USER}>`,
+      const { error: sendError } = await resend.emails.send({
+        from: 'Microtel Williston <onboarding@resend.dev>',
         to:   RECIPIENT,
-        replyTo: `"${d.name}" <${d.email}>`,
+        reply_to: `${d.name} <${d.email}>`,
         subject,
         text,
         html: buildEmailHtml(d),
       });
+
+      if (sendError) throw new Error(sendError.message);
 
       res.writeHead(200);
       return res.end(JSON.stringify({ ok: true }));
@@ -179,7 +181,7 @@ const server = http.createServer(async (req, res) => {
 
 server.listen(PORT, '0.0.0.0', () => {
   console.log(`Server running on port ${PORT}`);
-  if (!process.env.SMTP_HOST) {
-    console.log('  ⚠  SMTP not configured — set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS to enable email sending');
+  if (!process.env.RESEND_API_KEY) {
+    console.log('  ⚠  RESEND_API_KEY not set — enquiry form email sending is disabled');
   }
 });

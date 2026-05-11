@@ -4,7 +4,7 @@ const path = require('path');
 const { Resend } = require('resend');
 
 const PORT = 5000;
-const RECIPIENT = 'info@merlinhotelgroup.com';
+const RECIPIENT = 'amrit.singh@gradientm.com'; /* temp — swap to info@merlinhotelgroup.com once domain verified */
 
 const mimeTypes = {
   '.html': 'text/html',

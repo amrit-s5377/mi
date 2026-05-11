@@ -82,6 +82,7 @@
       <a href="index.html#amenities">Amenities</a>
       <a href="index.html#explore">Explore</a>
       <a href="index.html#location">Location</a>
+      <a href="index.html#enquiry">Enquire</a>
       <a href="index.html#contact">Contact</a>
     </nav>
     <a href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview"
@@ -104,6 +105,7 @@
         <a href="index.html#amenities">Amenities</a>
         <a href="index.html#explore">Explore</a>
         <a href="index.html#location">Location</a>
+        <a href="index.html#enquiry">Enquire</a>
         <a href="index.html#contact">Contact</a>
       </nav>
       <div class="nav-right">
@@ -462,7 +464,7 @@
 
   <!-- ── EXTENDED STAY PROMO BAND ── -->
   <section class="sec" style="background:var(--teal-xpale); padding:64px 8vw;" aria-labelledby="ext-promo-heading">
-    <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;flex-wrap:wrap;">
+    <div class="ext-promo-grid" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;flex-wrap:wrap;">
       <div>
         <div class="eyebrow reveal">Extended Stay</div>
         <!-- H2 from SEO: "Weekly & Monthly Rates for Extended-Stay Guests" -->
@@ -590,6 +592,110 @@
     </div>
   </section>
 
+  <!-- ── ENQUIRY FORM ── -->
+  <section class="sec enquiry-sec" id="enquiry" aria-labelledby="enquiry-heading">
+    <div class="enquiry-inner">
+      <div class="enquiry-info">
+        <div class="eyebrow reveal">Get In Touch</div>
+        <h2 class="sec-h2 reveal" id="enquiry-heading">Have a Question?<br><em>We're Here to Help</em></h2>
+        <p class="body-text reveal">Whether you're planning an extended stay, need a group rate, or just want to know more about our kitchenette suites — our team responds within a few hours.</p>
+
+        <div class="enquiry-contact-cards reveal">
+          <a href="mailto:info@merlinhotelgroup.com" class="enq-contact-item">
+            <div class="enq-contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <div>
+              <span class="enq-contact-label">Email Us</span>
+              <span class="enq-contact-val">info@merlinhotelgroup.com</span>
+            </div>
+          </a>
+          <a href="tel:+17015722000" class="enq-contact-item">
+            <div class="enq-contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.21 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg>
+            </div>
+            <div>
+              <span class="enq-contact-label">Call Us</span>
+              <span class="enq-contact-val">(701) 572-2000</span>
+            </div>
+          </a>
+          <div class="enq-contact-item enq-contact-item--static">
+            <div class="enq-contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <span class="enq-contact-label">Response Time</span>
+              <span class="enq-contact-val">Within a few hours</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="enquiry-note reveal">
+          <div class="enq-note-icon" aria-hidden="true">💡</div>
+          <div>
+            <strong>Better communication options</strong>
+            <p>We're exploring WhatsApp Business for instant messaging, Tawk.to live chat for real-time support on this page, and Calendly for scheduling property tour calls. Ask the team about enabling these.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="enquiry-form-wrap reveal-r">
+        <form class="enquiry-form" id="enquiryForm" novalidate>
+          <div class="enq-form-row enq-form-row--2">
+            <div class="enq-field">
+              <label for="enqName">Full Name <span class="enq-req" aria-hidden="true">*</span></label>
+              <input type="text" id="enqName" name="name" placeholder="John Smith" required autocomplete="name" />
+            </div>
+            <div class="enq-field">
+              <label for="enqPhone">Phone Number</label>
+              <input type="tel" id="enqPhone" name="phone" placeholder="(701) 000-0000" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="enq-field">
+            <label for="enqEmail">Email Address <span class="enq-req" aria-hidden="true">*</span></label>
+            <input type="email" id="enqEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+          </div>
+          <div class="enq-field">
+            <label for="enqType">Type of Enquiry <span class="enq-req" aria-hidden="true">*</span></label>
+            <select id="enqType" name="type" required>
+              <option value="" disabled selected>Select a topic…</option>
+              <option value="Room Availability">Room Availability &amp; Rates</option>
+              <option value="Extended Stay">Extended Stay / Weekly or Monthly Rate</option>
+              <option value="Corporate / Group Booking">Corporate / Group Booking</option>
+              <option value="Kitchenette Suite">Kitchenette Suite Details</option>
+              <option value="Pet Policy">Pet Policy</option>
+              <option value="Direct Billing">Direct / Corporate Billing</option>
+              <option value="General Enquiry">General Enquiry</option>
+            </select>
+          </div>
+          <div class="enq-form-row enq-form-row--2">
+            <div class="enq-field">
+              <label for="enqCheckin">Planned Check-in</label>
+              <input type="date" id="enqCheckin" name="checkin" />
+            </div>
+            <div class="enq-field">
+              <label for="enqCheckout">Planned Check-out</label>
+              <input type="date" id="enqCheckout" name="checkout" />
+            </div>
+          </div>
+          <div class="enq-field">
+            <label for="enqMessage">Your Message <span class="enq-req" aria-hidden="true">*</span></label>
+            <textarea id="enqMessage" name="message" rows="4" placeholder="Tell us what you need — number of guests, length of stay, any special requirements…" required></textarea>
+          </div>
+          <button type="submit" class="enq-submit-btn">
+            Send Enquiry
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          </button>
+          <p class="enq-form-note">Your message will open in your email client, pre-filled and ready to send to <strong>info@merlinhotelgroup.com</strong></p>
+          <div class="enq-success" id="enqSuccess" aria-live="polite" hidden>
+            <span class="enq-success-icon" aria-hidden="true">✓</span>
+            Thank you! Your enquiry email is ready — please send it from your email client.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ── CTA ── -->
   <section class="cta-sec" id="cta" aria-labelledby="cta-heading">
     <div class="cta-bg" id="ctaBg"></div>
@@ -622,7 +728,7 @@
         </address>
         <p class="foot-contact">
           <a href="tel:+17015722000">(701) 572-2000</a><br>
-          <a href="mailto:williston@microtel.com">williston@microtel.com</a>
+          <a href="mailto:info@merlinhotelgroup.com">info@merlinhotelgroup.com</a>
         </p>
       </div>
       <div class="foot-col">
@@ -665,5 +771,43 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    /* ── ENQUIRY FORM — mailto handler ── */
+    const enquiryForm = document.getElementById('enquiryForm');
+    if (enquiryForm) {
+      enquiryForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name     = document.getElementById('enqName').value.trim();
+        const phone    = document.getElementById('enqPhone').value.trim();
+        const email    = document.getElementById('enqEmail').value.trim();
+        const type     = document.getElementById('enqType').value;
+        const checkin  = document.getElementById('enqCheckin').value;
+        const checkout = document.getElementById('enqCheckout').value;
+        const message  = document.getElementById('enqMessage').value.trim();
+
+        if (!name || !email || !type || !message) {
+          const firstEmpty = enquiryForm.querySelector(':invalid');
+          if (firstEmpty) firstEmpty.focus();
+          return;
+        }
+
+        const subject = encodeURIComponent('Guest Enquiry — ' + type + ' | Microtel Williston');
+        const body = encodeURIComponent(
+          'Name: ' + name + '\n' +
+          (phone ? 'Phone: ' + phone + '\n' : '') +
+          'Email: ' + email + '\n' +
+          'Enquiry Type: ' + type + '\n' +
+          (checkin  ? 'Check-in: '  + checkin  + '\n' : '') +
+          (checkout ? 'Check-out: ' + checkout + '\n' : '') +
+          '\nMessage:\n' + message
+        );
+
+        window.location.href = 'mailto:info@merlinhotelgroup.com?subject=' + subject + '&body=' + body;
+
+        document.getElementById('enqSuccess').hidden = false;
+        enquiryForm.reset();
+      });
+    }
+  </script>
 </body>
 </html>

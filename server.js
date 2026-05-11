@@ -1,7 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
 const PORT = 5000;
 const RECIPIENT = 'info@merlinhotelgroup.com';
@@ -22,18 +22,11 @@ const mimeTypes = {
   '.ttf':  'font/ttf',
 };
 
-/* ── Nodemailer transporter ── */
-function createTransporter() {
-  const host = process.env.SMTP_HOST;
-  const user = process.env.SMTP_USER;
-  const pass = process.env.SMTP_PASS;
-  if (!host || !user || !pass) return null;
-  return nodemailer.createTransport({
-    host,
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_PORT === '465',
-    auth: { user, pass },
-  });
+/* ── Resend client ── */
+function getResend() {
+  const key = process.env.RESEND_API_KEY;
+  if (!key) return null;
+  return new Resend(key);
 }
 
 /* ── Partial injection ── */

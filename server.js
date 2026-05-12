@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { Resend } = require('resend');
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 const RECIPIENT = 'amrit.singh@gradientm.com'; /* temp — swap to sales@merlinhotelgroup.com once merlinhotelgroup.com is verified in Resend dashboard */
 
 const mimeTypes = {

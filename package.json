@@ -4,8 +4,8 @@
   "description": "A static marketing website for Microtel Inn & Suites by Wyndham in Williston, ND, showcasing extended-stay kitchenette suites for Bakken oilfield crews, travel nurses, and business travelers.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node build.js"
   },
   "keywords": [],
   "author": "",

@@ -6,3 +6,9 @@ id = "qIHUhYX9DaNm-7mReFJf2"
 uri = "file://microtel-williston.tar.gz"
 type = "unspecified"
 title = "Microtel Williston — Full Project"
+
+[[outputs]]
+id = "Ys_mhvfJva8NKCTSXuxEa"
+uri = "file://microtel-static-build.tar.gz"
+type = "unspecified"
+title = "Microtel — Static Build (dist/)"

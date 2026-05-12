@@ -470,6 +470,7 @@ a.enq-contact-item:hover {
   border-radius: 9px; padding: 12px 16px;
   font-size: 0.8rem; font-weight: 500; color: var(--teal-d);
 }
+.enq-success[hidden] { display: none !important; }
 .enq-success-icon {
   width: 22px; height: 22px; border-radius: 50%;
   background: var(--teal); color: #fff;
@@ -483,6 +484,7 @@ a.enq-contact-item:hover {
   border-radius: 9px; padding: 12px 16px;
   font-size: 0.8rem; font-weight: 500; color: #b32929;
 }
+.enq-error[hidden] { display: none !important; }
 .enq-error-icon {
   width: 22px; height: 22px; border-radius: 50%;
   background: #e05c5c; color: #fff;

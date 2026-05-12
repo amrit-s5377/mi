@@ -18,7 +18,7 @@ const path = require('path');
 
 /* ── Config ─────────────────────────────────────────────────── */
 const ROOT         = __dirname;
-const DIST         = path.join(ROOT, 'dist');
+const DIST         = path.join(ROOT, 'public');
 const PARTIALS_DIR = path.join(ROOT, 'partials');
 
 const RESEND_KEY = process.env.RESEND_API_KEY || '';

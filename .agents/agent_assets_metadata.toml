@@ -1,0 +1,8 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "qIHUhYX9DaNm-7mReFJf2"
+uri = "file://microtel-williston.tar.gz"
+type = "unspecified"
+title = "Microtel Williston — Full Project"

@@ -535,6 +535,123 @@ a.enq-contact-item:hover {
 
 
 /* ═══════════════════════════════════════
+   SHARED — FAQ ACCORDION (ext-faq-*)
+   Used on: extended-stay, corporate, amenities
+═══════════════════════════════════════ */
+.ext-faq { display: flex; flex-direction: column; gap: 0; margin-top: 1.4rem; }
+
+.ext-faq-item {
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+.ext-faq-item:first-child { border-top: 1px solid var(--border); border-radius: 12px 12px 0 0; }
+.ext-faq-item:last-child  { border-radius: 0 0 12px 12px; }
+
+.ext-faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem; padding: 1.1rem 1.3rem;
+  cursor: pointer;
+  font-family: var(--serif); font-size: 1rem; font-weight: 400; color: var(--ink);
+  list-style: none; user-select: none;
+  transition: background 0.2s, color 0.2s;
+}
+.ext-faq-q::-webkit-details-marker { display: none; }
+.ext-faq-q::marker { display: none; }
+.ext-faq-q:hover { background: var(--teal-xpale); color: var(--teal-d); }
+
+.ext-faq-icon {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--teal-pale);
+  transition: transform 0.3s var(--ease-out), background 0.2s;
+}
+.ext-faq-icon svg { width: 14px; height: 14px; stroke: var(--teal); transition: stroke 0.2s; }
+
+.ext-faq-item[open] .ext-faq-q    { color: var(--teal-d); background: var(--teal-xpale); }
+.ext-faq-item[open] .ext-faq-icon { transform: rotate(180deg); background: var(--teal); }
+.ext-faq-item[open] .ext-faq-icon svg { stroke: #fff; }
+
+.ext-faq-a { padding: 0 1.3rem 1.2rem 1.3rem; animation: faqOpen 0.28s var(--ease-out); }
+.ext-faq-a p { font-size: 0.84rem; font-weight: 300; line-height: 1.8; color: var(--ink-m); margin: 0; }
+
+@keyframes faqOpen {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ═══════════════════════════════════════
+   SHARED — BOTTOM CTA BANNER (ext-cta-*)
+   Used on: extended-stay, corporate, amenities
+═══════════════════════════════════════ */
+.ext-cta-banner {
+  margin: 4rem -6vw 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 4rem 6vw;
+}
+.ext-cta-inner {
+  max-width: 1160px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 300px; gap: 4rem; align-items: start;
+}
+.ext-cta-eyebrow {
+  font-size: 0.58rem; font-weight: 600; letter-spacing: 0.36em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.5rem; display: block;
+}
+.ext-cta-title {
+  font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--ink);
+  line-height: 1.2; margin-bottom: 0.8rem;
+}
+.ext-cta-sub {
+  font-size: 0.86rem; font-weight: 300; line-height: 1.8; color: var(--ink-m); margin-bottom: 1.4rem;
+}
+.ext-cta-perks { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+.ext-cta-perks span { font-size: 0.72rem; font-weight: 400; color: var(--ink-m); }
+
+.ext-cta-info {
+  display: flex; flex-direction: column; gap: 0;
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+  margin-bottom: 1rem;
+}
+.ext-cta-info-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 12px; border-bottom: 1px solid var(--border);
+  background: var(--cream);
+}
+.ext-cta-info-row:last-child { border-bottom: none; }
+.ext-cta-info-row span   { font-size: 0.7rem; font-weight: 300; color: var(--ink-l); }
+.ext-cta-info-row strong { font-size: 0.7rem; font-weight: 500; color: var(--ink); }
+
+.ext-cta-btn-primary {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fff; background: var(--teal); border-radius: 10px; padding: 13px;
+  margin-bottom: 0.6rem; transition: background 0.22s, transform 0.18s;
+}
+.ext-cta-btn-primary svg { width: 13px; height: 13px; flex-shrink: 0; }
+.ext-cta-btn-primary:hover { background: var(--teal-l); transform: translateY(-1px); }
+
+.ext-cta-btn-secondary {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; font-size: 0.66rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal-d); background: transparent; border: 1px solid var(--teal-d);
+  border-radius: 10px; padding: 11px; margin-bottom: 1.2rem;
+  transition: background 0.22s, color 0.22s, border-color 0.22s;
+}
+.ext-cta-btn-secondary svg { width: 13px; height: 13px; flex-shrink: 0; }
+.ext-cta-btn-secondary:hover { background: var(--teal); color: #fff; border-color: var(--teal); }
+
+.ext-cta-links { display: flex; flex-direction: column; gap: 0; }
+.ext-cta-links a {
+  font-size: 0.72rem; font-weight: 500; color: var(--teal);
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 6px; transition: gap 0.2s, color 0.2s;
+}
+.ext-cta-links a:last-child { border-bottom: none; }
+.ext-cta-links a:hover { color: var(--teal-d); gap: 10px; }
+
+/* ═══════════════════════════════════════
    RESPONSIVE — SHARED
 ═══════════════════════════════════════ */
 @media (max-width: 1100px) {

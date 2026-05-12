@@ -47,6 +47,11 @@
 
     <div class="enquiry-form-wrap reveal-r">
       <form class="enquiry-form" id="enquiryForm" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+        <input type="hidden" name="subject" value="Guest Enquiry — Microtel Williston" />
+        <input type="hidden" name="from_name" value="Microtel Williston Website" />
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
+
         <div class="enq-form-row enq-form-row--2">
           <div class="enq-field">
             <label for="enqName">Full Name <span class="enq-req" aria-hidden="true">*</span></label>
@@ -63,7 +68,7 @@
         </div>
         <div class="enq-field">
           <label for="enqType">Type of Enquiry <span class="enq-req" aria-hidden="true">*</span></label>
-          <select id="enqType" name="type" required>
+          <select id="enqType" name="enquiry_type" required>
             <option value="" disabled selected>Select a topic…</option>
             <option value="Room Availability">Room Availability &amp; Rates</option>
             <option value="Extended Stay">Extended Stay / Weekly or Monthly Rate</option>
@@ -127,28 +132,18 @@
     successEl.hidden = true;
     errorEl.hidden = true;
 
-    var payload = {
-      name:     document.getElementById('enqName').value.trim(),
-      phone:    document.getElementById('enqPhone').value.trim(),
-      email:    document.getElementById('enqEmail').value.trim(),
-      type:     document.getElementById('enqType').value,
-      checkin:  document.getElementById('enqCheckin').value,
-      checkout: document.getElementById('enqCheckout').value,
-      message:  document.getElementById('enqMessage').value.trim()
-    };
-
     try {
-      var res = await fetch('/api/enquiry', {
+      var formData = new FormData(form);
+      var res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        body: formData
       });
       var data = await res.json();
-      if (data.ok) {
+      if (data.success) {
         successEl.hidden = false;
         form.reset();
       } else {
-        errorMsg.textContent = data.error || 'Something went wrong. Please try again or call (701) 572-2000.';
+        errorMsg.textContent = data.message || 'Something went wrong. Please try again or call (701) 572-2000.';
         errorEl.hidden = false;
       }
     } catch (err) {

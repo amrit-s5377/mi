@@ -1,0 +1,151 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   meetings.css  |  MEETINGS & EVENTS PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+.meet-hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=2200&q=90');
+}
+
+.meet-page { max-width:1160px; margin:0 auto; padding:72px 6vw; }
+.meet-section { margin-bottom:4rem; }
+.meet-section:last-child { margin-bottom:0; }
+.meet-section--narrow { max-width:960px; margin-left:auto; margin-right:auto; }
+.meet-section p {
+  font-size:0.88rem; font-weight:300; line-height:1.88; color:var(--ink-m); margin-bottom:0.7rem;
+}
+
+/* ── STATS ROW ── */
+.meet-stats-row {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:0; border:1px solid var(--border); border-radius:14px;
+  overflow:hidden; margin-top:1.4rem;
+}
+.msr-stat {
+  padding:1.8rem 1.4rem; background:var(--white);
+  border-right:1px solid var(--border); text-align:center;
+}
+.msr-stat:last-child { border-right:none; }
+.msr-stat strong {
+  display:block; font-family:var(--serif);
+  font-size:clamp(1.6rem,2.5vw,2.2rem); color:var(--teal-d);
+  line-height:1; margin-bottom:0.3rem;
+}
+.msr-stat > span {
+  display:block; font-size:0.6rem; font-weight:600; letter-spacing:0.18em;
+  text-transform:uppercase; color:var(--ink-l); margin-bottom:0.7rem;
+}
+.msr-stat p { font-size:0.72rem; font-weight:300; color:var(--ink-m); line-height:1.6; margin:0; }
+
+/* ── FEATURES GRID ── */
+.meet-features-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.2rem; margin-top:1.8rem;
+}
+.meet-feat-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:12px; padding:1.6rem;
+  transition:border-color 0.22s, box-shadow 0.22s;
+}
+.meet-feat-card:hover { border-color:var(--teal); box-shadow:0 4px 20px rgba(13,127,110,0.09); }
+.mfc-icon {
+  width:42px; height:42px; border-radius:10px;
+  border:1.5px solid var(--teal); color:var(--teal);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:1rem; transition:background 0.22s, color 0.22s;
+}
+.mfc-icon svg { width:19px; height:19px; }
+.meet-feat-card:hover .mfc-icon { background:var(--teal); color:#fff; }
+.meet-feat-card h3 { font-size:0.88rem; font-weight:600; color:var(--ink); margin-bottom:0.45rem; }
+.meet-feat-card p { font-size:0.75rem; font-weight:300; line-height:1.7; color:var(--ink-m); margin:0; }
+
+/* ── LAYOUTS ── */
+.meet-layouts {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1rem; margin-top:1.8rem;
+}
+.meet-layout-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:12px; padding:1.5rem 1.3rem;
+  transition:box-shadow 0.22s;
+}
+.meet-layout-card--featured {
+  border:2px solid var(--teal); background:var(--teal-xpale);
+}
+.meet-layout-card:hover { box-shadow:0 4px 18px rgba(13,127,110,0.1); }
+.mlc-cap {
+  font-size:0.58rem; font-weight:700; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--teal); background:var(--teal-pale);
+  display:inline-block; padding:3px 10px; border-radius:999px; margin-bottom:0.7rem;
+}
+.meet-layout-card h3 { font-size:0.9rem; font-weight:600; color:var(--ink); margin-bottom:0.4rem; }
+.meet-layout-card p { font-size:0.74rem; font-weight:300; line-height:1.65; color:var(--ink-m); margin:0; }
+
+/* ── USE CASES SECTION ── */
+.meet-usecases-section {
+  background:linear-gradient(160deg, var(--slate-d) 0%, var(--slate) 100%);
+  padding:5rem 8vw; position:relative; overflow:hidden;
+  margin-bottom: 0;
+}
+.meet-usecases-section::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:radial-gradient(ellipse 60% 70% at 20% 60%, rgba(13,127,110,0.12) 0%, transparent 70%);
+}
+.meet-usecases-inner { max-width:1160px; margin:0 auto; position:relative; }
+.meet-usecases-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.4rem; margin-top:2.4rem;
+}
+.muc-item {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px; padding:1.8rem 1.6rem;
+  transition:transform 0.25s, border-color 0.25s;
+}
+.muc-item:hover { transform:translateY(-4px); border-color:rgba(58,170,150,0.3); }
+.muc-item > span { font-size:1.8rem; display:block; margin-bottom:0.9rem; }
+.muc-item h3 { font-size:0.9rem; font-weight:600; color:#fff; margin-bottom:0.45rem; }
+.muc-item p { font-size:0.76rem; font-weight:300; line-height:1.7; color:rgba(255,255,255,0.45); margin:0; }
+
+/* ── CONTACT ROW ── */
+.meet-contact-row {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1rem; margin-top:1.8rem;
+}
+.meet-contact-item {
+  display:flex; align-items:center; gap:1rem;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:12px; padding:1.3rem 1.4rem;
+  transition:border-color 0.22s, box-shadow 0.22s;
+}
+.meet-contact-item:hover { border-color:var(--teal); box-shadow:0 4px 18px rgba(13,127,110,0.09); }
+.meet-contact-item svg { width:22px; height:22px; stroke:var(--teal); flex-shrink:0; }
+.meet-contact-item strong { display:block; font-size:0.8rem; font-weight:600; color:var(--ink); margin-bottom:2px; }
+.meet-contact-item span { font-size:0.74rem; font-weight:300; color:var(--ink-m); }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width:1100px) {
+  .meet-stats-row { grid-template-columns:repeat(2,1fr); }
+  .msr-stat { border-bottom:1px solid var(--border); }
+  .msr-stat:nth-child(2) { border-right:none; }
+  .meet-usecases-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:900px) {
+  .meet-features-grid { grid-template-columns:repeat(2,1fr); }
+  .meet-layouts { grid-template-columns:repeat(2,1fr); }
+  .meet-contact-row { grid-template-columns:1fr; }
+}
+@media (max-width:768px) {
+  .meet-page { padding:56px 5vw; }
+  .meet-usecases-section { padding:4rem 5vw; }
+  .meet-features-grid { grid-template-columns:1fr; }
+  .meet-layouts { grid-template-columns:1fr 1fr; }
+  .meet-usecases-grid { grid-template-columns:1fr; }
+  .meet-stats-row { grid-template-columns:1fr 1fr; }
+}
+@media (max-width:480px) {
+  .meet-layouts { grid-template-columns:1fr; }
+  .meet-stats-row { grid-template-columns:1fr; }
+  .msr-stat { border-right:none; }
+}

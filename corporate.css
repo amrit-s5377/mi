@@ -1,0 +1,196 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   corporate.css  |  CORPORATE & GROUP PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+.corp-hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=2200&q=90');
+}
+
+.corp-page {
+  max-width: 1160px; margin: 0 auto; padding: 72px 6vw;
+}
+.corp-section { margin-bottom: 4rem; }
+.corp-section:last-child { margin-bottom: 0; }
+.corp-section--narrow { max-width: 960px; margin-left: auto; margin-right: auto; }
+.corp-section p {
+  font-size: 0.88rem; font-weight: 300; line-height: 1.88; color: var(--ink-m); margin-bottom: 0.7rem;
+}
+
+/* ── INDUSTRY CARDS ── */
+.corp-industries { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; margin-top: 1.8rem; }
+.corp-industry-card {
+  border-radius: 16px; padding: 2rem 1.8rem; position: relative; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.corp-industry-card--oil  { background: linear-gradient(145deg,#0e1e12 0%,#0a1a0f 100%); }
+.corp-industry-card--medical { background: linear-gradient(145deg,#0e1520 0%,#090f1a 100%); }
+.corp-industry-card--gov  { background: linear-gradient(145deg,#1a1408 0%,#120e04 100%); }
+
+.cic-icon {
+  width: 56px; height: 56px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.corp-industry-card--oil   .cic-icon { background:rgba(13,127,110,0.18); border:1px solid rgba(58,170,150,0.3); }
+.corp-industry-card--oil   .cic-icon svg { stroke: var(--teal-l); width:28px; height:28px; }
+.corp-industry-card--medical .cic-icon { background:rgba(58,100,220,0.18); border:1px solid rgba(100,150,220,0.3); }
+.corp-industry-card--medical .cic-icon svg { stroke:#6ea8ff; width:28px; height:28px; }
+.corp-industry-card--gov   .cic-icon { background:rgba(220,170,50,0.15); border:1px solid rgba(220,170,80,0.3); }
+.corp-industry-card--gov   .cic-icon svg { stroke:#e8c060; width:28px; height:28px; }
+
+.corp-industry-card h3 {
+  font-family: var(--serif); font-size:1.15rem; color:#fff;
+  margin-bottom:0.6rem;
+}
+.corp-industry-card p {
+  font-size:0.78rem; font-weight:300; line-height:1.7;
+  color:rgba(255,255,255,0.45); margin-bottom:1.2rem;
+}
+
+.cic-tags { display:flex; flex-wrap:wrap; gap:0.4rem; }
+.cic-tags span {
+  font-size:0.63rem; font-weight:500; padding:3px 10px;
+  border-radius:999px; border:1px solid rgba(255,255,255,0.12);
+  color:rgba(255,255,255,0.55); white-space:nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.corp-industry-card--oil   .cic-tags span:hover { background:var(--teal); color:#fff; border-color:var(--teal); }
+.corp-industry-card--medical .cic-tags span:hover { background:#4a7ad4; color:#fff; border-color:#4a7ad4; }
+.corp-industry-card--gov   .cic-tags span:hover { background:#c8941e; color:#fff; border-color:#c8941e; }
+
+/* ── BENEFITS SECTION ── */
+.corp-benefits-section {
+  background: linear-gradient(160deg, var(--slate-d) 0%, var(--slate) 100%);
+  margin: 0 -6vw 4rem; padding: 5rem 6vw;
+  position: relative; overflow: hidden;
+}
+.corp-benefits-section::before {
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background: radial-gradient(ellipse 60% 70% at 90% 40%, rgba(13,127,110,0.15) 0%, transparent 70%);
+}
+.corp-benefits-inner { max-width:1160px; margin:0 auto; position:relative; }
+.corp-benefits-header { margin-bottom:3rem; }
+.corp-benefits-grid {
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem;
+}
+.corp-benefit {
+  background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px; padding:1.6rem 1.4rem;
+  transition: transform 0.25s var(--ease-out), border-color 0.25s;
+}
+.corp-benefit:hover { transform:translateY(-4px); border-color:rgba(58,170,150,0.35); }
+.cb-icon {
+  width:42px; height:42px; border-radius:10px;
+  border:1.5px solid rgba(58,170,150,0.35); color:var(--teal-l);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:1rem; transition:background 0.22s, color 0.22s;
+}
+.cb-icon svg { width:19px; height:19px; }
+.corp-benefit:hover .cb-icon { background:var(--teal); color:#fff; border-color:var(--teal); }
+.corp-benefit h3 { font-size:0.88rem; font-weight:600; color:#fff; margin-bottom:0.5rem; }
+.corp-benefit p { font-size:0.75rem; font-weight:300; line-height:1.72; color:rgba(255,255,255,0.45); margin:0; }
+
+/* ── RATE CARDS ── */
+.corp-rate-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; margin-top:1.8rem;
+}
+.corp-rate-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:16px; padding:1.8rem; position:relative;
+  transition:box-shadow 0.25s;
+}
+.corp-rate-card:hover { box-shadow:0 8px 32px rgba(13,127,110,0.10); }
+.corp-rate-card--mid { border-top:3px solid var(--teal-l); }
+.corp-rate-card--best { border:2px solid var(--teal); }
+.crc-badge {
+  position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+  font-size:0.55rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase;
+  background:var(--teal); color:#fff; padding:4px 14px; border-radius:999px; white-space:nowrap;
+}
+.corp-rate-card h3 {
+  font-family:var(--serif); font-size:1.2rem; color:var(--ink); margin-bottom:0.6rem;
+}
+.crc-desc { font-size:0.78rem; font-weight:300; line-height:1.65; color:var(--ink-m); margin-bottom:1rem; padding-bottom:0.8rem; border-bottom:1px solid var(--border); }
+.crc-list { list-style:none; display:flex; flex-direction:column; gap:0; margin-bottom:1.4rem; }
+.crc-list li {
+  font-size:0.74rem; font-weight:300; color:var(--ink-m);
+  padding:7px 0; border-bottom:1px solid var(--border);
+  display:flex; align-items:center; gap:8px;
+}
+.crc-list li:last-child { border-bottom:none; }
+.crc-list li::before { content:'✓'; color:var(--teal); font-size:0.7rem; flex-shrink:0; }
+.crc-btn {
+  display:block; text-align:center; width:100%;
+  font-size:0.65rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase;
+  padding:11px; border-radius:8px; background:var(--ink); color:#fff;
+  transition:background 0.22s, transform 0.18s;
+}
+.crc-btn:hover { background:var(--ink-m); transform:translateY(-1px); }
+.crc-btn--teal { background:var(--teal); }
+.crc-btn--teal:hover { background:var(--teal-l); }
+
+/* ── CONTACT CARDS ── */
+.corp-contacts {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; margin-top:1.8rem;
+}
+.corp-contact-card {
+  background:var(--white); border:1px solid var(--border); border-radius:14px; padding:1.6rem;
+}
+.corp-contact-card--address { background:var(--cream); }
+.ccc-role {
+  font-size:0.58rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--teal); margin-bottom:0.3rem;
+}
+.ccc-name { font-family:var(--serif); font-size:1.1rem; color:var(--ink); margin-bottom:0.2rem; }
+.ccc-sub { font-size:0.7rem; font-weight:300; color:var(--ink-l); margin-bottom:1rem; padding-bottom:0.8rem; border-bottom:1px solid var(--border); }
+.ccc-item {
+  display:flex; align-items:center; gap:9px;
+  font-size:0.82rem; font-weight:500; color:var(--teal-d);
+  margin-bottom:0.6rem; transition:color 0.2s;
+}
+.ccc-item:hover { color:var(--teal); }
+.ccc-item svg { width:16px; height:16px; stroke:var(--teal); flex-shrink:0; }
+.ccc-address {
+  font-size:0.82rem; font-weight:300; line-height:1.8; color:var(--ink-m);
+  font-style:normal; margin-bottom:0.6rem;
+}
+.ccc-hours {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:0.8rem; padding-top:0.8rem; border-top:1px solid var(--border);
+  font-size:0.7rem;
+}
+.ccc-hours span { color:var(--ink-l); font-weight:300; }
+.ccc-hours strong { color:var(--ink); font-weight:500; }
+
+/* ── BOTTOM CTA ── */
+.corp-cta-banner {
+  margin: 4rem -6vw 0; background:var(--white);
+  border-top:1px solid var(--border); padding:4rem 6vw;
+}
+.corp-cta-inner {
+  max-width:1160px; margin:0 auto;
+  display:grid; grid-template-columns:1fr auto; gap:4rem; align-items:center;
+}
+.corp-cta-btns { display:flex; flex-direction:column; gap:0.7rem; min-width:220px; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .corp-benefits-grid { grid-template-columns:repeat(2,1fr); }
+  .corp-industries { grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 900px) {
+  .corp-industries { grid-template-columns:1fr; }
+  .corp-rate-grid { grid-template-columns:1fr 1fr; }
+  .corp-contacts { grid-template-columns:1fr; }
+  .corp-cta-inner { grid-template-columns:1fr; gap:2rem; }
+}
+@media (max-width: 768px) {
+  .corp-page { padding:56px 5vw; }
+  .corp-benefits-section { margin:0 -5vw 3rem; padding:4rem 5vw; }
+  .corp-benefits-grid { grid-template-columns:1fr; }
+  .corp-rate-grid { grid-template-columns:1fr; }
+  .corp-cta-banner { margin:3rem -5vw 0; padding:3rem 5vw; }
+}

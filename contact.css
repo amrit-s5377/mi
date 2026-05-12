@@ -1,0 +1,153 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   contact.css  |  CONTACT PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+.contact-hero-bg {
+  background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=2200&q=90');
+}
+
+.d-hero--short { min-height: 420px; }
+
+.contact-page { max-width:1160px; margin:0 auto; padding:72px 6vw; }
+.contact-section { margin-bottom:4rem; }
+.contact-section:last-child { margin-bottom:0; }
+.contact-section--narrow { max-width:960px; margin-left:auto; margin-right:auto; }
+.contact-section p {
+  font-size:0.88rem; font-weight:300; line-height:1.88; color:var(--ink-m); margin-bottom:0.7rem;
+}
+
+/* ── CONTACT CARDS ── */
+.contact-cards {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.2rem; margin-top:2rem;
+}
+.ctc-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:16px; padding:1.8rem;
+  transition:border-color 0.22s, box-shadow 0.22s;
+}
+.ctc-card--primary {
+  border:2px solid var(--teal); background:var(--teal-xpale);
+}
+.ctc-card:hover { border-color:var(--teal); box-shadow:0 6px 28px rgba(13,127,110,0.1); }
+.ctc-icon {
+  width:48px; height:48px; border-radius:12px;
+  background:var(--teal-pale); border:1.5px solid var(--teal);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:1.1rem;
+}
+.ctc-icon svg { width:22px; height:22px; stroke:var(--teal); }
+.ctc-card--primary .ctc-icon { background:var(--teal); }
+.ctc-card--primary .ctc-icon svg { stroke:#fff; }
+.ctc-label {
+  font-size:0.6rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--ink-l); margin-bottom:0.4rem;
+}
+.ctc-value {
+  display:block; font-family:var(--serif); font-size:1.3rem; color:var(--ink);
+  margin-bottom:0.7rem; line-height:1.25;
+  transition:color 0.2s;
+}
+.ctc-value:hover { color:var(--teal); }
+.ctc-value--addr { font-family:var(--sans); font-size:0.95rem; font-style:normal; font-weight:400; line-height:1.7; }
+.ctc-note { font-size:0.76rem; font-weight:300; line-height:1.7; color:var(--ink-m); margin:0 0 0.8rem; }
+.ctc-directions {
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:0.68rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--teal); border:1px solid var(--teal);
+  border-radius:7px; padding:7px 14px;
+  transition:background 0.2s, color 0.2s;
+}
+.ctc-directions:hover { background:var(--teal); color:#fff; }
+.ctc-directions svg { width:13px; height:13px; }
+
+/* ── TEAM CARDS ── */
+.contact-team {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.2rem; margin-top:1.8rem;
+}
+.ctm-card {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:14px; padding:1.6rem; display:flex; gap:1.2rem;
+  transition:border-color 0.22s;
+}
+.ctm-card:hover { border-color:var(--teal); }
+.ctm-avatar {
+  width:52px; height:52px; border-radius:50%; flex-shrink:0;
+  background:var(--teal-pale); border:2px solid var(--teal);
+  display:flex; align-items:center; justify-content:center;
+}
+.ctm-avatar svg { width:26px; height:26px; stroke:var(--teal); }
+.ctm-body { flex:1; }
+.ctm-role {
+  font-size:0.58rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--teal); margin-bottom:0.2rem;
+}
+.ctm-body h3 { font-size:0.9rem; font-weight:600; color:var(--ink); margin-bottom:0.4rem; }
+.ctm-body p { font-size:0.74rem; font-weight:300; line-height:1.7; color:var(--ink-m); margin-bottom:0.8rem; }
+.ctm-btn {
+  display:inline-flex; align-items:center;
+  font-size:0.66rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--teal); border:1px solid var(--teal);
+  border-radius:7px; padding:7px 14px;
+  transition:background 0.2s, color 0.2s;
+}
+.ctm-btn:hover { background:var(--teal); color:#fff; }
+
+/* ── INFO GRID ── */
+.contact-info-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:1.2rem; margin-top:1.8rem;
+}
+.cig-block {
+  background:var(--white); border:1px solid var(--border);
+  border-radius:12px; padding:1.4rem;
+}
+.cig-block h3 {
+  font-size:0.78rem; font-weight:600; color:var(--ink);
+  margin-bottom:0.8rem; padding-bottom:0.6rem;
+  border-bottom:1px solid var(--teal-pale);
+}
+.cig-rows { display:flex; flex-direction:column; gap:0; }
+.cig-row {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:8px 0; border-bottom:1px solid var(--border);
+  gap:1rem;
+}
+.cig-row:last-child { border-bottom:none; }
+.cig-row span { font-size:0.73rem; font-weight:300; color:var(--ink-l); }
+.cig-row strong { font-size:0.73rem; font-weight:500; color:var(--ink); text-align:right; }
+
+/* ── MAP ── */
+.contact-map-wrap {
+  height:440px; border-radius:14px; overflow:hidden;
+  border:1px solid var(--border); margin-top:1.4rem;
+  box-shadow:0 4px 24px rgba(14,30,42,0.08);
+}
+.contact-directions-btn {
+  display:inline-flex; align-items:center; gap:8px;
+  margin-top:1rem;
+  font-size:0.75rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase;
+  background:var(--teal); color:#fff;
+  border-radius:9px; padding:12px 22px;
+  transition:background 0.22s, transform 0.18s;
+}
+.contact-directions-btn:hover { background:var(--teal-l); transform:translateY(-1px); }
+.contact-directions-btn svg { flex-shrink:0; }
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width:1100px) {
+  .contact-cards { grid-template-columns:1fr; max-width:600px; }
+  .contact-team  { grid-template-columns:1fr; }
+}
+@media (max-width:900px) {
+  .contact-info-grid { grid-template-columns:1fr; }
+}
+@media (max-width:768px) {
+  .contact-page { padding:56px 5vw; }
+  .contact-map-wrap { height:320px; }
+  .ctm-card { flex-direction:column; }
+}

@@ -359,11 +359,13 @@
    RESPONSIVE — HOME PAGE
 ═══════════════════════════════════════ */
 @media (max-width: 1100px) {
-  .rooms-grid  { grid-template-columns: 1fr 1fr; }
-  .amen-grid   { grid-template-columns: 1fr 1fr; }
+  .rooms-grid   { grid-template-columns: 1fr 1fr; }
+  .amen-grid    { grid-template-columns: 1fr 1fr; }
   .explore-grid { grid-template-columns: 1fr 1fr; }
-  .ks-inner    { grid-template-columns: 1fr; }
-  .ks-visual   { display: none; }
+  .ks-inner     { grid-template-columns: 1fr; }
+  .ks-visual    { display: none; }
+  .enquiry-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .enquiry-form-wrap { padding: 1.8rem; }
 }
 @media (max-width: 900px) {
   .hero-layout  { grid-template-columns: 1fr; }
@@ -373,16 +375,24 @@
   .loc-grid     { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
-  .rooms-grid   { grid-template-columns: 1fr; }
+  .rooms-grid   { grid-template-columns: 1fr 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   .stat-bar     { flex-wrap: wrap; }
   .stat-item    { flex: 1 1 45%; border-bottom: 1px solid rgba(255,255,255,0.06); }
   .why-us       { gap: 0.8rem; }
+  .enq-form-row--2 { flex-direction: column; gap: 1.1rem; }
+}
+@media (max-width: 600px) {
+  /* Extended-stay promo band — stack vertically */
+  .ext-promo-grid { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
 }
 @media (max-width: 480px) {
   .hero-actions  { flex-direction: column; align-items: flex-start; }
   .explore-grid  { grid-template-columns: 1fr; }
+  .rooms-grid    { grid-template-columns: 1fr; }
   .cta-actions   { flex-direction: column; align-items: center; }
   .ks-actions    { flex-direction: column; }
   .ks-actions .btn-primary, .ks-actions .btn-secondary { width: 100%; justify-content: center; }
+  .enquiry-form-wrap { padding: 1.3rem; }
+  .enq-submit-btn { width: 100%; }
 }

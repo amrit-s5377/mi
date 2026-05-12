@@ -1,0 +1,163 @@
+<!-- ── ENQUIRY FORM ── -->
+<section class="sec enquiry-sec" id="enquiry" aria-labelledby="enquiry-heading">
+  <div class="enquiry-inner">
+    <div class="enquiry-info">
+      <div class="eyebrow reveal">Get In Touch</div>
+      <h2 class="sec-h2 reveal" id="enquiry-heading">Have a Question?<br><em>We're Here to Help</em></h2>
+      <p class="body-text reveal">Whether you're planning an extended stay, need a group rate, or just want to know more about our kitchenette suites — our team responds within a few hours.</p>
+
+      <div class="enquiry-contact-cards reveal">
+        <a href="mailto:info@merlinhotelgroup.com" class="enq-contact-item">
+          <div class="enq-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </div>
+          <div>
+            <span class="enq-contact-label">Email Us</span>
+            <span class="enq-contact-val">info@merlinhotelgroup.com</span>
+          </div>
+        </a>
+        <a href="tel:+17015722000" class="enq-contact-item">
+          <div class="enq-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.21 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14v2.92z"/></svg>
+          </div>
+          <div>
+            <span class="enq-contact-label">Call Us</span>
+            <span class="enq-contact-val">(701) 572-2000</span>
+          </div>
+        </a>
+        <div class="enq-contact-item enq-contact-item--static">
+          <div class="enq-contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <span class="enq-contact-label">Response Time</span>
+            <span class="enq-contact-val">Within a few hours</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="enquiry-note reveal">
+        <div class="enq-note-icon" aria-hidden="true">💡</div>
+        <div>
+          <strong>Tip</strong>
+          <p>For group bookings, corporate billing, or multi-room crew blocks, call us directly at (701) 572-2000 for the fastest response.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="enquiry-form-wrap reveal-r">
+      <form class="enquiry-form" id="enquiryForm" novalidate>
+        <div class="enq-form-row enq-form-row--2">
+          <div class="enq-field">
+            <label for="enqName">Full Name <span class="enq-req" aria-hidden="true">*</span></label>
+            <input type="text" id="enqName" name="name" placeholder="John Smith" required autocomplete="name" />
+          </div>
+          <div class="enq-field">
+            <label for="enqPhone">Phone Number</label>
+            <input type="tel" id="enqPhone" name="phone" placeholder="(701) 000-0000" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="enq-field">
+          <label for="enqEmail">Email Address <span class="enq-req" aria-hidden="true">*</span></label>
+          <input type="email" id="enqEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
+        </div>
+        <div class="enq-field">
+          <label for="enqType">Type of Enquiry <span class="enq-req" aria-hidden="true">*</span></label>
+          <select id="enqType" name="type" required>
+            <option value="" disabled selected>Select a topic…</option>
+            <option value="Room Availability">Room Availability &amp; Rates</option>
+            <option value="Extended Stay">Extended Stay / Weekly or Monthly Rate</option>
+            <option value="Corporate / Group Booking">Corporate / Group Booking</option>
+            <option value="Kitchenette Suite">Kitchenette Suite Details</option>
+            <option value="Pet Policy">Pet Policy</option>
+            <option value="Direct Billing">Direct / Corporate Billing</option>
+            <option value="General Enquiry">General Enquiry</option>
+          </select>
+        </div>
+        <div class="enq-form-row enq-form-row--2">
+          <div class="enq-field">
+            <label for="enqCheckin">Planned Check-in</label>
+            <input type="date" id="enqCheckin" name="checkin" />
+          </div>
+          <div class="enq-field">
+            <label for="enqCheckout">Planned Check-out</label>
+            <input type="date" id="enqCheckout" name="checkout" />
+          </div>
+        </div>
+        <div class="enq-field">
+          <label for="enqMessage">Your Message <span class="enq-req" aria-hidden="true">*</span></label>
+          <textarea id="enqMessage" name="message" rows="4" placeholder="Tell us what you need — number of guests, length of stay, any special requirements…" required></textarea>
+        </div>
+        <button type="submit" class="enq-submit-btn" id="enqSubmitBtn">
+          Send Enquiry
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </button>
+        <div class="enq-success" id="enqSuccess" aria-live="polite" hidden>
+          <span class="enq-success-icon" aria-hidden="true">✓</span>
+          Thank you! Your enquiry has been sent. We'll get back to you within a few hours.
+        </div>
+        <div class="enq-error" id="enqError" aria-live="polite" hidden>
+          <span class="enq-error-icon" aria-hidden="true">!</span>
+          <span id="enqErrorMsg">Something went wrong. Please try again or call us at (701) 572-2000.</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  var form = document.getElementById('enquiryForm');
+  if (!form) return;
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var btn = document.getElementById('enqSubmitBtn');
+    var successEl = document.getElementById('enqSuccess');
+    var errorEl = document.getElementById('enqError');
+    var errorMsg = document.getElementById('enqErrorMsg');
+
+    if (!form.checkValidity()) {
+      var firstInvalid = form.querySelector(':invalid');
+      if (firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    successEl.hidden = true;
+    errorEl.hidden = true;
+
+    var payload = {
+      name:     document.getElementById('enqName').value.trim(),
+      phone:    document.getElementById('enqPhone').value.trim(),
+      email:    document.getElementById('enqEmail').value.trim(),
+      type:     document.getElementById('enqType').value,
+      checkin:  document.getElementById('enqCheckin').value,
+      checkout: document.getElementById('enqCheckout').value,
+      message:  document.getElementById('enqMessage').value.trim()
+    };
+
+    try {
+      var res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      var data = await res.json();
+      if (data.ok) {
+        successEl.hidden = false;
+        form.reset();
+      } else {
+        errorMsg.textContent = data.error || 'Something went wrong. Please try again or call (701) 572-2000.';
+        errorEl.hidden = false;
+      }
+    } catch (err) {
+      errorMsg.textContent = 'Network error. Please check your connection and try again.';
+      errorEl.hidden = false;
+    } finally {
+      btn.disabled = false;
+      btn.innerHTML = 'Send Enquiry <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>';
+    }
+  });
+}());
+</script>

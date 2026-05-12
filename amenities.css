@@ -10,6 +10,31 @@
 /* ── PAGE WRAPPER ── */
 .amen-page { }
 
+/* ── ANCHOR NAV ── */
+.amen-anchor-nav {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  position: sticky; top: 68px; z-index: 100;
+  box-shadow: 0 2px 16px rgba(14,30,42,0.06);
+}
+.amen-anchor-inner {
+  display: flex; align-items: center; gap: 0; overflow-x: auto;
+  scrollbar-width: none; max-width: 1280px; margin: 0 auto; padding: 0 5vw;
+}
+.amen-anchor-inner::-webkit-scrollbar { display: none; }
+.amen-anchor-link {
+  display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-l); padding: 14px 16px;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.amen-anchor-link svg { opacity: 0.55; transition: opacity 0.2s; flex-shrink: 0; }
+.amen-anchor-link:hover { color: var(--teal-d); border-bottom-color: var(--teal); }
+.amen-anchor-link:hover svg { opacity: 1; }
+.amen-anchor-link.active { color: var(--teal-d); border-bottom-color: var(--teal); font-weight: 600; }
+.amen-anchor-link.active svg { opacity: 1; }
+
 /* ── INTRO SECTION ── */
 .amen-section { padding: 80px 8vw; margin: 0; }
 .amen-section--narrow { max-width: 900px; margin: 0 auto; }
@@ -124,6 +149,17 @@
 }
 .amen-feat-list--dark li { color: rgba(255,255,255,0.5); border-bottom-color: rgba(255,255,255,0.08); }
 .amen-feat-list--dark li::before { color: var(--teal-l); }
+
+/* ── MEETING ROOM ENQUIRE BUTTON ── */
+.amen-meet-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 1.6rem;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #fff; background: var(--teal); border-radius: 9px; padding: 12px 22px;
+  transition: background 0.22s, transform 0.18s;
+  box-shadow: 0 4px 18px rgba(13,127,110,0.35);
+}
+.amen-meet-btn:hover { background: var(--teal-l); transform: translateY(-1px); }
 
 /* ── BREAKFAST GRID ── */
 .amen-breakfast-grid {

@@ -190,3 +190,30 @@ if (mobDrawer) {
     a.addEventListener('click', closeDrawer);
   });
 }
+
+/* ─────────────────────────────────────────────────────────────
+   AMENITIES ANCHOR NAV — active link highlight on scroll
+─────────────────────────────────────────────────────────────── */
+const amenAnchorLinks = document.querySelectorAll('.amen-anchor-link');
+if (amenAnchorLinks.length) {
+  const sectionIds = ['pool', 'fitness', 'breakfast', 'laundry', 'meeting-room', 'all-amenities'];
+  const sections   = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  function updateAnchorNav() {
+    const scrollY   = window.scrollY;
+    const offset    = 140;
+    let activeId    = null;
+
+    sections.forEach(sec => {
+      if (sec && scrollY + offset >= sec.offsetTop) activeId = sec.id;
+    });
+
+    amenAnchorLinks.forEach(link => {
+      const href = link.getAttribute('href').replace('#', '');
+      link.classList.toggle('active', href === activeId);
+    });
+  }
+
+  window.addEventListener('scroll', updateAnchorNav, { passive: true });
+  updateAnchorNav();
+}

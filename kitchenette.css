@@ -5,7 +5,7 @@
 
 /* Hero background */
 .kit-hero-bg {
-  background-image: url('https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2200&q=90');
+  background-image: url('assets/3rd.jpg');
 }
 
 /* Extended-stay hero highlight link */
@@ -113,6 +113,27 @@
 .spec-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
   border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 1.2rem;
+}
+
+/* ── GALLERY ── */
+.d-gallery [data-lb-idx] { cursor: zoom-in; }
+.d-gallery [data-lb-idx]:hover img { filter: brightness(1); }
+
+.kit-gallery-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 0.6rem; margin-top: 0.9rem;
+}
+.kit-view-all {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--teal); border: 1px solid var(--teal);
+  background: transparent; border-radius: 8px; padding: 9px 18px;
+  cursor: pointer; transition: background 0.22s, color 0.22s;
+}
+.kit-view-all:hover { background: var(--teal); color: #fff; }
+.kit-view-all svg { width: 14px; height: 14px; flex-shrink: 0; }
+.kit-gallery-hint {
+  font-size: 0.7rem; font-weight: 300; color: var(--ink-l);
 }
 
 /* ═══════════════════════════════════════

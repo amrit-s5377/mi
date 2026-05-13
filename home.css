@@ -190,6 +190,19 @@
 .ks-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 8px; }
 .ks-img-grid img { aspect-ratio: 4/3; border-radius: 8px; filter: brightness(0.85); transition: filter 0.35s; }
 .ks-img-grid img:hover { filter: brightness(1); }
+.ks-img-grid img[data-lb-idx] { cursor: zoom-in; }
+.ks-img-main[data-lb-idx] { cursor: zoom-in; }
+
+.ks-view-all {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 10px;
+  font-size: 0.63rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(255,255,255,0.5); border: 1px solid rgba(255,255,255,0.18);
+  background: transparent; border-radius: 8px; padding: 8px 16px;
+  cursor: pointer; transition: background 0.22s, color 0.22s, border-color 0.22s;
+}
+.ks-view-all:hover { background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.38); }
+.ks-view-all svg { width: 13px; height: 13px; flex-shrink: 0; }
 
 /* ═══════════════════════════════════════
    ROOMS

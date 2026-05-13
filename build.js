@@ -31,11 +31,21 @@ const ASSETS = [
   'contact.css',
   '404.css',
   'main.js',
+  'gallery.js',
 ];
 
-function read(file)         { return fs.readFileSync(file, 'utf8'); }
+function read(file)           { return fs.readFileSync(file, 'utf8'); }
 function write(file, content) { fs.writeFileSync(file, content, 'utf8'); }
-function copy(src, dest)    { if (fs.existsSync(src)) fs.copyFileSync(src, dest); }
+function copy(src, dest)      { if (fs.existsSync(src)) fs.copyFileSync(src, dest); }
+function copyDir(src, dest) {
+  if (!fs.existsSync(src)) return;
+  fs.mkdirSync(dest, { recursive: true });
+  fs.readdirSync(src).forEach(function (f) {
+    if (f.includes('Zone.Identifier')) return;
+    var s = path.join(src, f), d = path.join(dest, f);
+    fs.statSync(s).isDirectory() ? copyDir(s, d) : copy(s, d);
+  });
+}
 
 /* ── Clean dist ── */
 if (fs.existsSync(DIST)) fs.rmSync(DIST, { recursive: true, force: true });
@@ -76,6 +86,10 @@ ASSETS.forEach(asset => {
     console.warn('  ⚠ missing  ', asset);
   }
 });
+
+/* ── Copy assets folder (images, etc.) ── */
+copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
+console.log('  ✓ copied   assets/');
 
 console.log('\n✅  Build complete →', DIST);
 console.log(`   ${built} pages built, ${ASSETS.length} assets copied`);

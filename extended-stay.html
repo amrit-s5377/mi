@@ -87,6 +87,36 @@
     </div>
   </div>
 
+  <!-- ── ANCHOR NAV ── -->
+  <nav class="ext-anchor-nav" aria-label="Page sections">
+    <div class="ext-anchor-inner">
+      <a href="#rates" class="ext-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="3" width="12" height="12" rx="1.5"/><path d="M5 1v4M11 1v4M2 8h12"/></svg>
+        Rate Plans
+      </a>
+      <a href="#whats-included" class="ext-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M13 4L6 11l-3-3"/></svg>
+        What's Included
+      </a>
+      <a href="#loaner-items" class="ext-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 11s1.5-3 5-3 5 3 5 3"/><circle cx="6" cy="5.5" r="2.5"/><path d="M13 9l2 2-2 2"/></svg>
+        Loaner Items
+      </a>
+      <a href="#who-we-serve" class="ext-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="5.5" cy="5" r="2.5"/><path d="M1 14c0-2.5 2-4.5 4.5-4.5"/><circle cx="11.5" cy="9" r="2"/><path d="M9 14c0-1.4 1.1-2.5 2.5-2.5H14"/></svg>
+        Who We Serve
+      </a>
+      <a href="#location" class="ext-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.5a4 4 0 014 4c0 3.2-4 9-4 9s-4-5.8-4-9a4 4 0 014-4z"/><circle cx="8" cy="5.5" r="1.5"/></svg>
+        Location
+      </a>
+      <a href="#faq" class="ext-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M6.5 6.2a1.5 1.5 0 013 .3c0 1-1.5 1.5-1.5 2.5" stroke-linecap="round"/><circle cx="8" cy="12" r=".7" fill="currentColor" stroke="none"/></svg>
+        FAQ
+      </a>
+    </div>
+  </nav>
+
   <!-- ── PAGE BODY ── -->
   <main class="ext-page">
 
@@ -99,7 +129,7 @@
     </section>
 
     <!-- RATE TIERS -->
-    <section class="ext-section ext-section--narrow">
+    <section class="ext-section ext-section--narrow" id="rates">
       <p class="d-eyebrow">Rate Plans</p>
       <h2 class="d-sec-title">Weekly &amp; Monthly Rate Options</h2>
       <div class="ext-rate-grid">
@@ -154,7 +184,7 @@
     </section>
 
     <!-- WHAT'S INCLUDED -->
-    <section class="ext-section ext-section--narrow">
+    <section class="ext-section ext-section--narrow" id="whats-included">
       <p class="d-eyebrow">What's Included — Every Suite</p>
       <h2 class="d-sec-title">More Than a Hotel Room</h2>
       <p>Every Queen Kitchenette Suite — at every rate plan — includes the full kit. There are no stripped-down extended-stay rooms here.</p>
@@ -210,7 +240,7 @@
     </section>
 
     <!-- LOANER ITEMS -->
-    <section class="ext-section ext-section--narrow ext-loaner">
+    <section class="ext-section ext-section--narrow ext-loaner" id="loaner-items">
       <p class="d-eyebrow">Free to Borrow — 7+ Night Stays</p>
       <h2 class="d-sec-title">Front-Desk Extras</h2>
       <p>Ask at check-in or any time during your stay. No charge for stays of a week or more.</p>
@@ -342,7 +372,7 @@
     </section>
 
     <!-- LOCATION -->
-    <section class="ext-section ext-section--narrow">
+    <section class="ext-section ext-section--narrow" id="location">
       <p class="d-eyebrow">Location</p>
       <h2 class="d-sec-title">Conveniently Located Off Highway 85</h2>
       <p>Microtel Inn &amp; Suites Williston is located off Highway 85 in Williston, North Dakota — the heart of the Bakken oilfield. We're 16 miles from Williston Basin International Airport (XWA), 0.4 miles from CHI St. Alexius Health Williston Medical Center, and a short drive from Halliburton, Schlumberger, and major Bakken oil &amp; gas operations. Lake Sakakawea (3 miles) and Fort Union Trading Post are easy weekend trips.</p>
@@ -492,5 +522,22 @@
   <!--PARTIAL:footer-->
 
   <script src="main.js"></script>
+  <script>
+    (function () {
+      var links = Array.from(document.querySelectorAll('.ext-anchor-link'));
+      var ids = links.map(function (l) { return l.getAttribute('href').slice(1); });
+      var sections = ids.map(function (id) { return document.getElementById(id); });
+      function update() {
+        var offset = 140;
+        var active = -1;
+        sections.forEach(function (s, i) {
+          if (s && s.getBoundingClientRect().top <= offset) active = i;
+        });
+        links.forEach(function (l, i) { l.classList.toggle('active', i === active); });
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>

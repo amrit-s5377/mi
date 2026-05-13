@@ -298,6 +298,29 @@
 /* ── FAQ ACCORDION & BOTTOM CTA BANNER ──
    Styles moved to style.css (shared) so all pages load them. */
 
+/* ── ANCHOR NAV ── */
+.ext-anchor-nav {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  position: sticky; top: 68px; z-index: 100;
+  box-shadow: 0 2px 16px rgba(14,30,42,0.06);
+}
+.ext-anchor-inner {
+  display: flex; align-items: center; gap: 0; overflow-x: auto;
+  scrollbar-width: none; max-width: 1280px; margin: 0 auto; padding: 0 5vw;
+}
+.ext-anchor-inner::-webkit-scrollbar { display: none; }
+.ext-anchor-link {
+  display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-l); padding: 14px 16px;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+.ext-anchor-link svg { width: 14px; height: 14px; }
+.ext-anchor-link:hover { color: var(--teal-d); border-bottom-color: var(--teal); }
+.ext-anchor-link.active { color: var(--teal-d); border-bottom-color: var(--teal); font-weight: 600; }
+
 /* ═══════════════════════════════════════
    RESPONSIVE — EXTENDED STAY PAGE
 ═══════════════════════════════════════ */

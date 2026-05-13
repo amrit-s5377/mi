@@ -4,7 +4,7 @@ const fs   = require('fs');
 const path = require('path');
 
 const ROOT         = __dirname;
-const DIST         = path.join(ROOT, 'public');
+const DIST         = path.join(ROOT, 'dist');
 const PARTIALS_DIR = path.join(ROOT, 'partials');
 
 const PAGES = [

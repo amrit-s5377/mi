@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hotel-site": {
+      "command": "node",
+      "args": ["mcp/server.js"]
+    }
+  }
+}

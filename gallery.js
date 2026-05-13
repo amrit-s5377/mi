@@ -1,23 +1,22 @@
 'use strict';
 
 (function () {
-  var CL     = 'https://res.cloudinary.com/djcgfqesd/image/upload';
-  var FOLDER = 'microtel';
+  var CL = 'https://res.cloudinary.com/djcgfqesd/image/upload';
 
-  function cl(transforms, filename) {
-    return CL + '/' + transforms + '/' + FOLDER + '/' + filename;
+  function cl(transforms, path) {
+    return CL + '/' + transforms + '/' + path;
   }
 
   var PHOTOS = [
-    { name: 'microtel-williston-kitchenette-cooktop-dishwasher-refrigerator.jpg', cap: 'Full kitchenette — 2-burner cooktop, gooseneck sink, dishwasher and full-size refrigerator' },
-    { name: 'microtel-williston-kitchenette-induction-cooktop-in-use.jpg',        cap: 'Cooktop detail — induction surface, cookware, kettle and knife block in use' },
-    { name: 'microtel-williston-queen-kitchenette-suite-full-kitchen.jpg',        cap: 'Kitchenette overview — microwave shelf, fridge and complete appliance setup' },
-    { name: 'microtel-williston-kitchenette-suite-full-room-overview.jpg',        cap: 'Full suite — queen bed, work desk, 65″ TV and complete kitchen' },
-    { name: 'microtel-williston-queen-suite-room-layout-entrance-view.jpg',       cap: 'Suite from entrance — TV, work desk, kitchenette and queen bed' },
-    { name: 'microtel-williston-kitchenette-suite-wide-room-view.jpg',            cap: 'Wide suite view — full room layout showing all areas' },
-    { name: 'microtel-williston-extended-stay-suite-kitchen-bedroom.jpg',         cap: 'Suite layout — queen bed, TV, work desk and kitchenette area' },
-    { name: 'microtel-williston-hotel-kitchen-counter-appliances.jpg',            cap: 'Kitchen counter — clean view of the complete kitchenette' },
-    { name: 'microtel-williston-queen-suite-bedroom-kitchenette-area.jpg',        cap: 'Suite overview — complete room with kitchenette and sleeping area' }
+    { name: 'v1778701563/microtel-williston-kitchenette-cooktop-dishwasher-refrigerator_z7ztkw.jpg', cap: 'Full kitchenette — 2-burner cooktop, gooseneck sink, dishwasher and full-size refrigerator' },
+    { name: 'v1778701557/microtel-williston-kitchenette-induction-cooktop-in-use_ex2frz.jpg',        cap: 'Cooktop detail — induction surface, cookware, kettle and knife block in use' },
+    { name: 'v1778701564/microtel-williston-queen-kitchenette-suite-full-kitchen_fmxds4.jpg',        cap: 'Kitchenette overview — microwave shelf, fridge and complete appliance setup' },
+    { name: 'v1778701570/microtel-williston-kitchenette-suite-full-room-overview_nse08t.jpg',        cap: 'Full suite — queen bed, work desk, 65″ TV and complete kitchen' },
+    { name: 'v1778701567/microtel-williston-queen-suite-room-layout-entrance-view_pmwhtv.jpg',       cap: 'Suite from entrance — TV, work desk, kitchenette and queen bed' },
+    { name: 'v1778701566/microtel-williston-kitchenette-suite-wide-room-view_eq8hvs.jpg',            cap: 'Wide suite view — full room layout showing all areas' },
+    { name: 'v1778701568/microtel-williston-extended-stay-suite-kitchen-bedroom_hld6cm.jpg',         cap: 'Suite layout — queen bed, TV, work desk and kitchenette area' },
+    { name: 'v1778701557/microtel-williston-hotel-kitchen-counter-appliances_jlmg9w.jpg',            cap: 'Kitchen counter — clean view of the complete kitchenette' },
+    { name: 'v1778701574/microtel-williston-queen-suite-bedroom-kitchenette-area_dh0wft.jpg',        cap: 'Suite overview — complete room with kitchenette and sleeping area' }
   ];
 
   var overlay, lbImg, lbCounter, lbCaption, lbThumbs;

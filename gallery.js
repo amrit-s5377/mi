@@ -8,7 +8,7 @@
   }
 
   var PHOTOS = [
-    { name: 'v1778701563/microtel-williston-kitchenette-cooktop-dishwasher-refrigerator_z7ztkw.jpg', cap: 'Full kitchenette — 2-burner cooktop, gooseneck sink, dishwasher and full-size refrigerator' },
+    { name: 'v1778701560/microtel-williston-queen-standard-room-bed-desk_vyddn2.jpg',               cap: 'Queen suite — renovated queen bed, work desk and in-room amenities' },
     { name: 'v1778701557/microtel-williston-kitchenette-induction-cooktop-in-use_ex2frz.jpg',        cap: 'Cooktop detail — induction surface, cookware, kettle and knife block in use' },
     { name: 'v1778701564/microtel-williston-queen-kitchenette-suite-full-kitchen_fmxds4.jpg',        cap: 'Kitchenette overview — microwave shelf, fridge and complete appliance setup' },
     { name: 'v1778701570/microtel-williston-kitchenette-suite-full-room-overview_nse08t.jpg',        cap: 'Full suite — queen bed, work desk, 65″ TV and complete kitchen' },

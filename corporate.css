@@ -194,3 +194,9 @@
   .corp-rate-grid { grid-template-columns:1fr; }
   .corp-cta-banner { margin:3rem -5vw 0; padding:3rem 5vw; }
 }
+@media (max-width: 480px) {
+  /* Contact cards — stack hours label + value so long values don't collide */
+  .ccc-hours { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+  /* Industry tags — allow wrapping on very small screens */
+  .cic-tags span { white-space: normal; }
+}

@@ -669,9 +669,14 @@ a.enq-contact-item:hover {
    RESPONSIVE — SHARED
 ═══════════════════════════════════════ */
 @media (max-width: 1100px) {
-  .d-body     { grid-template-columns: 1fr; padding: 56px 6vw; }
-  .d-sidebar  { position: static; }
-  .foot-inner { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .d-body          { grid-template-columns: 1fr; padding: 56px 6vw; }
+  .d-sidebar       { position: static; }
+  .foot-inner      { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  /* Enquiry form — collapse to single column on all sub-pages */
+  .enquiry-inner   { grid-template-columns: 1fr; gap: 3rem; }
+  .enquiry-form-wrap { padding: 1.8rem; }
+  /* Shared CTA banner — collapse on all sub-pages */
+  .ext-cta-inner   { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 @media (max-width: 768px) {
   .nav-links, .nav-book-btn { display: none; }
@@ -684,8 +689,16 @@ a.enq-contact-item:hover {
   .d-gimg--wide { grid-column: span 2; }
   .foot-inner   { grid-template-columns: 1fr; gap: 2rem; }
   .foot-bottom  { flex-direction: column; align-items: flex-start; }
+  /* Enquiry form — stack name/phone row, reduce padding */
+  .enq-form-row--2  { flex-direction: column; gap: 1.1rem; }
+  /* Shared CTA banner — adjust bleed margins to match narrower padding */
+  .ext-cta-banner   { margin: 3rem -5vw 0; padding: 3rem 5vw; }
+  .ext-cta-perks    { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
   .d-meta { gap: 1rem; }
+  /* Enquiry form — tighter padding and full-width submit */
+  .enquiry-form-wrap { padding: 1.3rem; }
+  .enq-submit-btn    { width: 100%; }
 }

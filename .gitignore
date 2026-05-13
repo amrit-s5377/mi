@@ -1,4 +1,7 @@
-/attached_assets
+attached_assets/
 node_modules/
 .env
 dist/
+.agents/
+.claude/
+mcp/

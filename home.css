@@ -503,6 +503,9 @@
   .cta-actions   { flex-direction: column; align-items: center; }
   .ks-actions    { flex-direction: column; }
   .ks-actions .btn-primary, .ks-actions .btn-secondary { width: 100%; justify-content: center; }
-  .enquiry-form-wrap { padding: 1.3rem; }
-  .enq-submit-btn { width: 100%; }
+  /* Meeting band — wrap 4 stats so they don't overflow narrow screens */
+  .meet-stats { flex-wrap: wrap; justify-content: flex-start; gap: 1.2rem 2rem; }
+  /* Corp & amenities grids — collapse from 2-col to 1-col */
+  .corp-grid  { grid-template-columns: 1fr; }
+  .amen-grid  { grid-template-columns: 1fr; }
 }

@@ -151,3 +151,13 @@
   .contact-map-wrap { height:320px; }
   .ctm-card { flex-direction:column; }
 }
+@media (max-width:480px) {
+  /* Info grid rows — wrap label + value so long strings ("On Request — Call Ahead") don't collide */
+  .cig-row { flex-wrap: wrap; gap: 0.15rem 0.5rem; }
+  .cig-row strong { text-align: left; }
+  /* Contact value (phone/email) — ensure long email doesn't overflow card */
+  .ctc-value { font-size: 1.1rem; overflow-wrap: break-word; word-break: break-word; }
+  /* Team avatar — reduce size on very small screens */
+  .ctm-avatar { width: 44px; height: 44px; }
+  .ctm-avatar svg { width: 22px; height: 22px; }
+}

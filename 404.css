@@ -1,0 +1,203 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Williston — 404 Page Styles
+═══════════════════════════════════════════════════════ */
+
+.page-404 {
+  background: var(--slate-d);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.err-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial glow in the background */
+.err-main::before {
+  content: '';
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(13,127,110,0.12) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.err-inner {
+  text-align: center;
+  max-width: 580px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Big 404 number */
+.err-code {
+  font-family: var(--serif);
+  font-size: clamp(7rem, 20vw, 13rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.08);
+  letter-spacing: -0.04em;
+  margin-bottom: -0.1em;
+  user-select: none;
+  position: relative;
+}
+
+.err-code::after {
+  content: '404';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13,127,110,0.35) 0%, rgba(255,255,255,0.06) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Eyebrow */
+.err-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal-l);
+  margin-bottom: 16px;
+}
+
+/* Title */
+.err-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.err-title em {
+  color: var(--teal-l);
+  font-style: italic;
+}
+
+/* Body text */
+.err-body {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.52);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Action buttons */
+.err-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.err-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px 26px;
+  border-radius: 9px;
+  text-decoration: none;
+  transition: background 0.22s, color 0.22s, transform 0.18s, border-color 0.22s;
+}
+
+.err-btn svg {
+  width: 14px;
+  height: 14px;
+  transform: rotate(180deg);
+  flex-shrink: 0;
+}
+
+.err-btn--primary {
+  background: var(--teal);
+  color: #fff;
+  border: 2px solid var(--teal);
+}
+
+.err-btn--primary:hover {
+  background: var(--teal-l);
+  border-color: var(--teal-l);
+  transform: translateY(-2px);
+}
+
+.err-btn--ghost {
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: 2px solid rgba(255,255,255,0.15);
+}
+
+.err-btn--ghost:hover {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border-color: rgba(255,255,255,0.3);
+  transform: translateY(-2px);
+}
+
+/* Quick links row */
+.err-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 28px;
+}
+
+.err-links-label {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.err-links a {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.18s;
+}
+
+.err-links a:hover { color: var(--teal-l); }
+
+/* Footer contrast adjustment on dark page */
+.page-404 footer {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .err-main { padding: 100px 20px 60px; }
+  .err-actions { flex-direction: column; align-items: center; }
+  .err-btn { width: 100%; max-width: 280px; justify-content: center; }
+}

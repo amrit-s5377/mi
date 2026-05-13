@@ -16,6 +16,7 @@ const PAGES = [
   'corporate.html',
   'meetings.html',
   'contact.html',
+  '404.html',
 ];
 
 const ASSETS = [
@@ -28,6 +29,7 @@ const ASSETS = [
   'corporate.css',
   'meetings.css',
   'contact.css',
+  '404.css',
   'main.js',
 ];
 

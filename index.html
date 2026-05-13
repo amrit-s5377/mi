@@ -137,6 +137,40 @@
     <div class="stat-item" id="st4"><strong>24/7</strong><span>Front Desk</span></div>
   </div>
 
+  <!-- ── ANCHOR NAV ── -->
+  <nav class="home-anchor-nav" aria-label="Page sections">
+    <div class="home-anchor-inner">
+      <a href="#about" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M2 7L8 2l6 5v7a1 1 0 01-1 1H3a1 1 0 01-1-1V7z"/></svg>
+        Overview
+      </a>
+      <a href="#kitchenette" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="7" width="14" height="7" rx="1"/><path d="M4 7V5a4 4 0 018 0v2" stroke-linecap="round"/></svg>
+        Suites
+      </a>
+      <a href="#rooms" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 11V8a3 3 0 013-3h8a3 3 0 013 3v3"/><path d="M1 11h14M4 9.5h8" stroke-linecap="round"/></svg>
+        Rooms
+      </a>
+      <a href="#amenities" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.5l1.8 3.6 4 .6-2.9 2.8.7 4L8 10.4l-3.6 1.9.7-4L2.2 5.7l4-.6z"/></svg>
+        Amenities
+      </a>
+      <a href="#corporate" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="8" width="12" height="6" rx="1"/><path d="M5 8V6a3 3 0 016 0v2" stroke-linecap="round"/></svg>
+        Corporate
+      </a>
+      <a href="#location" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.5a4 4 0 014 4c0 3.2-4 9-4 9s-4-5.8-4-9a4 4 0 014-4z"/><circle cx="8" cy="5.5" r="1.5"/></svg>
+        Location
+      </a>
+      <a href="#enquiry" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 10a2 2 0 01-2 2H5l-3 3V4a2 2 0 012-2h8a2 2 0 012 2v6z"/></svg>
+        Enquire
+      </a>
+    </div>
+  </nav>
+
   <!-- ── ABOUT ── -->
   <section class="sec about-sec" id="about" aria-labelledby="about-heading">
     <div class="about-grid">
@@ -710,5 +744,22 @@
 
   <script src="main.js"></script>
   <script src="gallery.js"></script>
+  <script>
+    (function () {
+      var links    = Array.from(document.querySelectorAll('.home-anchor-link'));
+      var ids      = links.map(function (l) { return l.getAttribute('href').slice(1); });
+      var sections = ids.map(function (id) { return document.getElementById(id); });
+      function update() {
+        var offset = 140;
+        var active = -1;
+        sections.forEach(function (s, i) {
+          if (s && s.getBoundingClientRect().top <= offset) active = i;
+        });
+        links.forEach(function (l, i) { l.classList.toggle('active', i === active); });
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
 </body>
 </html>

@@ -1,16 +1,23 @@
 'use strict';
 
 (function () {
+  var CL     = 'https://res.cloudinary.com/djcgfqesd/image/upload';
+  var FOLDER = 'microtel';
+
+  function cl(transforms, filename) {
+    return CL + '/' + transforms + '/' + FOLDER + '/' + filename;
+  }
+
   var PHOTOS = [
-    { src: 'assets/3rd.jpg',  cap: 'Full kitchenette — 2-burner cooktop, gooseneck sink, dishwasher and full-size refrigerator' },
-    { src: 'assets/8th.jpg',  cap: 'Cooktop detail — induction surface, cookware, kettle and knife block in use' },
-    { src: 'assets/1st.jpg',  cap: 'Kitchenette overview — microwave shelf, fridge and complete appliance setup' },
-    { src: 'assets/2nd.jpg',  cap: 'Full suite — queen bed, work desk, 65″ TV and complete kitchen' },
-    { src: 'assets/4th.jpg',  cap: 'Suite from entrance — TV, work desk, kitchenette and queen bed' },
-    { src: 'assets/6th.jpg',  cap: 'Wide suite view — full room layout showing all areas' },
-    { src: 'assets/5th.jpg',  cap: 'Suite layout — queen bed, TV, work desk and kitchenette area' },
-    { src: 'assets/7th.jpg',  cap: 'Kitchen counter — clean view of the complete kitchenette' },
-    { src: 'assets/9th.jpg',  cap: 'Suite overview — complete room with kitchenette and sleeping area' }
+    { name: 'microtel-williston-kitchenette-cooktop-dishwasher-refrigerator.jpg', cap: 'Full kitchenette — 2-burner cooktop, gooseneck sink, dishwasher and full-size refrigerator' },
+    { name: 'microtel-williston-kitchenette-induction-cooktop-in-use.jpg',        cap: 'Cooktop detail — induction surface, cookware, kettle and knife block in use' },
+    { name: 'microtel-williston-queen-kitchenette-suite-full-kitchen.jpg',        cap: 'Kitchenette overview — microwave shelf, fridge and complete appliance setup' },
+    { name: 'microtel-williston-kitchenette-suite-full-room-overview.jpg',        cap: 'Full suite — queen bed, work desk, 65″ TV and complete kitchen' },
+    { name: 'microtel-williston-queen-suite-room-layout-entrance-view.jpg',       cap: 'Suite from entrance — TV, work desk, kitchenette and queen bed' },
+    { name: 'microtel-williston-kitchenette-suite-wide-room-view.jpg',            cap: 'Wide suite view — full room layout showing all areas' },
+    { name: 'microtel-williston-extended-stay-suite-kitchen-bedroom.jpg',         cap: 'Suite layout — queen bed, TV, work desk and kitchenette area' },
+    { name: 'microtel-williston-hotel-kitchen-counter-appliances.jpg',            cap: 'Kitchen counter — clean view of the complete kitchenette' },
+    { name: 'microtel-williston-queen-suite-bedroom-kitchenette-area.jpg',        cap: 'Suite overview — complete room with kitchenette and sleeping area' }
   ];
 
   var overlay, lbImg, lbCounter, lbCaption, lbThumbs;
@@ -44,7 +51,7 @@
       '<div class="lb-thumbs">' +
         PHOTOS.map(function (p, i) {
           return '<button class="lb-thumb" data-idx="' + i + '" aria-label="View photo ' + (i + 1) + '">' +
-                 '<img src="' + p.src + '" alt="" loading="lazy" /></button>';
+                 '<img src="' + cl('w_200,f_auto,q_auto', p.name) + '" alt="" loading="lazy" /></button>';
         }).join('') +
       '</div>';
 
@@ -77,7 +84,7 @@
     if (!overlay) buildOverlay();
     current = ((idx % PHOTOS.length) + PHOTOS.length) % PHOTOS.length;
     var p = PHOTOS[current];
-    lbImg.src = p.src;
+    lbImg.src = cl('w_1400,f_auto,q_auto', p.name);
     lbImg.alt = p.cap;
     lbCaption.textContent = p.cap;
     updateUI();
@@ -96,7 +103,7 @@
     var p = PHOTOS[current];
     lbImg.classList.add('lb-fading');
     setTimeout(function () {
-      lbImg.src = p.src;
+      lbImg.src = cl('w_1400,f_auto,q_auto', p.name);
       lbImg.alt = p.cap;
       lbCaption.textContent = p.cap;
       updateUI();
@@ -117,7 +124,7 @@
   function preload(idx) {
     [-1, 1].forEach(function (d) {
       var i = (((idx + d) % PHOTOS.length) + PHOTOS.length) % PHOTOS.length;
-      new Image().src = PHOTOS[i].src;
+      new Image().src = cl('w_1400,f_auto,q_auto', PHOTOS[i].name);
     });
   }
 

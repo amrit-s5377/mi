@@ -400,7 +400,17 @@ footer { background: var(--slate-d); padding: 64px 8vw 32px; }
 .d-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 1.2rem; border-radius: 10px; overflow: hidden; }
 .d-gimg { overflow: hidden; aspect-ratio: 1; position: relative; cursor: zoom-in; }
 .d-gimg--wide { grid-column: span 2; aspect-ratio: 2/1; }
-.d-gimg img { transition: transform 0.55s var(--ease-out), filter 0.4s; filter: brightness(0.85); }
+.d-gimg img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.55s var(--ease-out), filter 0.4s; filter: brightness(0.85); }
+.d-gimg-view-all {
+  position: absolute; bottom: 9px; right: 9px;
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(11,20,30,0.55); backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25); border-radius: 7px;
+  padding: 6px 11px; color: #fff;
+  font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.2s; z-index: 2;
+}
+.d-gimg-view-all:hover { background: rgba(11,20,30,0.75); }
 .d-gimg:hover img { transform: scale(1.06); filter: brightness(0.95); }
 .d-gimg::after {
   content: '';

@@ -16,7 +16,11 @@
     { name: 'v1778701566/microtel-williston-kitchenette-suite-wide-room-view_eq8hvs.jpg',            cap: 'Wide suite view — full room layout showing all areas' },
     { name: 'v1778701568/microtel-williston-extended-stay-suite-kitchen-bedroom_hld6cm.jpg',         cap: 'Suite layout — queen bed, TV, work desk and kitchenette area' },
     { name: 'v1778701557/microtel-williston-hotel-kitchen-counter-appliances_jlmg9w.jpg',            cap: 'Kitchen counter — clean view of the complete kitchenette' },
-    { name: 'v1778701574/microtel-williston-queen-suite-bedroom-kitchenette-area_dh0wft.jpg',        cap: 'Suite overview — complete room with kitchenette and sleeping area' }
+    { name: 'v1778701574/microtel-williston-queen-suite-bedroom-kitchenette-area_dh0wft.jpg',        cap: 'Suite overview — complete room with kitchenette and sleeping area' },
+    { name: 'v1778711128/double_queen_bed_hmc9sh.avif',                                               cap: 'Double Queen Room — two queen beds with work desk' },
+    { name: 'v1778711127/ADA_accesible_lw4kpm.jpg',                                                   cap: 'ADA Accessible Room — roll-in shower and fully accessible layout' },
+    { name: 'v1778711129/hotel-outside_image_mwcvl4.avif',                                            cap: 'Microtel Williston — hotel exterior off Highway 85' },
+    { name: 'v1778711126/single_queen_bed_ifkki6.avif',                                               cap: 'Queen Room — standard queen bed and work desk' }
   ];
 
   var overlay, lbImg, lbCounter, lbCaption, lbThumbs;

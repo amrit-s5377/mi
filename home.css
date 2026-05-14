@@ -13,7 +13,7 @@
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('https://www.wyndhamhotels.com/content/dam/property-images/en-us/mt/us/nd/williston/40516/40516_exterior_day_1.jpg?crop=3000:2000;*,*&downsize=1800:*') center/cover no-repeat;
+  background: url('https://res.cloudinary.com/djcgfqesd/image/upload/v1778711126/outside_hero_image_o0qocr.avif') center/cover no-repeat;
   transform-origin: center; will-change: transform;
 }
 .hero-tint {

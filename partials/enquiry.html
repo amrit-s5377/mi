@@ -67,17 +67,49 @@
           <input type="email" id="enqEmail" name="email" placeholder="you@example.com" required autocomplete="email" />
         </div>
         <div class="enq-field">
+          <label for="enqCompany">Company / Organization</label>
+          <input type="text" id="enqCompany" name="company" placeholder="Acme Energy Services (optional)" autocomplete="organization" />
+        </div>
+        <div class="enq-field">
           <label for="enqType">Type of Enquiry <span class="enq-req" aria-hidden="true">*</span></label>
           <select id="enqType" name="enquiry_type" required>
             <option value="" disabled selected>Select a topic…</option>
             <option value="Room Availability">Room Availability &amp; Rates</option>
             <option value="Extended Stay">Extended Stay / Weekly or Monthly Rate</option>
             <option value="Corporate / Group Booking">Corporate / Group Booking</option>
+            <option value="Crew Block Booking">Crew Block / Workforce Housing</option>
             <option value="Kitchenette Suite">Kitchenette Suite Details</option>
             <option value="Pet Policy">Pet Policy</option>
             <option value="Direct Billing">Direct / Corporate Billing</option>
             <option value="General Enquiry">General Enquiry</option>
           </select>
+        </div>
+        <div class="enq-form-row enq-form-row--2">
+          <div class="enq-field">
+            <label for="enqGuests">Number of Guests</label>
+            <select id="enqGuests" name="guests">
+              <option value="" disabled selected>Select…</option>
+              <option value="1">1 guest</option>
+              <option value="2">2 guests</option>
+              <option value="3">3 guests</option>
+              <option value="4">4 guests</option>
+              <option value="5–10">5–10 guests</option>
+              <option value="11–20">11–20 guests</option>
+              <option value="20+">20+ guests</option>
+            </select>
+          </div>
+          <div class="enq-field">
+            <label for="enqRooms">Rooms Needed</label>
+            <select id="enqRooms" name="rooms_needed">
+              <option value="" disabled selected>Select…</option>
+              <option value="1">1 room</option>
+              <option value="2">2 rooms</option>
+              <option value="3">3 rooms</option>
+              <option value="4–6">4–6 rooms</option>
+              <option value="7–15">7–15 rooms</option>
+              <option value="16+">16+ rooms</option>
+            </select>
+          </div>
         </div>
         <div class="enq-form-row enq-form-row--2">
           <div class="enq-field">
@@ -91,7 +123,20 @@
         </div>
         <div class="enq-field">
           <label for="enqMessage">Your Message <span class="enq-req" aria-hidden="true">*</span></label>
-          <textarea id="enqMessage" name="message" rows="4" placeholder="Tell us what you need — number of guests, length of stay, any special requirements…" required></textarea>
+          <textarea id="enqMessage" name="message" rows="4" placeholder="Tell us what you need — length of stay, room type preferences, any special requirements…" required></textarea>
+        </div>
+        <div class="enq-field">
+          <label for="enqSource">How did you hear about us?</label>
+          <select id="enqSource" name="referral_source">
+            <option value="" disabled selected>Select…</option>
+            <option value="Google Search">Google Search</option>
+            <option value="Wyndham.com / Rewards">Wyndham.com / Rewards</option>
+            <option value="Repeat Guest">Repeat Guest</option>
+            <option value="Referral / Word of Mouth">Referral / Word of Mouth</option>
+            <option value="Company / Employer">Company / Employer</option>
+            <option value="Social Media">Social Media</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
         <button type="submit" class="enq-submit-btn" id="enqSubmitBtn">
           Send Enquiry

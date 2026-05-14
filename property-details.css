@@ -5,7 +5,7 @@
 
 /* Hero background */
 .detail-hero-bg {
-  background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=2200&q=90');
+  background-image: url("https://www.wyndhamhotels.com/content/dam/property-images/en-us/mt/us/nd/williston/40516/40516_exterior_view_1.jpg?downsize=1800:*");
 }
 
 /* Policies table */
@@ -46,6 +46,12 @@
 }
 .detail-nav-links a:last-child { border-bottom: none; }
 .detail-nav-links a:hover { color: var(--teal-d); gap: 10px; }
+
+/* Gallery — full-width hero + 3×3 grid */
+#gallery .d-gimg--wide {
+  grid-column: 1 / -1;
+  aspect-ratio: 21 / 8;
+}
 
 /* ── AMENITIES GRID — 3-col on wide screens ── */
 @media (min-width: 900px) {

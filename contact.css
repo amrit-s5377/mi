@@ -4,7 +4,9 @@
 ═══════════════════════════════════════════════════════ */
 
 .contact-hero-bg {
-  background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=2200&q=90');
+  background-image: none;
+  inset: 0;
+  background: url('https://res.cloudinary.com/djcgfqesd/image/upload/v1778711126/outside_hero_image_o0qocr.avif') center/cover no-repeat;
 }
 
 .d-hero--short { min-height: 420px; }

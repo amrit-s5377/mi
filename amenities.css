@@ -4,7 +4,7 @@
 ═══════════════════════════════════════════════════════ */
 
 .amen-hero-bg {
-  background-image: url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=2200&q=90');
+  background: url('https://res.cloudinary.com/djcgfqesd/image/upload/v1778711126/outside_hero_image_o0qocr.avif') center/cover no-repeat;
 }
 
 /* ── PAGE WRAPPER ── */

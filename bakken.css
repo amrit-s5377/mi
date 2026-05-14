@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   bakken.css  |  BAKKEN OILFIELD HOUSING PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+.bakken-hero-bg {
+  background-image: url('https://res.cloudinary.com/djcgfqesd/image/upload/v1778701568/microtel-williston-extended-stay-suite-kitchen-bedroom_hld6cm.jpg');
+}
+
+/* ── OPERATORS GRID ── */
+.bakken-operators {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.bko-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-size: 0.74rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.bko-item:last-child {
+  border: 1px dashed var(--teal);
+  color: var(--teal);
+  background: var(--teal-xpale);
+}
+
+.bko-item:hover {
+  border-color: var(--teal);
+  box-shadow: 0 4px 16px rgba(13,127,110,0.08);
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .bakken-operators { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .bakken-operators { grid-template-columns: repeat(2, 1fr); }
+}

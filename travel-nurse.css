@@ -1,0 +1,143 @@
+/* ═══════════════════════════════════════════════════════
+   Microtel Inn & Suites by Wyndham — Williston, ND
+   travel-nurse.css  |  TRAVEL NURSE HOUSING PAGE STYLES
+═══════════════════════════════════════════════════════ */
+
+.tn-hero-bg {
+  background-image: url('https://res.cloudinary.com/djcgfqesd/image/upload/v1778701564/microtel-williston-queen-kitchenette-suite-full-kitchen_fmxds4.jpg');
+}
+
+/* ── WHY US GRID ── */
+.tn-why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-top: 1.6rem;
+}
+
+.tn-why-item {
+  display: flex;
+  gap: 1rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem;
+  transition: border-color 0.22s, box-shadow 0.22s;
+}
+
+.tn-why-item:hover {
+  border-color: var(--teal);
+  box-shadow: 0 6px 24px rgba(13,127,110,0.08);
+}
+
+.tn-why-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tn-why-icon svg { width: 22px; height: 22px; }
+
+.tn-why-icon--loc      { background: var(--teal-pale); border: 1.5px solid var(--teal); }
+.tn-why-icon--loc svg  { stroke: var(--teal); }
+.tn-why-icon--service      { background: #e8f0fe; border: 1.5px solid #4a90d9; }
+.tn-why-icon--service svg  { stroke: #4a90d9; }
+.tn-why-icon--price      { background: #fff8e1; border: 1.5px solid #d4a017; }
+.tn-why-icon--price svg  { stroke: #d4a017; }
+.tn-why-icon--convenience      { background: var(--teal-pale); border: 1.5px solid var(--teal-l); }
+.tn-why-icon--convenience svg  { stroke: var(--teal-d); }
+
+.tn-why-item strong {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.35rem;
+}
+
+.tn-why-item p {
+  font-size: 0.76rem;
+  font-weight: 300;
+  line-height: 1.68;
+  color: var(--ink-m);
+  margin: 0;
+}
+
+/* ── AGENCY GRID ── */
+.tn-agencies {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.8rem;
+  margin-top: 1.4rem;
+}
+
+.tn-agency-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.tn-agency-item:last-child {
+  border: 1px dashed var(--teal);
+  background: var(--teal-xpale);
+}
+
+.tn-agency-item:hover {
+  border-color: var(--teal);
+  box-shadow: 0 4px 16px rgba(13,127,110,0.08);
+}
+
+.tn-agency-name {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.25rem;
+}
+
+.tn-agency-note {
+  font-size: 0.62rem;
+  font-weight: 300;
+  color: var(--teal);
+}
+
+.tn-agency-note-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 1.2rem;
+  background: var(--teal-xpale);
+  border: 1px solid var(--teal-pale);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+}
+
+.tn-agency-note-block p {
+  font-size: 0.78rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--ink-m);
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .tn-agencies { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .tn-why-grid { grid-template-columns: 1fr; }
+  .tn-agencies { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .tn-why-item { flex-direction: column; gap: 0.8rem; }
+}

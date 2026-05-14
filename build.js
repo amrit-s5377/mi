@@ -16,6 +16,8 @@ const PAGES = [
   'corporate.html',
   'meetings.html',
   'contact.html',
+  'bakken-oilfield-housing.html',
+  'travel-nurse-housing.html',
   '404.html',
 ];
 
@@ -29,9 +31,13 @@ const ASSETS = [
   'corporate.css',
   'meetings.css',
   'contact.css',
+  'bakken.css',
+  'travel-nurse.css',
   '404.css',
   'main.js',
   'gallery.js',
+  'sitemap.xml',
+  'robots.txt',
 ];
 
 function read(file)           { return fs.readFileSync(file, 'utf8'); }

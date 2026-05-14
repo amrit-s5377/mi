@@ -7,6 +7,17 @@
   background-image: url('https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/292321303.jpg?k=012375ed652ac9a8065fd76c638afe8f9bdeedcb5404176c691be80e9f70b19d&o=');
 }
 
+.meet-hero-photo {
+  max-width: 1160px; margin: 0 auto -2rem; padding: 0 6vw 0;
+}
+.meet-hero-photo img {
+  width: 100%; height: 420px; object-fit: cover;
+  border-radius: 14px; display: block;
+}
+@media (max-width: 600px) {
+  .meet-hero-photo img { height: 220px; }
+}
+
 .meet-page { max-width:1160px; margin:0 auto; padding:72px 6vw; }
 .meet-section { margin-bottom:4rem; }
 .meet-section:last-child { margin-bottom:0; }

@@ -404,6 +404,17 @@
   display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
   padding-top: 0.5rem; border-top: 1px solid var(--border);
 }
+.corp-page-links {
+  display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;
+}
+.corp-page-links a {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
+  color: var(--teal); border: 1px solid var(--teal);
+  border-radius: 8px; padding: 8px 16px;
+  transition: background 0.2s, color 0.2s;
+}
+.corp-page-links a:hover { background: var(--teal); color: #fff; }
 
 /* ═══════════════════════════════════════
    EXPLORE

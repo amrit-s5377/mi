@@ -20,7 +20,14 @@
     { name: 'v1778711128/double_queen_bed_hmc9sh.avif',                                               cap: 'Double Queen Room — two queen beds with work desk' },
     { name: 'v1778711127/ADA_accesible_lw4kpm.jpg',                                                   cap: 'ADA Accessible Room — roll-in shower and fully accessible layout' },
     { name: 'v1778711129/hotel-outside_image_mwcvl4.avif',                                            cap: 'Microtel Williston — hotel exterior off Highway 85' },
-    { name: 'v1778711126/single_queen_bed_ifkki6.avif',                                               cap: 'Queen Room — standard queen bed and work desk' }
+    { name: 'v1778711126/single_queen_bed_ifkki6.avif',                                               cap: 'Queen Room — standard queen bed and work desk' },
+    { name: 'v1778766715/microtel-williston-kitchenette-suite-sitting_-area_omkgxx.jpg',             cap: 'Kitchenette suite sitting area — lounge seating and full-kitchen layout' },
+    { name: 'v1778766720/microtel-williston-fitness-center-gym-facilities_ma2lj7.jpg',               cap: 'Fitness centre — cardio machines, free weights and gym equipment' },
+    { name: 'v1778766602/microtel-williston-room-hotel-balcony-terrace_g6jtfi.jpg',                  cap: 'Hotel balcony and terrace — outdoor view from the room' },
+    { name: 'v1778766460/microtel-williston-breakfast-dining-area-angle-2_k8bpuk.jpg',               cap: 'Breakfast dining area — hot breakfast buffet, second view' },
+    { name: 'v1778766393/microtel-williston-breakfast-dining-area_um4n1l.jpg',                       cap: 'Breakfast dining area — complimentary hot breakfast served daily' },
+    { name: 'v1778767131/microtel-williston-business-facilities_duzfca.jpg',                         cap: 'Business facilities — meeting room and business centre at Microtel Williston' },
+    { name: 'v1778768553/microtel-williston-meeting-room-conference-hall-banquet-function_sxwp7q.jpg', cap: 'Meeting room — 800 sq ft conference and banquet space at Microtel Williston' }
   ];
 
   var overlay, lbImg, lbCounter, lbCaption, lbThumbs;

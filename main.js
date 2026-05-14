@@ -184,36 +184,46 @@ function closeDrawer() {
 if (navHam)   navHam.addEventListener('click', openDrawer);
 if (mobClose) mobClose.addEventListener('click', closeDrawer);
 
-/* Close drawer when clicking a link */
+/* Close drawer when clicking a nav link */
 if (mobDrawer) {
   mobDrawer.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', closeDrawer);
   });
+  /* Close when clicking the dark backdrop (not the nav content) */
+  mobDrawer.addEventListener('click', function (e) {
+    if (e.target === mobDrawer) closeDrawer();
+  });
 }
 
+/* Escape key closes drawer */
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && mobDrawer && mobDrawer.classList.contains('open')) closeDrawer();
+});
+
 /* ─────────────────────────────────────────────────────────────
-   AMENITIES ANCHOR NAV — active link highlight on scroll
+   ANCHOR NAV — active link highlight on scroll (all pages)
 ─────────────────────────────────────────────────────────────── */
-const amenAnchorLinks = document.querySelectorAll('.amen-anchor-link');
-if (amenAnchorLinks.length) {
-  const sectionIds = ['pool', 'fitness', 'breakfast', 'laundry', 'meeting-room', 'all-amenities'];
-  const sections   = sectionIds.map(id => document.getElementById(id)).filter(Boolean);
+['.amen-anchor-link', '.page-anchor-link'].forEach(function (selector) {
+  var links = Array.from(document.querySelectorAll(selector));
+  if (!links.length) return;
 
-  function updateAnchorNav() {
-    const scrollY   = window.scrollY;
-    const offset    = 140;
-    let activeId    = null;
+  var sections = links
+    .map(function (l) { return document.getElementById(l.getAttribute('href').replace('#', '')); })
+    .filter(Boolean);
 
-    sections.forEach(sec => {
-      if (sec && scrollY + offset >= sec.offsetTop) activeId = sec.id;
+  function updateNav() {
+    var scrollY  = window.scrollY;
+    var offset   = 140;
+    var activeId = null;
+    sections.forEach(function (sec) {
+      if (scrollY + offset >= sec.offsetTop) activeId = sec.id;
     });
-
-    amenAnchorLinks.forEach(link => {
-      const href = link.getAttribute('href').replace('#', '');
+    links.forEach(function (link) {
+      var href = link.getAttribute('href').replace('#', '');
       link.classList.toggle('active', href === activeId);
     });
   }
 
-  window.addEventListener('scroll', updateAnchorNav, { passive: true });
-  updateAnchorNav();
-}
+  window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
+});

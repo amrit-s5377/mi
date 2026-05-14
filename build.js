@@ -38,6 +38,8 @@ const ASSETS = [
   'gallery.js',
   'sitemap.xml',
   'robots.txt',
+  '.htaccess',
+  'favicon.svg',
 ];
 
 function read(file)           { return fs.readFileSync(file, 'utf8'); }

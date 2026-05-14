@@ -168,12 +168,18 @@ address { font-style: normal; }
 
 /* Mobile drawer */
 .mob-drawer {
-  position: fixed; inset: 0; z-index: 790;
+  position: fixed; inset: 0; z-index: 810;
   background: var(--slate-d);
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0;
-  padding: 2rem; opacity: 0; pointer-events: none; transition: opacity 0.35s;
+  padding: 2rem; opacity: 0; pointer-events: none;
+  visibility: hidden;
+  transition: opacity 0.35s, visibility 0s linear 0.35s;
 }
-.mob-drawer.open { opacity: 1; pointer-events: all; }
+.mob-drawer.open {
+  opacity: 1; pointer-events: all;
+  visibility: visible;
+  transition: opacity 0.35s, visibility 0s;
+}
 .mob-close {
   position: absolute; top: 22px; right: 22px;
   background: rgba(255,255,255,0.08); border: none; border-radius: 8px;
@@ -815,3 +821,29 @@ a.enq-contact-item:hover {
   .lb-img-wrap img { max-height: calc(100vh - 195px); border-radius: 4px; }
   .lb-thumb { width: 40px; height: 30px; }
 }
+
+/* ═══════════════════════════════════════════════════════
+   PAGE ANCHOR NAV — shared sticky section nav (meetings, corporate, etc.)
+═══════════════════════════════════════════════════════ */
+.page-anchor-nav {
+  background: var(--white); border-bottom: 1px solid var(--border);
+  position: sticky; top: 68px; z-index: 100;
+  box-shadow: 0 2px 16px rgba(14,30,42,0.06);
+}
+.page-anchor-inner {
+  display: flex; align-items: center; overflow-x: auto;
+  scrollbar-width: none; max-width: 1280px; margin: 0 auto; padding: 0 5vw;
+}
+.page-anchor-inner::-webkit-scrollbar { display: none; }
+.page-anchor-link {
+  display: inline-flex; align-items: center; gap: 6px; flex-shrink: 0;
+  font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-l); padding: 14px 16px;
+  border-bottom: 2px solid transparent; margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s; white-space: nowrap;
+}
+.page-anchor-link svg { opacity: 0.55; transition: opacity 0.2s; flex-shrink: 0; }
+.page-anchor-link:hover { color: var(--teal-d); border-bottom-color: var(--teal); }
+.page-anchor-link:hover svg { opacity: 1; }
+.page-anchor-link.active { color: var(--teal-d); border-bottom-color: var(--teal); font-weight: 600; }
+.page-anchor-link.active svg { opacity: 1; }

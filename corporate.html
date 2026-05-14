@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Vercel Web Analytics -->
@@ -49,11 +50,41 @@
     </div>
   </div>
 
+  <!-- ── ANCHOR NAV ── -->
+  <nav class="page-anchor-nav" aria-label="Jump to section">
+    <div class="page-anchor-inner">
+      <a href="#why-us" class="page-anchor-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        Why Us
+      </a>
+      <a href="#industries" class="page-anchor-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        Industries
+      </a>
+      <a href="#benefits" class="page-anchor-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Benefits
+      </a>
+      <a href="#rates" class="page-anchor-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Rate Plans
+      </a>
+      <a href="#corp-enquiry" class="page-anchor-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Get in Touch
+      </a>
+      <a href="#faq" class="page-anchor-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        FAQ
+      </a>
+    </div>
+  </nav>
+
   <!-- ── PAGE BODY ── -->
   <main class="corp-page">
 
     <!-- INTRO -->
-    <section class="corp-section corp-section--narrow">
+    <section class="corp-section corp-section--narrow" id="why-us">
       <p class="d-eyebrow">Why Book Direct With Us?</p>
       <h2 class="d-sec-title">Built Around the Bakken Schedule, Not a 9-to-5</h2>
       <p>Microtel Inn &amp; Suites Williston is the go-to corporate and group hotel for companies operating in the Bakken oilfield region. We've built our rates, billing, and operations around the people and companies that actually need us — oilfield operators, travel nurse agencies, government contractors, and project teams on multi-week assignments.</p>
@@ -61,7 +92,7 @@
     </section>
 
     <!-- OPERATORS SERVED -->
-    <section class="corp-section corp-section--narrow">
+    <section class="corp-section corp-section--narrow" id="industries">
       <p class="d-eyebrow">Industries &amp; Companies We Serve</p>
       <h2 class="d-sec-title">Your Industry. Your Schedule. Your Rate.</h2>
       <div class="corp-industries">
@@ -109,7 +140,7 @@
     </section>
 
     <!-- BENEFITS GRID -->
-    <section class="corp-benefits-section">
+    <section class="corp-benefits-section" id="benefits">
       <div class="corp-benefits-inner">
         <div class="corp-benefits-header">
           <p class="d-eyebrow" style="color:var(--teal-l);">What We Offer</p>
@@ -177,7 +208,7 @@
     </section>
 
     <!-- RATES COMPARISON -->
-    <section class="corp-section corp-section--narrow">
+    <section class="corp-section corp-section--narrow" id="rates">
       <p class="d-eyebrow">Rate Plans</p>
       <h2 class="d-sec-title">Corporate Rate Options</h2>
       <div class="corp-rate-grid">
@@ -287,7 +318,7 @@
     </section>
 
     <!-- FAQ -->
-    <section class="corp-section corp-section--narrow">
+    <section class="corp-section corp-section--narrow" id="faq">
       <p class="d-eyebrow">Common Questions</p>
       <h2 class="d-sec-title">Corporate Booking FAQ</h2>
       <div class="ext-faq">

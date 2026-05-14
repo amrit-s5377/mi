@@ -52,8 +52,12 @@
   .d-amen-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .d-amen-item:nth-child(even) { border-right: 1px solid var(--border); }
-  .d-amen-item:nth-child(3n)   { border-right: none; }
+  /* Reset 2-col border logic, apply 3-col rules */
+  .d-amen-item                  { border-right: 1px solid var(--border); }
+  .d-amen-item:nth-child(3n)    { border-right: none; }
+  /* Remove bottom border from last row (last 1–3 items) */
+  .d-amen-item:nth-last-child(-n+3) { border-bottom: none; }
+  .d-amen-item:nth-last-child(-n+3):not(:nth-child(3n+1)) { border-bottom: none; }
 }
 
 /* ── POLICY GRID IMPROVEMENTS ── */

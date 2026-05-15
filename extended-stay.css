@@ -358,3 +358,84 @@
   .ext-loaner-grid { grid-template-columns: 1fr; }
   .eac-body { padding: 1.2rem 1.4rem 1.6rem; }
 }
+
+/* ─────────────────────────────────────────────
+   PRICE ANCHORS
+───────────────────────────────────────────── */
+
+/* Snippet 3 — Rate card price display */
+.erc-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem 0.45rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.75rem;
+  background: var(--teal-xpale);
+  border-radius: 6px;
+  margin: 0 0 0.85rem;
+}
+.erc-price-from {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ink-l);
+}
+.erc-price-num {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--slate);
+  line-height: 1;
+}
+.erc-price-period {
+  font-size: 0.82rem;
+  color: var(--ink-m);
+}
+.ext-rate-card--best .erc-price { background: rgba(13,127,110,0.08); }
+.ext-rate-card--best .erc-price-num { color: var(--teal-d); }
+
+/* Snippet 5 — Seasonal price range banner */
+.ext-seasonal-banner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.4rem;
+  background: linear-gradient(90deg, var(--teal-xpale) 0%, var(--cream) 100%);
+  border-left: 3px solid var(--teal);
+  border-radius: 6px;
+  margin: 0 0 2rem;
+  font-family: var(--sans);
+}
+.esb-icon { font-size: 1.6rem; flex-shrink: 0; }
+.esb-content { flex: 1; }
+.esb-title {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--slate);
+  margin-bottom: 0.15rem;
+}
+.esb-text {
+  font-size: 0.8rem;
+  color: var(--ink-m);
+  line-height: 1.5;
+}
+.esb-text strong { color: var(--teal-d); font-weight: 700; }
+.esb-text a { color: var(--slate); font-weight: 600; }
+.esb-cta {
+  padding: 0.55rem 1rem;
+  background: var(--teal);
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.esb-cta:hover { background: var(--teal-d); }
+@media (max-width: 640px) {
+  .ext-seasonal-banner { flex-direction: column; align-items: flex-start; }
+  .esb-cta { width: 100%; text-align: center; }
+}

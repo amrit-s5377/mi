@@ -92,7 +92,65 @@
           {"@type": "LocationFeatureSpecification", "name": "Meeting Room", "value": true},
           {"@type": "LocationFeatureSpecification", "name": "ADA Accessible Rooms", "value": true}
         ],
-        "brand": {"@type": "Brand", "name": "Microtel by Wyndham"}
+        "brand": {"@type": "Brand", "name": "Microtel by Wyndham"},
+        "makesOffer": [
+          {
+            "@type": "Offer",
+            "name": "Queen Kitchenette Suite — Nightly Rate",
+            "description": "Full-kitchen suite with cooktop, dishwasher, full-size fridge, microwave, and complete cookware. Built for extended stays.",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "129",
+              "maxPrice": "225",
+              "priceCurrency": "USD"
+            },
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview",
+            "seller": {"@type": "Organization", "name": "Wyndham Hotels & Resorts", "url": "https://www.wyndhamhotels.com/"}
+          },
+          {
+            "@type": "Offer",
+            "name": "Queen Kitchenette Suite — Weekly Extended-Stay Rate",
+            "description": "Weekly extended-stay rate for 7+ nights. Custom quote available — call (701) 572-2000.",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "799",
+              "priceCurrency": "USD",
+              "unitText": "WEEK"
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Queen Kitchenette Suite — Monthly Extended-Stay Rate",
+            "description": "Monthly rate for 30+ night stays. Direct billing accepted for corporate accounts and travel nurse agencies.",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "UnitPriceSpecification",
+              "price": "2799",
+              "priceCurrency": "USD",
+              "unitText": "MONTH"
+            },
+            "availability": "https://schema.org/InStock"
+          },
+          {
+            "@type": "Offer",
+            "name": "Standard Queen Room — Nightly Rate",
+            "description": "Standard queen room with microwave and mini-fridge.",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": "99",
+              "maxPrice": "185",
+              "priceCurrency": "USD"
+            },
+            "availability": "https://schema.org/InStock",
+            "url": "https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview",
+            "seller": {"@type": "Organization", "name": "Wyndham Hotels & Resorts", "url": "https://www.wyndhamhotels.com/"}
+          }
+        ]
       },
       {
         "@type": "Organization",
@@ -135,7 +193,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="home.css" />
 </head>
-<body>
+<body class="home-page">
 
   <!-- ════════ LOADER ════════ -->
   <div id="loader">
@@ -157,9 +215,20 @@
     <div class="hero-tint"></div>
     <div class="hero-layout">
       <div class="hero-copy">
-        <div class="hero-chip" id="hChip">
-          <span class="chip-dot"></span>
-          39 Newly Renovated Kitchenette Suites
+        <div class="hero-chip-row">
+          <div class="hero-chip" id="hChip">
+            <span class="chip-dot"></span>
+            39 Newly Renovated Kitchenette Suites
+          </div>
+          <div class="hero-price-badge">
+            <div class="hpb-cycle" role="text" aria-label="From $129 per night — weekly and monthly rates available">
+              <span class="hpb-c-price"><span class="hpb-label">From</span><strong>$129</strong><span class="hpb-per">/ night</span></span>
+              <span class="hpb-c-rates" aria-hidden="true">Weekly &middot; Monthly Rates</span>
+            </div>
+            <a href="kitchenette.html" class="hpb-link" aria-label="View Queen Kitchenette Suite">
+              <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+            </a>
+          </div>
         </div>
         <!-- H1 from SEO Meta Tags sheet -->
         <h1 class="hero-h1" id="hTitle">
@@ -222,6 +291,10 @@
       <a href="#rooms" class="home-anchor-link">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M1 11V8a3 3 0 013-3h8a3 3 0 013 3v3"/><path d="M1 11h14M4 9.5h8" stroke-linecap="round"/></svg>
         Rooms
+      </a>
+      <a href="#how-to-book" class="home-anchor-link">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="3" width="12" height="12" rx="2"/><path d="M5 1v3M11 1v3M2 7h12" stroke-linecap="round"/></svg>
+        Reserve
       </a>
       <a href="#amenities" class="home-anchor-link">
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 1.5l1.8 3.6 4 .6-2.9 2.8.7 4L8 10.4l-3.6 1.9.7-4L2.2 5.7l4-.6z"/></svg>
@@ -385,6 +458,14 @@
           <img src="https://res.cloudinary.com/djcgfqesd/image/upload/v1778701557/microtel-williston-hotel-kitchen-counter-appliances_jlmg9w.jpg"
                alt="Microtel Williston Queen Kitchenette Suite with full kitchen, dishwasher and full-size refrigerator" loading="lazy" />
           <span class="room-tag room-tag--teal">★ New</span>
+          <div class="room-price-overlay">
+            <div class="rpo-top">
+              <span class="rpo-from">From</span>
+              <span class="rpo-amount">$129</span>
+              <span class="rpo-unit">/ night</span>
+            </div>
+            <span class="rpo-ext">Weekly from $799 &middot; Monthly from $2,799</span>
+          </div>
         </div>
         <div class="room-body">
           <div class="room-cat">Extended Stay</div>
@@ -453,6 +534,45 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESERVATIONS ── -->
+  <section class="booking-explainer-sec" id="how-to-book" aria-labelledby="be-heading">
+    <div class="be-eyebrow">Reservations</div>
+    <h2 class="be-h2" id="be-heading">Reserve <em>Your Stay</em></h2>
+    <div class="be-grid">
+      <div class="be-card">
+        <div class="be-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        </div>
+        <h5>Online via Wyndham.com</h5>
+        <p>Secure instant confirmation and earn Wyndham Rewards points on every stay. Best for nightly reservations.</p>
+        <a href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview"
+           target="_blank" rel="noopener" class="be-cta">
+          Check Availability
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+        </a>
+      </div>
+      <div class="be-card be-featured">
+        <div class="be-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 5h3l2 5-2.5 1.5a11 11 0 005 5L12 14l5 2v3a1 1 0 01-1 1C7 20 2 15 2 7a1 1 0 011-1z"/></svg>
+        </div>
+        <h5>Call Our Front Desk</h5>
+        <p>Speak with our team for weekly, monthly, and corporate rates tailored to your stay. Available 24 hours.</p>
+        <a href="tel:+17015722000" class="be-cta be-cta--phone">(701) 572-2000</a>
+      </div>
+      <div class="be-card">
+        <div class="be-icon-wrap" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+        </div>
+        <h5>Corporate &amp; Group Enquiry</h5>
+        <p>For crew blocks, direct billing, and long-term workforce solutions — our sales team responds within a few hours.</p>
+        <a href="#enquiry" class="be-cta">
+          Send Enquiry
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
+        </a>
       </div>
     </div>
   </section>
@@ -975,5 +1095,21 @@
       update();
     })();
   </script>
+
+  <!-- ── MOBILE PRICE BAR ── -->
+  <div class="mobile-price-bar" id="mobilePriceBar" aria-label="Quick booking" role="complementary">
+    <div class="mpb-content">
+      <div class="mpb-price">
+        <span class="mpb-from">From</span>
+        <span class="mpb-amount">$129</span>
+        <span class="mpb-unit">/ night</span>
+      </div>
+      <div class="mpb-ctas">
+        <a href="tel:+17015722000" class="mpb-cta mpb-call" aria-label="Call (701) 572-2000">Call</a>
+        <a href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview"
+           target="_blank" rel="noopener" class="mpb-cta mpb-book">Book Wyndham</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -26,10 +26,17 @@
   gap: 3vw; align-items: center;
   padding: 80px 8vw; max-width: 1280px; margin: 0 auto; width: 100%;
 }
+.hero-chip-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+}
 .hero-chip {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(13,127,110,0.2); border: 1px solid rgba(58,170,150,0.35);
-  border-radius: 999px; padding: 5px 14px; margin-bottom: 1.8rem;
+  border-radius: 999px; padding: 5px 14px; margin-bottom: 0;
   font-size: 0.62rem; font-weight: 500; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--teal-l);
   opacity: 0; transform: translateY(12px);
@@ -685,4 +692,339 @@
   /* Corp & amenities grids — collapse from 2-col to 1-col */
   .corp-grid  { grid-template-columns: 1fr; }
   .amen-grid  { grid-template-columns: 1fr; }
+}
+
+/* ─────────────────────────────────────────────
+   PRICE ANCHORS
+───────────────────────────────────────────── */
+
+/* Snippet 1 — Hero Price Badge (text-only, no background) */
+.hero-price-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-family: var(--sans);
+  animation: hpb-appear 0.65s var(--ease-out) 1.5s both;
+}
+@keyframes hpb-appear {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+/* Two texts share the same grid cell — crossfade between them */
+.hpb-cycle {
+  display: grid;
+  grid-template-areas: 'text';
+}
+.hpb-c-price,
+.hpb-c-rates {
+  grid-area: text;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  line-height: 1;
+}
+/* "FROM" label — small caps, very subtle */
+.hpb-label {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  align-self: center;
+}
+/* Big serif italic price numeral */
+.hpb-c-price strong {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 32px rgba(255,255,255,0.22), 0 0 60px rgba(58,170,150,0.35);
+}
+/* "/ night" — small caps, subtle */
+.hpb-per {
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.42);
+  align-self: center;
+}
+/* Rates line — wider tracking, mid weight */
+.hpb-c-rates {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  align-items: center;
+}
+/* Blur crossfade — premium, cinematic feel */
+.hpb-c-price { animation: hpb-price-in 6s ease-in-out infinite; }
+.hpb-c-rates { animation: hpb-rates-in 6s ease-in-out infinite; }
+@keyframes hpb-price-in {
+  0%, 38%  { opacity: 1; filter: blur(0px); }
+  46%, 94% { opacity: 0; filter: blur(5px); }
+  100%     { opacity: 1; filter: blur(0px); }
+}
+@keyframes hpb-rates-in {
+  0%, 40%  { opacity: 0; filter: blur(5px); }
+  50%, 88% { opacity: 1; filter: blur(0px); }
+  96%, 100% { opacity: 0; filter: blur(5px); }
+}
+/* Arrow link — minimal, no background */
+.hpb-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 18px; height: 18px;
+  text-decoration: none;
+  opacity: 0.45;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.hpb-link svg { width: 11px; height: 11px; stroke: #fff; flex-shrink: 0; }
+.hpb-link:hover { opacity: 1; transform: translateX(2px); }
+
+/* Snippet 2 — Room Card Price Overlay (slides up from image bottom on hover) */
+.room-price-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(11,20,30,0.9) 0%, rgba(11,20,30,0.55) 60%, transparent 100%);
+  padding: 2.2rem 1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  transform: translateY(30%);
+  opacity: 0;
+  transition: transform 0.38s ease, opacity 0.32s ease;
+  pointer-events: none;
+}
+.rpo-top {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+.rpo-from   { font-size: 0.6rem; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 0.07em; }
+.rpo-amount { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: #fff; line-height: 1; }
+.rpo-unit   { font-size: 0.68rem; color: rgba(255,255,255,0.5); }
+.rpo-ext    { font-size: 0.62rem; color: rgba(255,255,255,0.42); }
+/* Desktop: reveal on hover */
+@media (hover: hover) {
+  .room-card--featured:hover .room-price-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+/* Touch devices: always visible */
+@media (hover: none) {
+  .room-price-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Snippet 4 — Sticky Mobile Price Bar */
+.mobile-price-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 820;
+  background: var(--white);
+  border-top: 2px solid var(--teal);
+  box-shadow: 0 -4px 16px rgba(14,30,42,0.12);
+  padding: 0.6rem 1rem;
+  font-family: var(--sans);
+}
+.mpb-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.mpb-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+.mpb-from   { font-size: 0.62rem; color: var(--ink-l); text-transform: uppercase; letter-spacing: 0.07em; }
+.mpb-amount { font-size: 1.3rem; font-weight: 800; color: var(--slate); }
+.mpb-unit   { font-size: 0.72rem; color: var(--ink-m); }
+.mpb-ctas   { display: flex; gap: 0.45rem; }
+.mpb-cta {
+  padding: 0.55rem 0.85rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+.mpb-call { background: var(--white); color: var(--teal); border: 1.5px solid var(--teal); }
+.mpb-book { background: var(--teal); color: var(--white); }
+@media (max-width: 768px) {
+  .mobile-price-bar { display: block; }
+  body.home-page { padding-bottom: 68px; }
+}
+
+/* ── Snippet 6 — Reserve Your Stay (refined + border beam) ── */
+/* @property enables smooth conic-gradient rotation for the beam */
+@property --be-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.booking-explainer-sec {
+  background: var(--white);
+  padding: 3.5rem 5vw;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.booking-explainer-sec .be-eyebrow {
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0 0 0.55rem;
+}
+.booking-explainer-sec .be-h2 {
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  color: var(--slate);
+  font-family: var(--serif);
+  font-weight: 400;
+  margin: 0 0 2.2rem;
+}
+.booking-explainer-sec .be-h2 em {
+  font-style: italic;
+  color: var(--teal-d);
+}
+/* Separate bordered cards with gap instead of shared-border grid */
+.be-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 880px;
+  margin: 0 auto;
+  text-align: left;
+}
+.be-card {
+  padding: 1.5rem 1.4rem;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+.be-card:hover {
+  border-color: rgba(13,127,110,0.35);
+  box-shadow: 0 6px 28px rgba(13,127,110,0.09);
+}
+/* Border beam — rotating conic gradient masked to border strip only */
+.be-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--be-angle),
+    transparent 0deg,
+    transparent 310deg,
+    rgba(58,170,150,0.55) 345deg,
+    rgba(255,255,255,0.85) 360deg,
+    rgba(58,170,150,0.55) 15deg,
+    transparent 45deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: be-spin 2.5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  z-index: -1;
+}
+.be-card:hover::after { opacity: 1; }
+@keyframes be-spin { to { --be-angle: 360deg; } }
+
+/* Featured card — distinct style, always has subtle beam glow */
+.be-card.be-featured {
+  background: var(--teal-xpale);
+  border-color: rgba(13,127,110,0.28);
+  box-shadow: 0 4px 20px rgba(13,127,110,0.07);
+}
+.be-card.be-featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal-d), var(--teal-l));
+  border-radius: 12px 12px 0 0;
+  z-index: 1;
+}
+.be-card.be-featured::after { opacity: 0.3; }
+.be-card.be-featured:hover::after { opacity: 1; }
+
+.be-icon-wrap {
+  width: 34px; height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--teal-pale);
+  border-radius: 8px;
+  margin-bottom: 0.85rem;
+  flex-shrink: 0;
+  transition: background 0.22s;
+}
+.be-icon-wrap svg { width: 16px; height: 16px; stroke: var(--teal-d); transition: stroke 0.22s; }
+.be-card:hover .be-icon-wrap { background: var(--teal); }
+.be-card:hover .be-icon-wrap svg { stroke: #fff; }
+.be-card.be-featured .be-icon-wrap { background: rgba(13,127,110,0.14); }
+.be-card h5 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--slate);
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.01em;
+}
+.be-card p {
+  font-size: 0.75rem;
+  color: var(--ink-m);
+  line-height: 1.65;
+  margin: 0 0 1rem;
+  flex-grow: 1;
+}
+.be-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--teal);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: gap 0.2s, color 0.2s;
+}
+.be-cta svg { width: 12px; height: 12px; flex-shrink: 0; stroke: currentColor; transition: transform 0.2s; }
+.be-cta:hover { gap: 0.45rem; color: var(--teal-d); }
+.be-cta:hover svg { transform: translateX(2px); }
+.be-cta--phone {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--slate);
+  letter-spacing: 0.01em;
+}
+.be-cta--phone:hover { color: var(--teal-d); }
+@media (max-width: 700px) {
+  .be-grid { grid-template-columns: 1fr; gap: 0.75rem; }
 }

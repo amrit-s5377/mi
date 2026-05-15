@@ -1028,3 +1028,36 @@
 @media (max-width: 700px) {
   .be-grid { grid-template-columns: 1fr; gap: 0.75rem; }
 }
+
+/* ── SEASONAL PRICING BANNER ── */
+.seasonal-banner {
+  background: var(--teal-xpale);
+  border-top: 1px solid rgba(13,127,110,0.12);
+  border-bottom: 1px solid rgba(13,127,110,0.12);
+  padding: 0.9rem 5vw;
+}
+.sb-inner {
+  max-width: 900px; margin: 0 auto;
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+}
+.sb-label {
+  display: flex; align-items: center; gap: 0.4rem;
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal-d); white-space: nowrap; flex-shrink: 0;
+}
+.sb-label svg { width: 13px; height: 13px; stroke: var(--teal-d); }
+.sb-text {
+  font-size: 0.79rem; color: var(--ink-m); line-height: 1.55; flex: 1; min-width: 200px;
+}
+.sb-text strong { color: var(--slate); font-weight: 600; }
+.sb-text a { color: var(--teal-d); font-weight: 500; text-decoration: underline; }
+.sb-cta {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  padding: 8px 16px; background: var(--teal); color: #fff; border-radius: 6px;
+  text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.2s;
+}
+.sb-cta:hover { background: var(--teal-d); }
+@media (max-width: 600px) {
+  .sb-inner { gap: 0.6rem; }
+  .sb-cta { width: 100%; text-align: center; padding: 10px; }
+}

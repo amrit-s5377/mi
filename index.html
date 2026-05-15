@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Vercel Web Analytics -->
@@ -11,50 +11,118 @@
   <!-- ═══ SEO META TAGS ═══ -->
   <title>Microtel Williston | Extended-Stay Suites in the Bakken</title>
   <meta name="description" content="Newly renovated full-kitchen suites in Williston, ND. Built for Bakken crews, travel nurses &amp; extended business stays. Weekly &amp; monthly rates available." />
-  <meta name="keywords" content="extended stay williston nd, bakken oilfield housing, travel nurse housing williston, hotel with kitchen williston, weekly hotel williston nd, monthly hotel williston nd, microtel williston" />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://microtelwilliston.com/" />
+
+  <!-- Geo -->
+  <meta name="geo.region" content="US-ND" />
+  <meta name="geo.placename" content="Williston, North Dakota" />
+  <meta name="geo.position" content="48.1470;-103.6180" />
+  <meta name="ICBM" content="48.1470, -103.6180" />
 
   <!-- Open Graph -->
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Microtel Williston" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://microtelwilliston.com/" />
   <meta property="og:title" content="Microtel Williston | Extended-Stay Full-Kitchen Suites" />
   <meta property="og:description" content="39 newly renovated full-kitchen suites in Williston, ND. Built for Bakken crews, travel nurses &amp; extended business stays." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://res.cloudinary.com/djcgfqesd/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/v1778711129/hotel-outside_image_mwcvl4.avif" />
+  <meta property="og:image:alt" content="Microtel Inn &amp; Suites by Wyndham Williston exterior" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Microtel Williston | Extended-Stay Full-Kitchen Suites" />
+  <meta name="twitter:description" content="39 newly renovated full-kitchen suites in Williston, ND. Built for Bakken crews, travel nurses &amp; extended business stays." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/djcgfqesd/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/v1778711129/hotel-outside_image_mwcvl4.avif" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="favicon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#0d7f6e">
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Hotel",
-    "name": "Microtel Inn & Suites by Wyndham Williston",
-    "description": "Newly renovated full-kitchen suites in Williston, ND. Perfect for Bakken oilfield workers, travel nurses, and extended business stays.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3820 4th Avenue West",
-      "addressLocality": "Williston",
-      "addressRegion": "ND",
-      "postalCode": "58801",
-      "addressCountry": "US"
-    },
-    "telephone": "+17015722000",
-    "url": "https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview",
-    "amenityFeature": [
-      {"@type": "LocationFeatureSpecification", "name": "Full Kitchen Suites"},
-      {"@type": "LocationFeatureSpecification", "name": "Free Wi-Fi"},
-      {"@type": "LocationFeatureSpecification", "name": "Free Parking"},
-      {"@type": "LocationFeatureSpecification", "name": "Free Guest Laundry"},
-      {"@type": "LocationFeatureSpecification", "name": "Pet Friendly"},
-      {"@type": "LocationFeatureSpecification", "name": "Indoor Pool"},
-      {"@type": "LocationFeatureSpecification", "name": "Fitness Center"},
-      {"@type": "LocationFeatureSpecification", "name": "Free Breakfast"},
-      {"@type": "LocationFeatureSpecification", "name": "24-Hour Front Desk"}
-    ],
-    "priceRange": "$$",
-    "starRating": {"@type": "Rating", "ratingValue": "3"}
+    "@graph": [
+      {
+        "@type": "Hotel",
+        "@id": "https://microtelwilliston.com/#hotel",
+        "name": "Microtel Inn & Suites by Wyndham Williston",
+        "description": "Newly renovated full-kitchen suites in Williston, ND. Perfect for Bakken oilfield workers, travel nurses, and extended business stays.",
+        "url": "https://microtelwilliston.com/",
+        "telephone": "+17015722000",
+        "email": "sales@merlinhotelgroup.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3820 4th Avenue West",
+          "addressLocality": "Williston",
+          "addressRegion": "ND",
+          "postalCode": "58801",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 48.1470,
+          "longitude": -103.6180
+        },
+        "image": "https://res.cloudinary.com/djcgfqesd/image/upload/w_1200,h_630,c_fill,f_auto,q_auto/v1778711129/hotel-outside_image_mwcvl4.avif",
+        "priceRange": "$$",
+        "starRating": {"@type": "Rating", "ratingValue": "3"},
+        "numberOfRooms": 77,
+        "petsAllowed": true,
+        "checkinTime": "15:00",
+        "checkoutTime": "11:00",
+        "amenityFeature": [
+          {"@type": "LocationFeatureSpecification", "name": "Full Kitchen Suites", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Free Parking", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Free Guest Laundry", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Pet Friendly", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Indoor Heated Pool", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Hot Tub", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Fitness Center", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Free Hot Breakfast", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "24-Hour Front Desk", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "Meeting Room", "value": true},
+          {"@type": "LocationFeatureSpecification", "name": "ADA Accessible Rooms", "value": true}
+        ],
+        "brand": {"@type": "Brand", "name": "Microtel by Wyndham"}
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://microtelwilliston.com/#organization",
+        "name": "Merlin Hotel Group",
+        "url": "https://microtelwilliston.com/",
+        "telephone": "+17015722000",
+        "email": "sales@merlinhotelgroup.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3820 4th Avenue West",
+          "addressLocality": "Williston",
+          "addressRegion": "ND",
+          "postalCode": "58801",
+          "addressCountry": "US"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://microtelwilliston.com/"}
+        ]
+      }
+    ]
   }
   </script>
 
-  <!-- Fonts -->
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://res.cloudinary.com" />
+  <link rel="dns-prefetch" href="https://res.cloudinary.com" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />

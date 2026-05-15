@@ -40,6 +40,7 @@ const ASSETS = [
   'robots.txt',
   '.htaccess',
   'favicon.svg',
+  'site.webmanifest',
 ];
 
 function read(file)           { return fs.readFileSync(file, 'utf8'); }

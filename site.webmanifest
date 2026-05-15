@@ -1,0 +1,16 @@
+{
+  "name": "Microtel Inn & Suites Williston",
+  "short_name": "Microtel Williston",
+  "description": "Extended-stay hotel suites in Williston, ND. Full kitchens, free breakfast, pool.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0d7f6e",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

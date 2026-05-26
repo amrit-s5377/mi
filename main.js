@@ -22,6 +22,7 @@ if (loaderEl) {
     window.addEventListener('DOMContentLoaded', () => {
       runHeroEntrance();
       initScrollAnimations();
+      scrollToHash();
     });
   } else {
     window.addEventListener('load', () => {
@@ -35,6 +36,7 @@ if (loaderEl) {
             sessionStorage.setItem('loaderShown', '1');
             runHeroEntrance();
             initScrollAnimations();
+            scrollToHash();
           }
         });
     });
@@ -199,6 +201,38 @@ if (mobDrawer) {
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && mobDrawer && mobDrawer.classList.contains('open')) closeDrawer();
 });
+
+/* ─────────────────────────────────────────────────────────────
+   HASH SCROLL — scroll to #anchor after GSAP init completes
+   Needed because the loader animation blocks the browser's
+   native anchor scroll when navigating to /#section from subpages
+─────────────────────────────────────────────────────────────── */
+function scrollToHash() {
+  var hash = window.location.hash;
+  if (!hash) return;
+  var target = document.querySelector(hash);
+  if (!target) return;
+  setTimeout(function () {
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 120);
+}
+
+/* On the homepage, intercept footer /#anchor clicks so they
+   smooth-scroll in place instead of reloading the page */
+if (loaderEl) {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var href = a.getAttribute('href');
+    if (!href || !href.startsWith('/#')) return;
+    var id = href.slice(2); /* strip leading /# */
+    var target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    history.pushState(null, '', href);
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 
 /* ─────────────────────────────────────────────────────────────
    ANCHOR NAV — active link highlight on scroll (all pages)

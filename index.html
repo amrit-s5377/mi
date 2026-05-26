@@ -49,6 +49,7 @@
     "@context": "https://schema.org",
     "@type": "Hotel",
     "@id": "https://willistonhotel.com/#hotel",
+    "identifier": "microtel-inn-suites-williston",
     "name": "Microtel Inn & Suites by Wyndham Williston",
     "alternateName": "Microtel Williston",
     "description": "Newly renovated full-kitchen suites in Williston, ND. Perfect for Bakken oilfield workers, travel nurses, and extended business stays. Free Wi-Fi, free laundry, free breakfast, pet-friendly.",
@@ -77,8 +78,8 @@
       "latitude": 48.142799,
       "longitude": -103.617828
     },
-    "checkinTime": "15:00",
-    "checkoutTime": "11:00",
+    "checkinTime": "15:00:00-06:00",
+    "checkoutTime": "11:00:00-06:00",
     "priceRange": "$$",
     "starRating": {
       "@type": "Rating",
@@ -88,6 +89,8 @@
       "@type": "Brand",
       "name": "Microtel by Wyndham"
     },
+    "isAccessibleForFree": false,
+    "publicAccess": true,
     "amenityFeature": [
       { "@type": "LocationFeatureSpecification", "name": "Full Kitchen Suites", "value": true },
       { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
@@ -109,100 +112,136 @@
       {
         "@type": "HotelRoom",
         "name": "Queen Kitchenette Suite",
-        "description": "Newly renovated full-kitchen suite with 2-burner cooktop, dishwasher, full-size refrigerator, microwave with hood, and complete cookware kit. Built for extended stays.",
-        "bed": { "@type": "BedDetails", "typeOfBed": "Queen", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
+        "description": "Fully equipped kitchen suite with cooktop, dishwasher, full-size refrigerator, microwave with hood, and complete cookware. Queen bed, 65-inch HDTV, and separate living area. Ideal for extended stays.",
+        "bed": "Queen",
+        "occupancy": { "@type": "QuantitativeValue", "value": 2, "maxValue": 2 },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Full Kitchen", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "65-inch HDTV", "value": true }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "name": "Queen Kitchenette Suite — Nightly Rate",
+          "checkinTime": "15:00:00-06:00",
+          "checkoutTime": "11:00:00-06:00",
+          "price": 129,
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "HotelRoom",
         "name": "Queen Room",
-        "description": "Standard queen room with DreamWell bedding, 65-inch HDTV, microwave and mini-fridge, and free Wi-Fi.",
-        "bed": { "@type": "BedDetails", "typeOfBed": "Queen", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
+        "description": "Standard queen room with DreamWell bedding, 65-inch HDTV, microwave, and mini-fridge. Comfortable and affordable for short or extended stays.",
+        "bed": "Queen",
+        "occupancy": { "@type": "QuantitativeValue", "value": 2, "maxValue": 2 },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Mini-Fridge", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "65-inch HDTV", "value": true }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "name": "Queen Room — Standard Nightly Rate",
+          "checkinTime": "15:00:00-06:00",
+          "checkoutTime": "11:00:00-06:00",
+          "price": 99,
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "HotelRoom",
         "name": "Double Queen Room",
-        "description": "Room with 2 queen beds, ideal for families or small groups. Work desk, microwave, mini-fridge, and free Wi-Fi.",
-        "bed": { "@type": "BedDetails", "typeOfBed": "Queen", "numberOfBeds": 2 },
-        "occupancy": { "@type": "QuantitativeValue", "maxValue": 4 }
+        "description": "Spacious room with two queen beds, 65-inch HDTV, microwave, and mini-fridge. Perfect for crews and families needing extra sleeping capacity.",
+        "bed": "Double Queen",
+        "occupancy": { "@type": "QuantitativeValue", "value": 4, "maxValue": 4 },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Mini-Fridge", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "65-inch HDTV", "value": true }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "name": "Double Queen Room — Standard Nightly Rate",
+          "checkinTime": "15:00:00-06:00",
+          "checkoutTime": "11:00:00-06:00",
+          "price": 109,
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
       },
       {
         "@type": "HotelRoom",
         "name": "ADA Accessible Room",
-        "description": "ADA-accessible room with roll-in shower, widened doorways, and lowered fixtures. Full amenities, fully accessible.",
-        "bed": { "@type": "BedDetails", "typeOfBed": "Queen", "numberOfBeds": 1 },
-        "occupancy": { "@type": "QuantitativeValue", "maxValue": 2 }
+        "description": "ADA-compliant queen room with roll-in shower, grab bars, lowered fixtures, and accessible layout. Equal in comfort and amenities to standard queen rooms.",
+        "bed": "Queen",
+        "occupancy": { "@type": "QuantitativeValue", "value": 2, "maxValue": 2 },
+        "amenityFeature": [
+          { "@type": "LocationFeatureSpecification", "name": "Roll-in Shower", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "Free Wi-Fi", "value": true },
+          { "@type": "LocationFeatureSpecification", "name": "65-inch HDTV", "value": true }
+        ],
+        "offers": {
+          "@type": "Offer",
+          "name": "ADA Accessible Room — Standard Nightly Rate",
+          "checkinTime": "15:00:00-06:00",
+          "checkoutTime": "11:00:00-06:00",
+          "price": 99,
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock"
+        }
       }
     ],
     "makesOffer": [
       {
         "@type": "Offer",
         "name": "Queen Kitchenette Suite — Nightly Rate",
-        "description": "Full-kitchen suite with cooktop, dishwasher, full-size fridge, microwave, and complete cookware. Built for extended stays.",
+        "description": "Full-kitchen suite with cooktop, dishwasher, full-size fridge, microwave with hood, and complete cookware kit. Built for extended stays.",
         "identifier": "MICROTEL-WLS-KITCHENETTE-NIGHTLY",
+        "validFrom": "2026-05-01",
+        "price": 129,
         "priceCurrency": "USD",
-        "price": "129",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "minPrice": "129",
-          "maxPrice": "225",
-          "priceCurrency": "USD"
-        },
+        "checkinTime": "15:00:00-06:00",
+        "checkoutTime": "11:00:00-06:00",
         "availability": "https://schema.org/InStock",
         "url": "https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview",
-        "validFrom": "2026-05-01",
-        "itemOffered": { "@type": "HotelRoom", "name": "Queen Kitchenette Suite" },
         "seller": { "@type": "Organization", "name": "Wyndham Hotels & Resorts", "url": "https://www.wyndhamhotels.com/" }
       },
       {
         "@type": "Offer",
         "name": "Queen Kitchenette Suite — Weekly Extended-Stay Rate",
-        "description": "Weekly rate for 7+ night stays. Custom quote — call (701) 639-9317.",
+        "description": "Weekly rate for 7+ night stays. Call (701) 639-9317 for a custom quote.",
         "identifier": "MICROTEL-WLS-KITCHENETTE-WEEKLY",
+        "price": 799,
         "priceCurrency": "USD",
-        "price": "799",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "799",
-          "priceCurrency": "USD",
-          "unitText": "WEEK"
-        },
-        "availability": "https://schema.org/InStock",
-        "itemOffered": { "@type": "HotelRoom", "name": "Queen Kitchenette Suite" }
+        "checkinTime": "15:00:00-06:00",
+        "checkoutTime": "11:00:00-06:00",
+        "availability": "https://schema.org/InStock"
       },
       {
         "@type": "Offer",
         "name": "Queen Kitchenette Suite — Monthly Extended-Stay Rate",
         "description": "Monthly rate for 30+ night stays. Call (701) 639-9317. Direct billing accepted.",
         "identifier": "MICROTEL-WLS-KITCHENETTE-MONTHLY",
+        "price": 2799,
         "priceCurrency": "USD",
-        "price": "2799",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "2799",
-          "priceCurrency": "USD",
-          "unitText": "MONTH"
-        },
-        "availability": "https://schema.org/InStock",
-        "itemOffered": { "@type": "HotelRoom", "name": "Queen Kitchenette Suite" }
+        "checkinTime": "15:00:00-06:00",
+        "checkoutTime": "11:00:00-06:00",
+        "availability": "https://schema.org/InStock"
       },
       {
         "@type": "Offer",
         "name": "Queen Room — Standard Nightly Rate",
-        "description": "Standard queen room with microwave and mini-fridge.",
+        "description": "Standard queen room with DreamWell bedding, 65-inch HDTV, microwave and mini-fridge.",
         "identifier": "MICROTEL-WLS-QUEEN-NIGHTLY",
+        "price": 99,
         "priceCurrency": "USD",
-        "price": "99",
-        "priceSpecification": {
-          "@type": "PriceSpecification",
-          "minPrice": "99",
-          "maxPrice": "185",
-          "priceCurrency": "USD"
-        },
+        "checkinTime": "15:00:00-06:00",
+        "checkoutTime": "11:00:00-06:00",
         "availability": "https://schema.org/InStock",
         "url": "https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview",
-        "itemOffered": { "@type": "HotelRoom", "name": "Queen Room" },
         "seller": { "@type": "Organization", "name": "Wyndham Hotels & Resorts", "url": "https://www.wyndhamhotels.com/" }
       }
     ],
@@ -212,8 +251,6 @@
       "opens": "00:00",
       "closes": "23:59"
     },
-    "isAccessibleForFree": false,
-    "publicAccess": true,
     "sameAs": [
       "https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview"
     ]

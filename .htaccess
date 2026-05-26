@@ -13,7 +13,7 @@ ErrorDocument 404 /404.html
   # 1) HTTP → HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
-  # 2) www → non-www (keeps canonical microtelwilliston.com)
+  # 2) www → non-www (keeps canonical willistonhotel.com)
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
 </IfModule>

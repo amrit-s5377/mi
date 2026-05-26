@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /partials/
 
-Sitemap: https://microtelwilliston.com/sitemap.xml
+Sitemap: https://willistonhotel.com/sitemap.xml

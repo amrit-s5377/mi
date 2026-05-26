@@ -493,6 +493,7 @@
   background: var(--white); padding: 1.6rem 2rem;
   transition: background 0.2s;
 }
+.faq-item:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .faq-item:hover { background: var(--teal-xpale); }
 .faq-q {
   font-size: 0.87rem; font-weight: 600; color: var(--ink);

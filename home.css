@@ -342,7 +342,6 @@
   max-width: 1280px; margin-left: auto; margin-right: auto; margin-top: 2.8rem;
 }
 .amen-card { background: var(--white); padding: 2rem 1.6rem; transition: background 0.22s; }
-.amen-card:last-child { grid-column-end: -1; }
 .amen-card:hover { background: var(--teal-pale); }
 .amen-icon-wrap {
   width: 42px; height: 42px; border-radius: 10px;

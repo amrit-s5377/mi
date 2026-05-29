@@ -1,24 +1,24 @@
 <!-- ════════ MOBILE DRAWER ════════ -->
-<div class="mob-drawer" id="mobDrawer">
+<div class="mob-drawer" id="mobDrawer" aria-hidden="true" role="dialog" aria-label="Navigation menu" aria-modal="true">
   <button class="mob-close" id="mobClose" aria-label="Close menu">&#x2715;</button>
   <nav class="mob-nav">
-    <a href="/#heroSec">Home</a>
-    <a href="amenities">Amenities</a>
-    <a href="extended-stay">Extended Stay</a>
-    <a href="bakken-oilfield-housing" style="padding-left:1.4rem;font-size:0.78rem;color:var(--ink-l);">↳ Bakken Oilfield Housing</a>
-    <a href="travel-nurse-housing" style="padding-left:1.4rem;font-size:0.78rem;color:var(--ink-l);">↳ Travel Nurse Housing</a>
-    <a href="corporate">Corporate</a>
-    <a href="meetings">Meetings</a>
-    <a href="contact">Contact</a>
+    <a href="/">Home</a>
+    <a href="/amenities">Amenities</a>
+    <a href="/extended-stay">Extended Stay</a>
+    <a href="/bakken-oilfield-housing" style="padding-left:1.4rem;font-size:0.78rem;color:var(--ink-l);">↳ Bakken Oilfield Housing</a>
+    <a href="/travel-nurse-housing" style="padding-left:1.4rem;font-size:0.78rem;color:var(--ink-l);">↳ Travel Nurse Housing</a>
+    <a href="/corporate">Corporate</a>
+    <a href="/meetings">Meetings</a>
+    <a href="/contact">Contact</a>
   </nav>
   <a href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview"
-     target="_blank" rel="noopener" class="mob-book-btn">Book Now — Wyndham.com</a>
+     target="_blank" rel="noopener" class="mob-book-btn">Book Now on Wyndham.com</a>
 </div>
 
 <!-- ════════ NAVBAR ════════ -->
 <header id="siteNav">
   <div class="nav-inner">
-    <a href="/#heroSec" class="nav-brand">
+    <a href="/" class="nav-brand">
       <span class="brand-icon">M</span>
       <span class="brand-text">
         <span class="brand-name">Microtel</span>
@@ -26,33 +26,33 @@
       </span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="/#heroSec">Home</a>
-      <a href="amenities">Amenities</a>
+      <a href="/">Home</a>
+      <a href="/amenities">Amenities</a>
       <div class="nav-dropdown">
-        <a href="extended-stay" class="nav-dropdown-toggle">Extended Stay
+        <a href="/extended-stay" class="nav-dropdown-toggle">Extended Stay
           <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:10px;height:10px;margin-left:3px;vertical-align:middle;"><path d="M2 4l4 4 4-4"/></svg>
         </a>
         <div class="nav-dropdown-menu">
-          <a href="extended-stay">Weekly &amp; Monthly Rates</a>
-          <a href="bakken-oilfield-housing">Bakken Oilfield Housing</a>
-          <a href="travel-nurse-housing">Travel Nurse Housing</a>
+          <a href="/extended-stay">Weekly &amp; Monthly Rates</a>
+          <a href="/bakken-oilfield-housing">Bakken Oilfield Housing</a>
+          <a href="/travel-nurse-housing">Travel Nurse Housing</a>
         </div>
       </div>
       <div class="nav-dropdown">
-        <a href="corporate" class="nav-dropdown-toggle">Corporate
+        <a href="/corporate" class="nav-dropdown-toggle">Corporate
           <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:10px;height:10px;margin-left:3px;vertical-align:middle;"><path d="M2 4l4 4 4-4"/></svg>
         </a>
         <div class="nav-dropdown-menu">
-          <a href="corporate">Corporate &amp; Groups</a>
-          <a href="meetings">Meetings &amp; Events</a>
+          <a href="/corporate">Corporate &amp; Groups</a>
+          <a href="/meetings">Meetings &amp; Events</a>
         </div>
       </div>
-      <a href="contact">Contact</a>
+      <a href="/contact">Contact</a>
     </nav>
     <div class="nav-right">
       <a href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview"
          target="_blank" rel="noopener" class="nav-book-btn">Book Now</a>
-      <button class="nav-ham" id="navHam" aria-label="Open menu">
+      <button class="nav-ham" id="navHam" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobDrawer">
         <span></span><span></span><span></span>
       </button>
     </div>

@@ -226,6 +226,8 @@
   <!-- Preconnect -->
   <link rel="preconnect" href="https://res.cloudinary.com" />
   <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+  <!-- LCP preload — hero background image discovered early for faster paint -->
+  <link rel="preload" as="image" href="https://res.cloudinary.com/djcgfqesd/image/upload/v1778711126/outside_hero_image_o0qocr.avif" fetchpriority="high" type="image/avif" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -266,11 +268,11 @@
             39 Newly Renovated Kitchenette Suites
           </div>
           <div class="hero-price-badge">
-            <div class="hpb-cycle" role="text" aria-label="From $129 per night — weekly and monthly rates available">
+            <div class="hpb-cycle" role="text" aria-label="From $129 per night, weekly and monthly rates available">
               <span class="hpb-c-price"><span class="hpb-label">From</span><strong>$129</strong><span class="hpb-per">/ night</span></span>
               <span class="hpb-c-rates" aria-hidden="true">Weekly &middot; Monthly Rates</span>
             </div>
-            <a href="kitchenette.html" class="hpb-link" aria-label="View Queen Kitchenette Suite">
+            <a href="/kitchenette" class="hpb-link" aria-label="View Queen Kitchenette Suite">
               <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
             </a>
           </div>
@@ -280,7 +282,7 @@
           Williston's Newest<br><em>Full-Kitchen</em><br><em>Extended-Stay Hotel</em>
         </h1>
         <p class="hero-p" id="hPara">
-          Microtel Inn &amp; Suites by Wyndham — Northwest North Dakota's smartest
+          Microtel Inn &amp; Suites by Wyndham, Northwest North Dakota's smartest
           extended-stay choice. Full kitchens, free laundry, free breakfast. Built for
           Bakken crews, travel nurses, and long-term business stays.
         </p>
@@ -290,7 +292,7 @@
             Reserve on Wyndham
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
-          <a href="property-details.html" class="btn-secondary">View Property</a>
+          <a href="/property-details" class="btn-secondary">View Property</a>
         </div>
       </div>
       <div class="hero-card" id="hCard" aria-label="Quick booking info">
@@ -366,7 +368,7 @@
       <div class="about-visual">
         <div class="about-img-main reveal-l">
           <img src="https://res.cloudinary.com/djcgfqesd/image/upload/v1778711129/hotel-outside_image_mwcvl4.avif"
-               alt="Microtel Inn &amp; Suites Williston exterior — hotel off Highway 85, Williston ND" loading="lazy" />
+               alt="Microtel Inn &amp; Suites Williston exterior, hotel off Highway 85, Williston ND" loading="lazy" />
         </div>
         <div class="about-img-accent reveal-l" style="transition-delay:0.15s;">
           <img src="https://res.cloudinary.com/djcgfqesd/image/upload/v1778701568/microtel-williston-extended-stay-suite-kitchen-bedroom_hld6cm.jpg"
@@ -384,7 +386,7 @@
           39 Newly Renovated<br><em>Queen Kitchenette Suites</em>
         </h2>
         <p class="body-text reveal">
-          Welcome to Microtel Inn &amp; Suites by Wyndham Williston — your home base in the heart of
+          Welcome to Microtel Inn &amp; Suites by Wyndham Williston, your home base in the heart of
           the Bakken oilfield region. We've recently completed a major suite renovation: 39 of our rooms
           are now full-kitchen Queen Suites, purpose-built for guests staying multiple nights, weeks, or
           months in Williston, North Dakota.
@@ -430,7 +432,6 @@
   <section class="sec kitchen-spotlight" id="kitchenette" aria-labelledby="kitchen-heading">
     <div class="ks-inner">
       <div class="ks-copy">
-        <div class="eyebrow reveal">New — 39 Rooms</div>
         <!-- H2 from SEO -->
         <h2 class="sec-h2 reveal" id="kitchen-heading">
           Queen <em>Kitchenette Suite</em>
@@ -439,7 +440,7 @@
         <p class="body-text reveal">
           Our newly renovated Queen Kitchenette Suite is built for guests who need more than a hotel
           room. Whether you're staying a night, a week, or a month, this suite gives you the comfort
-          and equipment of a furnished apartment — with the service of a hotel.
+          and equipment of a furnished apartment, with the service of a hotel.
         </p>
         <ul class="ks-features reveal">
           <li><strong>Full Kitchen:</strong> 2-burner cooktop, full-size fridge-freezer, stainless dishwasher, over-range microwave with hood</li>
@@ -449,7 +450,7 @@
           <li><strong>Extras (borrow free 7+ nights):</strong> Rice cooker, air fryer, slow cooker, boot dryers (Nov–Mar)</li>
         </ul>
         <div class="ks-actions reveal">
-          <a href="kitchenette.html" class="btn-primary">
+          <a href="/kitchenette" class="btn-primary">
             View Full Suite Details
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
           </a>
@@ -462,7 +463,7 @@
           <!-- Hero — left, full height -->
           <div class="ks-m-hero" data-lb-idx="2">
             <img src="https://res.cloudinary.com/djcgfqesd/image/upload/w_900,f_auto,q_auto/v1778701564/microtel-williston-queen-kitchenette-suite-full-kitchen_fmxds4.jpg"
-                 alt="Full kitchenette — microwave shelf, fridge and complete appliance setup" loading="lazy" />
+                 alt="Full kitchenette: microwave shelf, fridge and complete appliance setup" loading="lazy" />
             <div class="ks-badge">
               <span class="ks-badge-num">39</span>
               <span class="ks-badge-lbl">Renovated<br>Suites</span>
@@ -476,7 +477,7 @@
           <!-- Bottom-right: full room overview, carries view-all button -->
           <div class="ks-m-bot" data-lb-idx="3">
             <img src="https://res.cloudinary.com/djcgfqesd/image/upload/w_600,f_auto,q_auto/v1778701570/microtel-williston-kitchenette-suite-full-room-overview_nse08t.jpg"
-                 alt="Full suite — queen bed, 65″ TV, work desk and complete kitchen" loading="lazy" />
+                 alt="Full suite: queen bed, 65″ TV, work desk and complete kitchen" loading="lazy" />
             <button class="ks-view-all" data-lb-open="0" onclick="event.stopPropagation()" aria-label="View all 9 suite photos">
               <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg>
               View all 9 photos
@@ -491,7 +492,6 @@
   <section class="sec rooms-sec" id="rooms" aria-labelledby="rooms-heading">
     <div class="sec-header">
       <div>
-        <div class="eyebrow reveal">Accommodations</div>
         <h2 class="sec-h2 reveal" id="rooms-heading">Rooms &amp; <em>Suites</em></h2>
       </div>
       <a href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview"
@@ -515,7 +515,7 @@
         <div class="room-body">
           <div class="room-cat">Extended Stay</div>
           <h3 class="room-name">Queen Kitchenette Suite</h3>
-          <p class="room-desc">Full kitchen — cooktop, dishwasher, full-size fridge, microwave. Complete cookware &amp; tableware stocked. Weekly &amp; monthly rates available.</p>
+          <p class="room-desc">Full kitchen: cooktop, dishwasher, full-size fridge, microwave. Complete cookware &amp; tableware stocked. Weekly &amp; monthly rates available.</p>
           <div class="room-footer">
             <div class="room-actions">
               <a href="tel:+17016399317" class="room-btn room-btn--ghost">Call</a>
@@ -594,7 +594,7 @@
         Nightly rates from <strong>$99</strong> in low season up to <strong>$225</strong>
         during peak July drilling season. Book nightly stays on
         <a href="https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview" target="_blank" rel="noopener">Wyndham.com</a>
-        — or call us for weekly/monthly extended-stay quotes.
+        or call us for weekly/monthly extended-stay quotes.
       </p>
       <a href="tel:+17016399317" class="sb-cta">Call for Quote</a>
     </div>
@@ -602,7 +602,6 @@
 
   <!-- ── RESERVATIONS ── -->
   <section class="booking-explainer-sec" id="how-to-book" aria-labelledby="be-heading">
-    <div class="be-eyebrow">Best Way to Book</div>
     <h2 class="be-h2" id="be-heading">Reserve <em>Your Stay</em></h2>
     <div class="be-grid">
       <div class="be-card">
@@ -630,7 +629,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
         </div>
         <h5>Corporate &amp; Group Enquiry</h5>
-        <p>For crew blocks, direct billing, and long-term workforce solutions — our sales team responds within a few hours.</p>
+        <p>For crew blocks, direct billing, and long-term workforce solutions, our sales team responds within a few hours.</p>
         <a href="#enquiry" class="be-cta">
           Send Enquiry
           <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2.5 7h9M8 3.5L11.5 7 8 10.5"/></svg>
@@ -645,17 +644,16 @@
     <div class="par-overlay"></div>
     <div class="par-inner">
       <blockquote class="par-quote reveal">
-        "Clean, comfortable &amp; convenient — exactly what you need in Williston."
-        <cite>— Verified Guest · Wyndham Rewards Member</cite>
+        "Clean, comfortable and convenient. Exactly what you need in Williston."
+        <cite>Verified Guest · Wyndham Rewards Member</cite>
       </blockquote>
     </div>
   </div>
 
   <!-- ── AMENITIES ── -->
   <section class="sec amen-sec" id="amenities" aria-labelledby="amen-heading">
-    <div class="eyebrow reveal">Hotel Amenities</div>
     <!-- H2 from SEO: "Free Laundry, Free Wi-Fi, Free Breakfast — Every Stay" -->
-    <h2 class="sec-h2 reveal" id="amen-heading">Free Laundry, Free Wi-Fi,<br><em>Free Breakfast</em> — Every Stay</h2>
+    <h2 class="sec-h2 reveal" id="amen-heading">Free Laundry, Free Wi-Fi,<br><em>Free Breakfast</em> on Every Stay</h2>
     <p class="sec-sub reveal">No hidden fees. All the essentials are complimentary.</p>
     <div class="amen-grid">
       <div class="amen-card reveal-up">
@@ -721,7 +719,6 @@
   <section class="sec meet-band" aria-labelledby="meet-heading">
     <div class="meet-inner">
       <div class="meet-copy">
-        <div class="eyebrow reveal" style="color:var(--teal-l);">Events &amp; Meetings</div>
         <h2 class="sec-h2 reveal" id="meet-heading" style="color:#fff;">800 sq ft <em>Meeting Room</em></h2>
         <p class="body-text reveal" style="color:rgba(255,255,255,0.55);max-width:480px;">Host your next team briefing, contractor onboarding, or corporate training in our dedicated meeting room. AV equipment included, catering available on request.</p>
         <a href="#enquiry" class="btn-primary reveal" style="margin-top:1.6rem;display:inline-flex;">
@@ -742,13 +739,12 @@
   <section class="sec" style="background:var(--teal-xpale); padding:64px 8vw;" aria-labelledby="ext-promo-heading">
     <div class="ext-promo-grid" style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;flex-wrap:wrap;">
       <div>
-        <div class="eyebrow reveal">Extended Stay</div>
         <!-- H2 from SEO: "Weekly & Monthly Rates for Extended-Stay Guests" -->
         <h2 class="sec-h2 reveal" id="ext-promo-heading" style="color:var(--ink);">Weekly &amp; Monthly Rates<br><em>for Extended-Stay Guests</em></h2>
         <p class="body-text reveal" style="max-width:560px;">Stay 7+ nights and save significantly over transient rates. Our 39 full-kitchen suites are designed for oilfield rotations, 13-week travel nurse contracts, and long-term project assignments. Direct corporate billing available.</p>
       </div>
       <div class="reveal" style="display:flex;flex-direction:column;gap:0.75rem;flex-shrink:0;">
-        <a href="extended-stay.html" class="btn-primary">
+        <a href="/extended-stay" class="btn-primary">
           See Weekly &amp; Monthly Rates
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </a>
@@ -762,9 +758,8 @@
     <div class="corp-inner">
 
       <div class="corp-header">
-        <div class="eyebrow reveal">Corporate &amp; Group Bookings</div>
         <h2 class="sec-h2 reveal" id="corp-heading">Built for Bakken Workers,<br><em>Travel Nurses &amp; Long Stays</em></h2>
-        <p class="sec-sub reveal" style="max-width:600px;">Direct corporate billing, block room rates, and 24-hour service — built around the oilfield schedule, not a 9-to-5.</p>
+        <p class="sec-sub reveal" style="max-width:600px;">Direct corporate billing, block room rates, and 24-hour service built around the oilfield schedule, not a 9-to-5.</p>
       </div>
 
       <div class="corp-operators reveal">
@@ -793,7 +788,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><path d="M12 12v4M10 14h4"/></svg>
           </div>
           <h3>Direct Corporate Billing</h3>
-          <p>Skip the per-room credit card. Set up a corporate account for consolidated direct billing — one invoice, one payment, full transparency for your AP team.</p>
+          <p>Skip the per-room credit card. Set up a corporate account for consolidated direct billing: one invoice, one payment, full transparency for your AP team.</p>
         </div>
         <div class="corp-card reveal-up" style="transition-delay:0.08s;">
           <div class="corp-card-icon" aria-hidden="true">
@@ -826,11 +821,11 @@
         <a href="tel:+17016399317" class="btn-secondary">Call (701) 639-9317</a>
       </div>
       <div class="corp-page-links reveal">
-        <a href="bakken-oilfield-housing.html">
+        <a href="/bakken-oilfield-housing">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="width:13px;height:13px;flex-shrink:0;"><path d="M8 2v2M5.5 3.5l1.5 2M10.5 3.5l-1.5 2"/><rect x="4" y="6" width="8" height="3" rx="1"/><path d="M5 9v5M11 9v5M3 14h10"/></svg>
           Bakken Oilfield Housing →
         </a>
-        <a href="travel-nurse-housing.html">
+        <a href="/travel-nurse-housing">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true" style="width:13px;height:13px;flex-shrink:0;"><rect x="5" y="2" width="6" height="7" rx="1.5"/><path d="M2 9h12v5H2z"/><path d="M8 11v2M7 12h2"/></svg>
           Travel Nurse Housing →
         </a>
@@ -842,17 +837,16 @@
   <!-- ── EXPLORE WILLISTON ── -->
   <section class="sec explore-sec" id="explore" aria-labelledby="explore-heading">
     <div class="explore-header">
-      <div class="eyebrow reveal">Discover the Area</div>
       <h2 class="sec-h2 reveal" id="explore-heading">Explore <em>Williston</em></h2>
       <p class="sec-sub reveal" style="max-width:520px;">
-        From ancient history to wide-open prairie adventures — Williston has more to offer than you think.
+        From ancient history to wide-open prairie adventures. Williston has more to offer than you think.
       </p>
     </div>
     <div class="explore-grid">
       <div class="explore-card reveal-up">
         <div class="explore-img">
           <img src="https://res.cloudinary.com/djcgfqesd/image/upload/v1778705011/Garrison-Dam-North-Dakota_olep11.jpg"
-               alt="Lake Sakakawea near Williston ND — fishing, boating and prairie sunsets" loading="lazy" />
+               alt="Lake Sakakawea near Williston ND, fishing, boating and prairie sunsets" loading="lazy" />
         </div>
         <div class="explore-body">
           <div class="explore-dist">3 miles</div>
@@ -900,7 +894,6 @@
   <section class="sec loc-sec" id="location" aria-labelledby="loc-heading">
     <div class="loc-grid">
       <div class="loc-text">
-        <div class="eyebrow reveal">Find Us</div>
         <!-- H2 from SEO: "Conveniently Located Off Highway 85, 16 Miles from XWA Airport" -->
         <h2 class="sec-h2 reveal" id="loc-heading">Conveniently Located Off Highway 85,<br><em>16 Miles from XWA Airport</em></h2>
         <p class="body-text reveal">
@@ -926,7 +919,7 @@
         <iframe
           src="https://maps.google.com/maps?q=3820+4th+Ave+W,+Williston,+ND+58801&output=embed&z=16"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Microtel Inn &amp; Suites Williston ND location map — 3820 4th Ave W">
+          title="Microtel Inn &amp; Suites Williston ND location map, 3820 4th Ave W">
         </iframe>
       </div>
     </div>
@@ -944,7 +937,7 @@
       </div>
       <div class="review-card reveal-up" style="transition-delay:0.1s;">
         <div class="review-stars" aria-label="5 out of 5 stars">★★★★★</div>
-        <p class="review-text">"Great value for the area. The new kitchenette suite is fantastic — I cooked my own meals for a week and saved a ton. Would stay again for work trips."</p>
+        <p class="review-text">"Great value for the area. The new kitchenette suite is fantastic; I cooked my own meals for a week and saved a ton. Would stay again for work trips."</p>
         <div class="review-author">Danielle T. &nbsp;·&nbsp; Wyndham Rewards</div>
       </div>
       <div class="review-card reveal-up" style="transition-delay:0.2s;">
@@ -958,20 +951,19 @@
 
   <!-- ── FAQ ── -->
   <section class="sec faq-sec" id="faq" aria-labelledby="faq-heading">
-    <div class="eyebrow reveal">Quick Answers</div>
     <h2 class="sec-h2 reveal" id="faq-heading">Frequently Asked <em>Questions</em></h2>
     <div class="faq-grid">
       <div class="faq-item reveal-up">
         <div class="faq-q">Is parking free?</div>
-        <div class="faq-a">Yes — complimentary on-site parking for all guests including spaces for trucks, buses, and oversized vehicles. No reservations needed.</div>
+        <div class="faq-a">Yes, complimentary on-site parking for all guests including spaces for trucks, buses, and oversized vehicles. No reservations needed.</div>
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.05s;">
         <div class="faq-q">Is breakfast included with every stay?</div>
-        <div class="faq-a">Yes. A free hot breakfast buffet is served every morning — eggs, waffles, pastries, juice and fresh fruit. No extra charge.</div>
+        <div class="faq-a">Yes. A free hot breakfast buffet is served every morning: eggs, waffles, pastries, juice and fresh fruit. No extra charge.</div>
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.15s;">
         <div class="faq-q">Are pets allowed?</div>
-        <div class="faq-a">Yes, well-behaved pets are welcome. An additional fee applies — please let us know when booking so we can prepare the right room.</div>
+        <div class="faq-a">Yes, well-behaved pets are welcome. An additional fee applies; please let us know when booking so we can prepare the right room.</div>
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.2s;">
         <div class="faq-q">What are the check-in and check-out times?</div>
@@ -979,7 +971,7 @@
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.25s;">
         <div class="faq-q">Is Wi-Fi free?</div>
-        <div class="faq-a">Yes, high-speed Wi-Fi is included for every guest throughout all rooms and common areas — no password, no extra charge.</div>
+        <div class="faq-a">Yes, high-speed Wi-Fi is included for every guest throughout all rooms and common areas. No password, no extra charge.</div>
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.3s;">
         <div class="faq-q">Do you offer weekly or monthly rates?</div>
@@ -987,7 +979,7 @@
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.35s;">
         <div class="faq-q">Do you have a meeting room?</div>
-        <div class="faq-a">Yes — an 800 sq ft meeting room seats up to 40 guests with AV equipment and catering on request. Ideal for team briefings and corporate training.</div>
+        <div class="faq-a">Yes, an 800 sq ft meeting room seats up to 40 guests with AV equipment and catering on request. Ideal for team briefings and corporate training.</div>
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.4s;">
         <div class="faq-q">Can I earn loyalty points?</div>
@@ -995,7 +987,7 @@
       </div>
       <div class="faq-item reveal-up" style="transition-delay:0.45s;">
         <div class="faq-q">Is laundry available on-site?</div>
-        <div class="faq-a">Yes — free guest laundry with industrial washers and dryers is available on-site. Perfect for extended stays and crew rotations.</div>
+        <div class="faq-a">Yes, free guest laundry with industrial washers and dryers is available on-site. Perfect for extended stays and crew rotations.</div>
       </div>
     </div>
   </section>
@@ -1018,9 +1010,9 @@
         tag: '★ New', tagTeal: true,
         cat: 'Extended Stay', title: 'Queen Kitchenette Suite',
         img: 'https://res.cloudinary.com/djcgfqesd/image/upload/w_900,f_auto,q_auto/v1778701570/microtel-williston-kitchenette-suite-full-room-overview_nse08t.jpg',
-        imgAlt: 'Queen Kitchenette Suite — full suite with kitchen, queen bed and 65″ TV',
+        imgAlt: 'Queen Kitchenette Suite: full suite with kitchen, queen bed and 65″ TV',
         specs: [{ l:'Size', v:'325 sq ft' }, { l:'Bed', v:'1 Queen' }, { l:'Sleeps', v:'2 guests' }, { l:'Renovated', v:'2024' }],
-        desc: 'Purpose-built for extended stays — Bakken crews, travel nurses, and long-term business travelers. A full kitchen lets you cook every meal and save significantly over dining out.',
+        desc: 'Purpose-built for extended stays: Bakken crews, travel nurses, and long-term business travelers. A full kitchen lets you cook every meal and save significantly over dining out.',
         groups: [
           { name: 'Kitchen', items: ['2-burner induction cooktop', 'Full-size dishwasher', 'Full-size refrigerator', 'Microwave', 'Complete cookware & tableware', 'Knife block & kettle', 'Gooseneck sink'] },
           { name: 'Room', items: ['65″ HDTV', 'Work desk & ergonomic chair', 'DreamWell bedding', 'Blackout curtains', 'USB charging ports'] },
@@ -1031,11 +1023,11 @@
         tag: 'Most Popular', tagTeal: false,
         cat: 'Standard', title: 'Queen Room',
         img: 'https://res.cloudinary.com/djcgfqesd/image/upload/w_900,f_auto,q_auto/v1778711126/single_queen_bed_ifkki6.avif',
-        imgAlt: 'Standard Queen Room — queen bed, 65″ TV and work desk',
+        imgAlt: 'Standard Queen Room: queen bed, 65″ TV and work desk',
         specs: [{ l:'Bed', v:'1 Queen' }, { l:'Sleeps', v:'2 guests' }, { l:'Bedding', v:'DreamWell' }],
         desc: 'A clean, well-equipped room for business travelers and short stays. Everything you need for a comfortable, productive night in Williston.',
         groups: [
-          { name: 'Room', items: ['1 Queen bed — DreamWell bedding', '65″ HDTV', 'Work desk & ergonomic chair', 'USB charging ports', 'Blackout curtains'] },
+          { name: 'Room', items: ['1 Queen bed, DreamWell bedding', '65″ HDTV', 'Work desk & ergonomic chair', 'USB charging ports', 'Blackout curtains'] },
           { name: 'In-Room', items: ['Microwave', 'Mini-refrigerator', 'Coffee maker', 'Iron & ironing board', 'Hair dryer'] },
           { name: 'Included', items: ['Free hot breakfast daily', 'Free high-speed Wi-Fi', 'Free parking', 'Free guest laundry'] },
         ],
@@ -1044,11 +1036,11 @@
         tag: 'Family', tagTeal: false,
         cat: 'Family', title: 'Double Queen Room',
         img: 'https://res.cloudinary.com/djcgfqesd/image/upload/w_900,f_auto,q_auto/v1778711128/double_queen_bed_hmc9sh.avif',
-        imgAlt: 'Double Queen Room — two queen beds, ideal for families',
+        imgAlt: 'Double Queen Room: two queen beds, ideal for families',
         specs: [{ l:'Beds', v:'2 Queens' }, { l:'Sleeps', v:'4 guests' }, { l:'Best for', v:'Families' }],
         desc: 'Two queen beds make this the ideal choice for families or small groups. Spacious layout with full amenities for a comfortable stay.',
         groups: [
-          { name: 'Room', items: ['2 Queen beds — DreamWell bedding', '65″ HDTV', 'Work desk', 'USB charging ports', 'Blackout curtains'] },
+          { name: 'Room', items: ['2 Queen beds, DreamWell bedding', '65″ HDTV', 'Work desk', 'USB charging ports', 'Blackout curtains'] },
           { name: 'In-Room', items: ['Microwave', 'Mini-refrigerator', 'Coffee maker', 'Iron & ironing board', 'Hair dryer'] },
           { name: 'Included', items: ['Free hot breakfast daily', 'Free high-speed Wi-Fi', 'Free parking', 'Free guest laundry'] },
         ],
@@ -1057,12 +1049,12 @@
         tag: 'Accessible', tagTeal: false,
         cat: 'Accessible', title: 'ADA Accessible Room',
         img: 'https://res.cloudinary.com/djcgfqesd/image/upload/w_900,f_auto,q_auto/v1778711127/ADA_accesible_lw4kpm.jpg',
-        imgAlt: 'ADA Accessible Room — roll-in shower and widened doorways',
+        imgAlt: 'ADA Accessible Room: roll-in shower and widened doorways',
         specs: [{ l:'Bed', v:'1 Queen' }, { l:'Sleeps', v:'2 guests' }, { l:'Access', v:'ADA Compliant' }],
-        desc: 'Fully ADA-compliant room designed for guests with mobility needs. Every standard amenity is preserved — nothing is compromised.',
+        desc: 'Fully ADA-compliant room designed for guests with mobility needs. Every standard amenity is preserved, nothing compromised.',
         groups: [
           { name: 'Accessibility', items: ['Roll-in shower with grab bars', 'Widened doorways (36″+)', 'Lowered fixtures & counters', 'Accessible bed height', 'Visual alarms & door knocker'] },
-          { name: 'Room', items: ['1 Queen bed — DreamWell bedding', '65″ HDTV', 'Work desk', 'Microwave & mini-refrigerator', 'Coffee maker'] },
+          { name: 'Room', items: ['1 Queen bed, DreamWell bedding', '65″ HDTV', 'Work desk', 'Microwave & mini-refrigerator', 'Coffee maker'] },
           { name: 'Included', items: ['Free hot breakfast daily', 'Free high-speed Wi-Fi', 'Free parking', 'Free guest laundry'] },
         ],
       },

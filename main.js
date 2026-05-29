@@ -9,6 +9,13 @@ const WYNDHAM_URL =
   'https://www.wyndhamhotels.com/microtel/williston-north-dakota/microtel-williston/overview';
 
 /* ─────────────────────────────────────────────────────────────
+   REDUCED MOTION — check once at startup
+   CSS already sets animated elements to opacity:1/transform:none
+   when this is true; JS skips the GSAP calls entirely.
+─────────────────────────────────────────────────────────────── */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ─────────────────────────────────────────────────────────────
    LOADER (home page only — skipped on sub-pages)
 ─────────────────────────────────────────────────────────────── */
 const loaderEl = document.getElementById('loader');
@@ -16,11 +23,12 @@ const loaderEl = document.getElementById('loader');
 if (loaderEl) {
   const alreadySeen = sessionStorage.getItem('loaderShown');
 
-  if (alreadySeen) {
-    /* Skip loader on return visits — show content instantly */
+  if (alreadySeen || prefersReducedMotion) {
+    /* Skip loader: return visits or user prefers reduced motion */
     loaderEl.style.display = 'none';
+    sessionStorage.setItem('loaderShown', '1');
     window.addEventListener('DOMContentLoaded', () => {
-      runHeroEntrance();
+      if (!prefersReducedMotion) runHeroEntrance();
       initScrollAnimations();
       scrollToHash();
     });
@@ -71,6 +79,11 @@ function runHeroEntrance() {
 ─────────────────────────────────────────────────────────────── */
 function initScrollAnimations() {
   ScrollTrigger.getAll().forEach(t => t.kill());
+
+  /* Skip all parallax and reveal animations for reduced-motion users.
+     CSS rules in style.css / home.css already set elements to their
+     visible final state, so no GSAP calls are needed. */
+  if (prefersReducedMotion) return;
 
   const heroBg = document.getElementById('heroBg');
   if (heroBg) {
@@ -173,13 +186,19 @@ const mobClose  = document.getElementById('mobClose');
 
 function openDrawer() {
   navHam.classList.add('open');
+  navHam.setAttribute('aria-expanded', 'true');
+  navHam.setAttribute('aria-label', 'Close navigation menu');
   mobDrawer.classList.add('open');
+  mobDrawer.removeAttribute('aria-hidden');
   document.body.style.overflow = 'hidden';
 }
 
 function closeDrawer() {
   navHam.classList.remove('open');
+  navHam.setAttribute('aria-expanded', 'false');
+  navHam.setAttribute('aria-label', 'Open navigation menu');
   mobDrawer.classList.remove('open');
+  mobDrawer.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
 }
 

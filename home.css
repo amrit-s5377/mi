@@ -168,10 +168,10 @@
 .why-item {
   display: flex; gap: 1rem; align-items: flex-start;
   padding: 1.1rem; background: var(--teal-xpale);
-  border-radius: 10px; border-left: 3px solid var(--teal);
-  transition: background 0.22s;
+  border-radius: 10px; border: 1px solid var(--teal-pale);
+  transition: background 0.22s, border-color 0.22s;
 }
-.why-item:hover { background: var(--teal-pale); }
+.why-item:hover { background: var(--teal-pale); border-color: var(--teal); }
 .why-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
 .why-item strong { display: block; font-size: 0.82rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
 .why-item p { font-size: 0.76rem; font-weight: 300; line-height: 1.6; color: var(--ink-m); margin: 0; }
@@ -1061,4 +1061,19 @@
 @media (max-width: 600px) {
   .sb-inner { gap: 0.6rem; }
   .sb-cta { width: 100%; text-align: center; padding: 10px; }
+}
+
+/* ═══════════════════════════════════════
+   REDUCED MOTION — hero elements default visible
+   Overrides the GSAP-animated opacity:0 initial states
+   so content is never gated behind an animation.
+═══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .hero-chip, .hero-h1, .hero-p, .hero-actions, .hero-card, .hero-scroll-cue {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .chip-dot { animation: none !important; opacity: 1 !important; }
+  .scroll-track::after { animation: none !important; }
+  @keyframes faqOpen { from { opacity: 1; transform: none; } }
 }

@@ -91,7 +91,21 @@ const server = http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      if (err.code === 'ENOENT') {
+      if (err.code === 'ENOENT' && !ext) {
+        // Clean URL fallback: /amenities → amenities.html
+        fs.readFile(filePath + '.html', (err2, data2) => {
+          if (!err2) {
+            const html = injectPartials(data2.toString()).replace('</body>', LR_SCRIPT + '\n</body>');
+            res.writeHead(200, { 'Content-Type': 'text/html' });
+            res.end(html);
+          } else {
+            fs.readFile(path.join(ROOT, '404.html'), (e, d) => {
+              res.writeHead(404, { 'Content-Type': 'text/html' });
+              res.end(d || '<h1>404 Not Found</h1>');
+            });
+          }
+        });
+      } else if (err.code === 'ENOENT') {
         fs.readFile(path.join(ROOT, '404.html'), (e, d) => {
           res.writeHead(404, { 'Content-Type': 'text/html' });
           res.end(d || '<h1>404 Not Found</h1>');

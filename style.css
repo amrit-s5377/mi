@@ -7,6 +7,13 @@
 /* ── RESET ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* ── FOCUS VISIBLE ── */
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 /* ── DESIGN TOKENS ── */
 :root {
   --teal:       #0d7f6e;
@@ -24,6 +31,9 @@
   --ink-l:      #8aa09a;
   --border:     #deeae6;
   --border-d:   #c4d8d2;
+  --error:      #e05c5c;
+  --error-bg:   #fff2f2;
+  --error-ink:  #b32929;
   --serif:      'DM Serif Display', Georgia, serif;
   --sans:       'Inter', system-ui, sans-serif;
   --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
@@ -140,7 +150,8 @@ address { font-style: normal; }
   box-shadow: 0 8px 32px rgba(14,30,42,0.12);
   z-index: -1;
 }
-.nav-dropdown:hover .nav-dropdown-menu { opacity: 1; pointer-events: all; transform: none; }
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu { opacity: 1; pointer-events: all; transform: none; }
 .nav-dropdown-menu a {
   display: block; font-size: 0.73rem; font-weight: 400; color: var(--ink-m);
   padding: 8px 12px; border-radius: 7px;
@@ -349,7 +360,7 @@ footer { background: var(--slate-d); padding: 64px 8vw 32px; }
   background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.8rem;
   box-shadow: 0 4px 28px rgba(14,30,42,0.06);
 }
-.d-info-card--accent { border-top: 3px solid var(--teal); }
+.d-info-card--accent { background: linear-gradient(to bottom, var(--teal-xpale) 0%, var(--white) 52px); }
 .dic-label { font-size: 0.56rem; font-weight: 600; letter-spacing: 0.36em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; display: block; }
 .dic-title { font-family: var(--serif); font-size: 1.45rem; font-weight: 400; color: var(--ink); margin-bottom: 0.8rem; line-height: 1.15; }
 .dic-body { font-size: 0.78rem; font-weight: 300; line-height: 1.75; color: var(--ink-m); margin-bottom: 1.3rem; padding-bottom: 1.3rem; border-bottom: 1px solid var(--border); }
@@ -487,7 +498,7 @@ a.enq-contact-item:hover {
 .enquiry-note {
   display: flex; gap: 1rem; align-items: flex-start; margin-top: 1.8rem;
   background: var(--teal-xpale); border: 1px solid var(--teal-pale);
-  border-left: 3px solid var(--teal); border-radius: 10px; padding: 1rem 1.2rem;
+  border-radius: 10px; padding: 1rem 1.2rem;
 }
 .enq-note-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
 .enquiry-note strong { display: block; font-size: 0.8rem; font-weight: 600; color: var(--ink); margin-bottom: 0.3rem; }
@@ -561,14 +572,14 @@ a.enq-contact-item:hover {
 
 .enq-error {
   display: flex; align-items: center; gap: 10px;
-  background: #fff2f2; border: 1px solid #e05c5c;
+  background: var(--error-bg); border: 1px solid var(--error);
   border-radius: 9px; padding: 12px 16px;
-  font-size: 0.8rem; font-weight: 500; color: #b32929;
+  font-size: 0.8rem; font-weight: 500; color: var(--error-ink);
 }
 .enq-error[hidden] { display: none !important; }
 .enq-error-icon {
   width: 22px; height: 22px; border-radius: 50%;
-  background: #e05c5c; color: #fff;
+  background: var(--error); color: #fff;
   display: flex; align-items: center; justify-content: center;
   font-size: 0.8rem; font-weight: 700; flex-shrink: 0;
 }
@@ -847,3 +858,16 @@ a.enq-contact-item:hover {
 .page-anchor-link:hover svg { opacity: 1; }
 .page-anchor-link.active { color: var(--teal-d); border-bottom-color: var(--teal); font-weight: 600; }
 .page-anchor-link.active svg { opacity: 1; }
+
+/* ═══════════════════════════════════════
+   REDUCED MOTION — reveal elements default visible
+   GSAP skips reveal animations when motion is reduced;
+   these rules ensure elements are never left invisible.
+═══════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-l, .reveal-r, .reveal-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

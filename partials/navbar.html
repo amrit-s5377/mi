@@ -28,23 +28,27 @@
     <nav class="nav-links" aria-label="Main navigation">
       <a href="/">Home</a>
       <a href="/amenities">Amenities</a>
+      <!-- Extended Stay: link and chevron are separate elements -->
       <div class="nav-dropdown">
-        <a href="/extended-stay" class="nav-dropdown-toggle">Extended Stay
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:10px;height:10px;margin-left:3px;vertical-align:middle;"><path d="M2 4l4 4 4-4"/></svg>
-        </a>
-        <div class="nav-dropdown-menu">
-          <a href="/extended-stay">Weekly &amp; Monthly Rates</a>
-          <a href="/bakken-oilfield-housing">Bakken Oilfield Housing</a>
-          <a href="/travel-nurse-housing">Travel Nurse Housing</a>
+        <a href="/extended-stay" class="nav-link-item">Extended Stay</a>
+        <button class="nav-dd-btn" aria-label="Show Extended Stay menu" aria-expanded="false" aria-haspopup="true">
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/extended-stay" role="menuitem">Weekly &amp; Monthly Rates</a>
+          <a href="/bakken-oilfield-housing" role="menuitem">Bakken Oilfield Housing</a>
+          <a href="/travel-nurse-housing" role="menuitem">Travel Nurse Housing</a>
         </div>
       </div>
+      <!-- Corporate: link and chevron are separate elements -->
       <div class="nav-dropdown">
-        <a href="/corporate" class="nav-dropdown-toggle">Corporate
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:10px;height:10px;margin-left:3px;vertical-align:middle;"><path d="M2 4l4 4 4-4"/></svg>
-        </a>
-        <div class="nav-dropdown-menu">
-          <a href="/corporate">Corporate &amp; Groups</a>
-          <a href="/meetings">Meetings &amp; Events</a>
+        <a href="/corporate" class="nav-link-item">Corporate</a>
+        <button class="nav-dd-btn" aria-label="Show Corporate menu" aria-expanded="false" aria-haspopup="true">
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M2 4l4 4 4-4"/></svg>
+        </button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/corporate" role="menuitem">Corporate &amp; Groups</a>
+          <a href="/meetings" role="menuitem">Meetings &amp; Events</a>
         </div>
       </div>
       <a href="/contact">Contact</a>

@@ -165,7 +165,7 @@ function updateNavMode() {
     siteNav.classList.add('light');
     return;
   }
-  const pastHero = window.scrollY > window.innerHeight * 0.78;
+  const pastHero  = window.scrollY > window.innerHeight * 0.78;
   const scrolledUp = window.scrollY <= 60;
   if (scrolledUp) {
     siteNav.classList.remove('light');
@@ -219,6 +219,41 @@ if (mobDrawer) {
 /* Escape key closes drawer */
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && mobDrawer && mobDrawer.classList.contains('open')) closeDrawer();
+});
+
+/* ─────────────────────────────────────────────────────────────
+   NAV DROPDOWN CHEVRONS
+   Each chevron button toggles the dropdown independently of the
+   main navigation link, so the link ALWAYS navigates on click.
+   CSS :hover still drives the dropdown for pointer devices;
+   this JS layer adds support for touch/keyboard/non-hover.
+─────────────────────────────────────────────────────────────── */
+document.querySelectorAll('.nav-dd-btn').forEach(function (btn) {
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var dropdown = this.closest('.nav-dropdown');
+    var isOpen   = dropdown.classList.toggle('dd-open');
+    this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    /* Close any other open dropdowns */
+    document.querySelectorAll('.nav-dropdown.dd-open').forEach(function (dd) {
+      if (dd !== dropdown) {
+        dd.classList.remove('dd-open');
+        var chevron = dd.querySelector('.nav-dd-btn');
+        if (chevron) chevron.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+});
+
+/* Close all dropdowns on outside click */
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.nav-dropdown')) {
+    document.querySelectorAll('.nav-dropdown.dd-open').forEach(function (dd) {
+      dd.classList.remove('dd-open');
+      var chevron = dd.querySelector('.nav-dd-btn');
+      if (chevron) chevron.setAttribute('aria-expanded', 'false');
+    });
+  }
 });
 
 /* ─────────────────────────────────────────────────────────────
